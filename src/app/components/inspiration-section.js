@@ -5,12 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { useState } from "react";
 
 export default function Inspiration() {
+    const [photo,setPhoto]=useState(1);
+    const changePhoto=(index)=>{
+        if(index!=null){
+            setPhoto(index+1);
+        }
+    }
     const pagination = {
         clickable: true,
         bulletClass: "swiper-pagination-bullet !border-2 !border-white",
-        bulletActiveClass: "swiper-pagination-bullet-active !border-0",
+        bulletActiveClass: "swiper-pagination-bullet-active !border-opacity-0",
     };
 
     return (
@@ -24,7 +31,8 @@ export default function Inspiration() {
                     "--swiper-pagination-bullet-inactive-color": "transparent",
                     "--swiper-pagination-bullet-inactive-opacity": "1",
                 }}
-                className="w-1/2 h-full"
+                onSlideChange={(swiper)=>changePhoto(swiper.realIndex)}
+                className="w-1/2 h-full select-none"
                 pagination={pagination}
                 modules={[Pagination]}
             >
@@ -48,13 +56,13 @@ export default function Inspiration() {
                         pulvinar a.
                     </p>
                     <Link
-                        className="text-sky-400 font-medium underline"
+                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                         href="#"
                     >
                         Read more
                         <Image
                             alt="photo"
-                            className="ml-4 inline"
+                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
                             src={"/arrow-blue.svg"}
                             height={12}
                             width={25}
@@ -81,13 +89,13 @@ export default function Inspiration() {
                         pulvinar a.
                     </p>
                     <Link
-                        className="text-sky-400 font-medium underline"
+                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                         href="#"
                     >
                         Read more
                         <Image
                             alt="photo"
-                            className="ml-4 inline"
+                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
                             src={"/arrow-blue.svg"}
                             height={12}
                             width={25}
@@ -114,13 +122,13 @@ export default function Inspiration() {
                         pulvinar a.
                     </p>
                     <Link
-                        className="text-sky-400 font-medium underline"
+                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                         href="#"
                     >
                         Read more
                         <Image
                             alt="photo"
-                            className="ml-4 inline"
+                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
                             src={"/arrow-blue.svg"}
                             height={12}
                             width={25}
@@ -147,13 +155,13 @@ export default function Inspiration() {
                         pulvinar a.
                     </p>
                     <Link
-                        className="text-sky-400 font-medium underline"
+                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                         href="#"
                     >
                         Read more
                         <Image
                             alt="photo"
-                            className="ml-4 inline"
+                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
                             src={"/arrow-blue.svg"}
                             height={12}
                             width={25}
@@ -164,7 +172,7 @@ export default function Inspiration() {
             <Image
                 alt="photo"
                 className="w-1/2 object-cover"
-                src={"/inspiration-photo.png"}
+                src={`/inspiration-photo${photo}.png`}
                 height={2000}
                 width={2000}
             />

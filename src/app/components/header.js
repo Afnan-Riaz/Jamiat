@@ -14,7 +14,8 @@ export default function Header() {
         if (cheveron) cheveron.style.transform = "rotate(0deg)";
         const item = e.currentTarget.querySelector(".navItem");
         const menu = item.querySelector(".navMenu");
-        if (menu) menu.style.display = "none";
+        if (menu)
+            menu.style.display = "none";
     };
     return (
         <header className="text-white bg-none z-10 relative h-24">
@@ -53,12 +54,13 @@ export default function Header() {
                         />
                     </Link>
                 </div>
-                <p>+92 333 1234567</p>
+                <Link href={"tel:6031112298"}>+92 333 1234567</Link>
                 <div className="h-5 w-px bg-white"></div>
-                <p>info@jamiat.org</p>
+                <Link href="mailto:info@jamiat.org">info@jamiat.org</Link>
             </div>
             <nav className=" flex px-7 justify-between items-center">
-                <div className="mr-2">
+                <Link href="/">
+                <div className="mr-2 cursor-pointer">
                     <Image
                         alt="photo"
                         className="inline"
@@ -67,11 +69,12 @@ export default function Header() {
                         height={65}
                     />
                     <span className=" font-semibold hidden laptop12:inline laptop13:after:content-['Pakistan']">
-                        Islami Jamiat-e-Talaba
+                        Islami Jamiat-e-Talaba&nbsp;
                     </span>
                 </div>
+                </Link>
                 <div className="flex items-center space-x-[2vw] ml-auto">
-                    <Link className="hidden lg:block" href="#">
+                    <Link className="hidden lg:block hover:text-gray-200" href="#">
                         Home
                     </Link>
                     <div
@@ -80,11 +83,11 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2" href="#">
+                            <Link className="flex gap-2 hover:text-gray-200" href="#">
                                 About Us
                                 <Image
                                     alt="photo"
-                                    className="cheveron"
+                                    className="cheveron transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}
@@ -93,16 +96,16 @@ export default function Header() {
                             <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md p-4 top-6">
                                 <ul>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">About Us 1</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">About Us 1</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">About Us 2</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">About Us 2</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">About Us 3</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">About Us 3</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -114,11 +117,11 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2" href="#">
+                            <Link className="flex gap-2 hover:text-gray-200" href="#">
                                 Literature
                                 <Image
                                     alt="photo"
-                                    className="cheveron"
+                                    className="cheveron transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}
@@ -127,25 +130,25 @@ export default function Header() {
                             <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md text-white p-4 top-6">
                                 <ul>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">Literature 1</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">Literature 1</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">Literature 2</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">Literature 2</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">Literature 3</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">Literature 3</Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <Link className="hidden lg:block" href="#">
+                    <Link className="hidden lg:block hover:text-gray-200" href="#">
                         Alumni
                     </Link>
-                    <Link className="hidden lg:block" href="#">
+                    <Link className="hidden lg:block hover:text-gray-200" href="#">
                         Our Projects
                     </Link>
                     <div
@@ -154,11 +157,11 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2" href="#">
+                            <Link className="flex gap-2 hover:text-gray-200" href="#">
                                 Media & News
                                 <Image
                                     alt="photo"
-                                    className="cheveron"
+                                    className="cheveron transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}
@@ -167,28 +170,28 @@ export default function Header() {
                             <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md text-white p-4 top-6">
                                 <ul>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">News 1</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">News 1</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">News 2</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">News 2</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  bg-white"></div>
-                                        <Link href="#">News 3</Link>
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
+                                        <Link className="hover:text-gray-200" href="#">News 3</Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <Link href="#">
-                        <button className=" w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] bg-red-600 rounded-md">
+                        <button className="hover:bg-red-700 transition-colors w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] bg-red-600 rounded-md">
                             Join Us
                         </button>
                     </Link>
                     <Link className="!ml-2" href="#">
-                        <button className="w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] border rounded-md">
+                        <button className="hover:border-2 hover:text-gray-200 w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] border rounded-md">
                             Donate
                         </button>
                     </Link>

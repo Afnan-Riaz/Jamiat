@@ -30,12 +30,12 @@ export default function Footprint() {
                 </div>
                 <h4 className="w-[480px] text-2xl font-extrabold font-inter">Activities</h4>
                 <div className="flex gap-4">
-                    <Image src={"/activity1.png"} height={160} width={190} alt="photo"/>
-                    <Image src={"/activity2.png"} height={160} width={190} alt="photo"/>
-                    <Image src={"/activity3.png"} height={160} width={190} alt="photo"/>
+                    <Link className="hover:brightness-90 transition-[filter]" href={"#"}><Image src={"/activity1.png"} height={160} width={190} alt="photo"/></Link>
+                    <Link className="hover:brightness-90 transition-[filter]" href={"#"}><Image src={"/activity2.png"} height={160} width={190} alt="photo"/></Link>
+                    <Link className="hover:brightness-90 transition-[filter]" href={"#"}><Image src={"/activity3.png"} height={160} width={190} alt="photo"/></Link>
                 </div>
                 <Link
-                        className="text-blue-800 font-medium underline"
+                        className="text-blue-800 hover:text-blue-600 w-fit font-medium underline"
                         href="#"
                     >
                         View All

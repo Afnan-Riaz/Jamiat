@@ -23,6 +23,13 @@ module.exports = {
         'inspiration-bg':"url(/inspiration-bg.png)",
         'message-bg':"url(/message-bg.png)",
         'footprint-bg':"url(/footprint-bg.png)",
+        'project-afia-bg':"url(/project-afia.png)",
+        'project-farmer-bg':"url(/project-farmer.png)",
+        'project-scholarship-bg':"url(/project-scholarship.png)",
+        'project-environment-bg':"url(/project-environment.png)",
+        'analytics-bg':"url(/analytics-bg.png)",
+        'media-bg':"url(/media-bg.png)",
+        'subscribe-bg':"url(/subscribe-bg.png)",
       },
     },
     screens:{

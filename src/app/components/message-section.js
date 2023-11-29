@@ -73,13 +73,13 @@ export default function Message() {
                         </p>
                     </div>
                     <Link
-                        className="text-sky-400 font-medium absolute bottom-4 ml-10 underline"
+                        className="text-sky-400 w-fit font-medium absolute hover:text-sky-500 transition-colors group bottom-4 ml-10 underline"
                         href="#"
                     >
                         Read more
                         <Image
                             alt="photo"
-                            className="ml-4 inline"
+                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
                             src={"/arrow-blue.svg"}
                             height={12}
                             width={25}
