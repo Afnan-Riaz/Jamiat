@@ -1,13 +1,13 @@
-import About from "./components/about-section";
-import Inspiration from "./components/inspiration-section";
-import Journey from "./components/journey-section";
-import Landing from "./components/landing-section";
-import Footprint from "./components/footprint-section";
-import Message from "./components/message-section";
-import Projects from "./components/projects-section";
-import Member from "./components/member-section";
-import Analytics from "./components/analytics-section";
-import Media from "./components/media-section";
+import About from "./components/homepage/about-section";
+import Inspiration from "./components/homepage/inspiration-section";
+import Journey from "./components/homepage/journey-section";
+import Landing from "./components/homepage/landing-section";
+import Footprint from "./components/homepage/footprint-section";
+import Message from "./components/homepage/message-section";
+import Projects from "./components/homepage/projects-section";
+import Member from "./components/homepage/member-section";
+import Analytics from "./components/homepage/analytics-section";
+import Media from "./components/homepage/media-section";
 
 export default function Home() {
     return (

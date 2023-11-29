@@ -1,11 +1,23 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Media() {
     const [activeTabMedia, setActiveTabMedia] = useState(1);
     const [activeTabSocial, setActiveTabSocial] = useState(1);
     const [audio, setAudio] = useState("/audio-file.mp3");
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        document.head.appendChild(script);
+
+        return () => {
+          document.head.removeChild(script);
+        };
+      }, []);
     return (
         <div className="w-full bg-media-bg bg-cover">
             <div className="w-full flex py-20 gap-5 justify-center">
@@ -164,34 +176,12 @@ export default function Media() {
                         <div className="flex-1">
                             <input
                                 type="radio"
-                                id="facebook"
-                                name="social"
-                                value={"facebook"}
-                                className="peer hidden"
-                                checked={activeTabSocial === 1}
-                                onChange={() => setActiveTabSocial(1)}
-                            />
-                            <label
-                                className="px-2 py-2.5 w-full rounded-t-lg flex justify-center bg-blue-900 peer-checked:bg-blue-950 cursor-pointer"
-                                htmlFor="facebook"
-                            >
-                                <Image
-                                    alt="photo"
-                                    src={"facebook.svg"}
-                                    height={50}
-                                    width={12}
-                                />
-                            </label>
-                        </div>
-                        <div className="flex-1">
-                            <input
-                                type="radio"
                                 id="twitter"
                                 name="social"
                                 value={"twitter"}
                                 className="peer hidden"
-                                checked={activeTabSocial === 2}
-                                onChange={() => setActiveTabSocial(2)}
+                                checked={activeTabSocial === 1}
+                                onChange={() => setActiveTabSocial(1)}
                             />
                             <label
                                 className="px-2 py-2.5 w-full rounded-t-lg flex justify-center bg-blue-900 peer-checked:bg-blue-950 cursor-pointer"
@@ -205,11 +195,39 @@ export default function Media() {
                                 />
                             </label>
                         </div>
+                        <div className="flex-1">
+                            <input
+                                type="radio"
+                                id="facebook"
+                                name="social"
+                                value={"facebook"}
+                                className="peer hidden"
+                                checked={activeTabSocial === 2}
+                                onChange={() => setActiveTabSocial(2)}
+                            />
+                            <label
+                                className="px-2 py-2.5 w-full rounded-t-lg flex justify-center bg-blue-900 peer-checked:bg-blue-950 cursor-pointer"
+                                htmlFor="facebook"
+                            >
+                                <Image
+                                    alt="photo"
+                                    src={"facebook.svg"}
+                                    height={50}
+                                    width={12}
+                                />
+                            </label>
+                        </div>
                     </div>
                     <div className="h-[630px] w-full relative">
                         <div
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 1}
+                        >
+                            <Link class="twitter-timeline" data-width="380" data-height="650" href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw">Tweets by JamiatPK</Link>
+                        </div>
+                        <div
+                            className="bg-white absolute h-full w-full"
+                            hidden={activeTabSocial != 2}
                         >
                             <iframe
                                 className="border-0 h-full w-full overflow-hidden"
@@ -217,12 +235,6 @@ export default function Media() {
                                 allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             ></iframe>
-                        </div>
-                        <div
-                            className="bg-white absolute h-full w-full"
-                            hidden={activeTabSocial != 2}
-                        >
-                            <a class="twitter-timeline" data-width="380" data-height="650" href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw">Tweets by JamiatPK</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                     </div>
                 </div>

@@ -93,19 +93,11 @@ export default function Header() {
                                     height={13}
                                 />
                             </Link>
-                            <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md p-4 top-6">
+                            <div className="navMenu hidden h-40 w-max bg-slate-700 absolute rounded-md p-4 top-6">
                                 <ul>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">About Us 1</Link>
-                                    </li>
-                                    <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">About Us 2</Link>
-                                    </li>
-                                    <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">About Us 3</Link>
+                                        <Link className="hover:text-gray-200" href="#">Islami Jamiat Talaba</Link>
                                     </li>
                                 </ul>
                             </div>

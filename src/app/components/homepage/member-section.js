@@ -38,7 +38,7 @@ export default function Member() {
                             id="100"
                             name="amount"
                             value={100}
-                            onChange={()=>setCustom(false)}
+                            onChange={()=>{setCustom(false); setAmount(100)}}
                         />
                         <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="100">100 RS</label>
                     </div>
@@ -49,7 +49,7 @@ export default function Member() {
                             id="500"
                             name="amount"
                             value={500}
-                            onChange={()=>setCustom(false)}
+                            onChange={()=>{setCustom(false); setAmount(500)}}
                             />
                         <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="500">500 RS</label>
                     </div>
@@ -60,7 +60,7 @@ export default function Member() {
                             id="1000"
                             name="amount"
                             value={1000}
-                            onChange={()=>setCustom(false)}
+                            onChange={()=>{setCustom(false); setAmount(1000)}}
                             />
                         <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="1000">1000 RS</label>
                     </div>
@@ -71,7 +71,7 @@ export default function Member() {
                             id="custom"
                             name="amount"
                             value={amount}
-                            onChange={()=>setCustom(true)}
+                            onChange={()=>{setCustom(true);setAmount("")}}
                         />
                         <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="custom">Custom</label>
                     </div>
