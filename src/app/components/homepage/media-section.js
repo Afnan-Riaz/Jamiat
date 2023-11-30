@@ -94,16 +94,19 @@ export default function Media() {
                                             src={"/facebook-dark.svg"}
                                             width={7}
                                             height={10}
+                                            alt="icon"
                                         />
                                         <Image
                                             src={"/twitter-dark.svg"}
                                             width={15}
                                             height={20}
+                                            alt="icon"
                                         />
                                         <Image
                                             src={"/linkedin-dark.svg"}
                                             width={15}
                                             height={20}
+                                            alt="icon"
                                         />
                                     </div>
                                 </div>
@@ -151,6 +154,7 @@ export default function Media() {
                                 src={"/event-1.png"}
                                 height={400}
                                 width={400}
+                                alt="event"
                             />
                             <div className="flex my-2 text-sm justify-between">
                                 <p>22 june</p>
@@ -223,7 +227,7 @@ export default function Media() {
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 1}
                         >
-                            <Link class="twitter-timeline" data-width="380" data-height="650" href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw">Tweets by JamiatPK</Link>
+                            <Link className="twitter-timeline" data-width="380" data-height="650" href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw">Tweets by JamiatPK</Link>
                         </div>
                         <div
                             className="bg-white absolute h-full w-full"
@@ -232,7 +236,6 @@ export default function Media() {
                             <iframe
                                 className="border-0 h-full w-full overflow-hidden"
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJamiatPK%2F&tabs=timeline&width=380&height=650&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                                allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             ></iframe>
                         </div>

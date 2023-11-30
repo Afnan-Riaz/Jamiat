@@ -97,7 +97,7 @@ export default function Header() {
                                 <ul>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">Islami Jamiat Talaba</Link>
+                                        <Link className="hover:text-gray-200" href={"/about/islami-jamiat-talaba"}>Islami Jamiat Talaba</Link>
                                     </li>
                                 </ul>
                             </div>
