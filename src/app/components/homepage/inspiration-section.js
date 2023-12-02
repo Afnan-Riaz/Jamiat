@@ -171,7 +171,7 @@ export default function Inspiration() {
             </Swiper>
             <Image
                 alt="photo"
-                className="md:w-1/2 w-3/5 md:mb-0 mb-6 object-cover"
+                className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 object-cover"
                 src={`/inspiration-photo${photo}.png`}
                 height={2000}
                 width={2000}

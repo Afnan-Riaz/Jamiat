@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef, useState } from "react";
 export default function Header() {
+    const menuRef = useRef(null);
     const handleNavExpand = (e) => {
         const cheveron = e.currentTarget.querySelector(".cheveron");
         if (cheveron) cheveron.style.transform = "rotate(180deg)";
         const item = e.currentTarget.querySelector(".navItem");
         const menu = item.querySelector(".navMenu");
-        if (menu){
+        if (menu) {
             menu.style.maxHeight = "160px";
         }
     };
@@ -16,12 +18,12 @@ export default function Header() {
         if (cheveron) cheveron.style.transform = "rotate(0deg)";
         const item = e.currentTarget.querySelector(".navItem");
         const menu = item.querySelector(".navMenu");
-        if (menu){
+        if (menu) {
             menu.style.maxHeight = "0px";
         }
     };
     return (
-        <header className="text-white bg-none z-10 relative h-24">
+        <header className="text-white bg-none z-10 relative h-24 sm:pt-0 pt-4">
             <div className="hidden sm:flex h-8 p-1 text-xs bg-sky-600 bg-opacity-10 pr-7 backdrop-blur-[22px] items-center justify-end gap-6">
                 <div className="flex justify-evenly gap-4">
                     <Link href="#">
@@ -63,21 +65,24 @@ export default function Header() {
             </div>
             <nav className=" flex px-7 justify-between items-center">
                 <Link href="/">
-                <div className="mr-2 cursor-pointer">
-                    <Image
-                        alt="photo"
-                        className="inline"
-                        src={"/jamiat-logo.svg"}
-                        width={65}
-                        height={65}
-                    />
-                    <span className=" font-semibold hidden laptop12:inline laptop13:after:content-['Pakistan']">
-                        Islami Jamiat-e-Talaba&nbsp;
-                    </span>
-                </div>
+                    <div className="mr-2 cursor-pointer">
+                        <Image
+                            alt="photo"
+                            className="inline"
+                            src={"/jamiat-logo.svg"}
+                            width={65}
+                            height={65}
+                        />
+                        <span className=" font-semibold hidden laptop12:inline laptop13:after:content-['Pakistan']">
+                            Islami Jamiat-e-Talaba&nbsp;
+                        </span>
+                    </div>
                 </Link>
                 <div className="flex items-center space-x-[2vw] ml-auto">
-                    <Link className="hidden lg:block hover:text-gray-200" href="/">
+                    <Link
+                        className="hidden lg:block hover:text-gray-200"
+                        href="/"
+                    >
                         Home
                     </Link>
                     <div
@@ -86,7 +91,10 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2 hover:text-gray-200" href="#">
+                            <Link
+                                className="flex gap-2 hover:text-gray-200"
+                                href="#"
+                            >
                                 About Us
                                 <Image
                                     alt="photo"
@@ -100,7 +108,12 @@ export default function Header() {
                                 <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                        <Link className="hover:text-gray-200" href={"/about/islami-jamiat-talaba"}>Islami Jamiat Talaba</Link>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href={"/about/islami-jamiat-talaba"}
+                                        >
+                                            Islami Jamiat Talaba
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -112,7 +125,10 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2 hover:text-gray-200" href="#">
+                            <Link
+                                className="flex gap-2 hover:text-gray-200"
+                                href="#"
+                            >
                                 Literature
                                 <Image
                                     alt="photo"
@@ -125,25 +141,46 @@ export default function Header() {
                             <div className="navMenu overflow-hidden max-h-0 transition-all duration-500 w-40 bg-slate-700 absolute rounded-md text-white top-6">
                                 <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">Literature 1</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            Literature 1
+                                        </Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">Literature 2</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            Literature 2
+                                        </Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">Literature 3</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            Literature 3
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <Link className="hidden lg:block hover:text-gray-200" href="#">
+                    <Link
+                        className="hidden lg:block hover:text-gray-200"
+                        href="#"
+                    >
                         Alumni
                     </Link>
-                    <Link className="hidden lg:block hover:text-gray-200" href="#">
+                    <Link
+                        className="hidden lg:block hover:text-gray-200"
+                        href="#"
+                    >
                         Our Projects
                     </Link>
                     <div
@@ -152,7 +189,10 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2 hover:text-gray-200" href="#">
+                            <Link
+                                className="flex gap-2 hover:text-gray-200"
+                                href="#"
+                            >
                                 Media & News
                                 <Image
                                     alt="photo"
@@ -165,16 +205,31 @@ export default function Header() {
                             <div className="navMenu overflow-hidden max-h-0 transition-all duration-500 w-40 bg-slate-700 absolute rounded-md text-white top-6">
                                 <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">News 1</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            News 1
+                                        </Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">News 2</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            News 2
+                                        </Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
-                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
-                                        <Link className="hover:text-gray-200" href="#">News 3</Link>
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="#"
+                                        >
+                                            News 3
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -191,13 +246,64 @@ export default function Header() {
                         </button>
                     </Link>
                 </div>
-                <div className="inline lg:hidden ml-6">
+                <div
+                    onClick={() => {
+                        menuRef.current.style.width = "60%";
+                    }}
+                    className="inline lg:hidden ml-6"
+                >
                     <Image
                         alt="photo"
                         src={"/hamburger.svg"}
                         width={30}
                         height={30}
                     />
+                </div>
+                <div
+                    ref={menuRef}
+                    className="h-screen overflow-hidden transition-all fixed top-0 right-0 bg-gray-700 w-0"
+                >
+                    <Image
+                        onClick={() => {
+                            menuRef.current.style.width = "0";
+                        }}
+                        className="float-right m-8"
+                        src={"/cross.png"}
+                        height={30}
+                        width={30}
+                    />
+                    <ul className="my-16 mx-4 space-y-5">
+                        <li className="flex gap-1 leading-8 items-center">
+                            <div className="h-6 w-1 rounded-sm bg-white"></div>
+                            <Link className="hover:text-gray-200" href="#">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <div className="flex gap-1 leading-8 items-center">
+                                <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                <Link className="hover:text-gray-200" href="#">
+                                    About
+                                </Link>
+                            </div>
+                            <ul className="ml-4 text-sm">
+                                <li>
+                                    <Link
+                                        className="hover:text-gray-200"
+                                        href="#"
+                                    >
+                                        Islami Jamiat Talaba
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="flex gap-1 leading-8 items-center">
+                            <div className="h-6 w-1 rounded-sm bg-white"></div>
+                            <Link className="hover:text-gray-200" href="#">
+                                News
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </header>

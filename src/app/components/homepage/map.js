@@ -8,7 +8,7 @@ export default function Pakistan({text, onChange}) {
         onChange({state,resident,education});
     }
     const handleMouseLeave=(e)=>{
-        var state="the country";
+        var state="Pakistan";
         var education=868;
         var resident=532;
         onChange({state,resident,education});
@@ -18,14 +18,12 @@ export default function Pakistan({text, onChange}) {
             <svg
                 baseProfile="tiny"
                 fill="#0097cf"
-                // height="550"
                 stroke="#ffffff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="4"
                 version="1.2"
                 viewBox="0 0 1000 960"
-                // width="500"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path

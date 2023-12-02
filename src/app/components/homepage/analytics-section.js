@@ -39,7 +39,7 @@ export default function Analytics() {
             ref={containerRef}
             className="w-full h-72 bg-analytics-bg bg-cover flex flex-wrap px-10 gap-x-4 justify-evenly items-center text-white"
         >
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 w-[99px]">
                 <p
                     ref={(el) => (numberRefs.current[0] = el)}
                     className="font-inter text-[42px] font-extrabold"
@@ -48,16 +48,16 @@ export default function Analytics() {
                 </p>
                 <p className="text-xl font-semibold">Members</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 w-[161px]">
                 <p
                     ref={(el) => (numberRefs.current[1] = el)}
                     className="font-inter text-[42px] font-extrabold"
                 >
                     0
                 </p>
-                <p className="text-xl font-semibold">Members</p>
+                <p className="text-xl font-semibold">Volunteers</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 w-[110px]">
                 <p
                     ref={(el) => (numberRefs.current[2] = el)}
                     className="font-inter text-[42px] font-extrabold"
@@ -66,7 +66,7 @@ export default function Analytics() {
                 </p>
                 <p className="text-xl font-semibold">Units</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center w-[110px]">
                 <div>
                 <span
                     ref={(el) => (numberRefs.current[3] = el)}

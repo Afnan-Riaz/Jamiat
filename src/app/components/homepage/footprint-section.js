@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footprint() {
     const [text, setText] = useState({
-        state: "the country",
+        state: "Pakistan",
         resident: "868",
         education: "532",
     });
@@ -89,7 +89,7 @@ export default function Footprint() {
                     </Link>
                 </div>
                 <Link
-                    className="text-blue-800 hover:text-blue-600 w-fit font-medium underline"
+                    className="text-blue-800 hover:text-blue-600 w-full block text-center font-medium underline"
                     href="#"
                 >
                     View All
