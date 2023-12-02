@@ -7,15 +7,18 @@ export default function Header() {
         if (cheveron) cheveron.style.transform = "rotate(180deg)";
         const item = e.currentTarget.querySelector(".navItem");
         const menu = item.querySelector(".navMenu");
-        if (menu) menu.style.display = "block";
+        if (menu){
+            menu.style.maxHeight = "160px";
+        }
     };
     const handleNavCollapse = (e) => {
         const cheveron = e.currentTarget.querySelector("img");
         if (cheveron) cheveron.style.transform = "rotate(0deg)";
         const item = e.currentTarget.querySelector(".navItem");
         const menu = item.querySelector(".navMenu");
-        if (menu)
-            menu.style.display = "none";
+        if (menu){
+            menu.style.maxHeight = "0px";
+        }
     };
     return (
         <header className="text-white bg-none z-10 relative h-24">
@@ -74,7 +77,7 @@ export default function Header() {
                 </div>
                 </Link>
                 <div className="flex items-center space-x-[2vw] ml-auto">
-                    <Link className="hidden lg:block hover:text-gray-200" href="#">
+                    <Link className="hidden lg:block hover:text-gray-200" href="/">
                         Home
                     </Link>
                     <div
@@ -93,8 +96,8 @@ export default function Header() {
                                     height={13}
                                 />
                             </Link>
-                            <div className="navMenu hidden h-40 w-max bg-slate-700 absolute rounded-md p-4 top-6">
-                                <ul>
+                            <div className="navMenu overflow-hidden max-h-0 transition-all duration-500 w-max bg-slate-700 absolute rounded-md top-6">
+                                <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-white"></div>
                                         <Link className="hover:text-gray-200" href={"/about/islami-jamiat-talaba"}>Islami Jamiat Talaba</Link>
@@ -119,8 +122,8 @@ export default function Header() {
                                     height={13}
                                 />
                             </Link>
-                            <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md text-white p-4 top-6">
-                                <ul>
+                            <div className="navMenu overflow-hidden max-h-0 transition-all duration-500 w-40 bg-slate-700 absolute rounded-md text-white top-6">
+                                <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
                                         <Link className="hover:text-gray-200" href="#">Literature 1</Link>
@@ -159,8 +162,8 @@ export default function Header() {
                                     height={13}
                                 />
                             </Link>
-                            <div className="navMenu hidden h-40 w-40 bg-slate-700 absolute rounded-md text-white p-4 top-6">
-                                <ul>
+                            <div className="navMenu overflow-hidden max-h-0 transition-all duration-500 w-40 bg-slate-700 absolute rounded-md text-white top-6">
+                                <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-white"></div>
                                         <Link className="hover:text-gray-200" href="#">News 1</Link>

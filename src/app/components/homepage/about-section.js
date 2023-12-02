@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function About() {
     return (
         <div className="w-full relative bg-about-bg bg-cover bg-no-repeat z-0">
-            <div className="w-fit grid grid-cols-[350px_350px_435px] text-white grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-20 pb-5">
+            <div className="w-fit grid laptop12:grid-cols-[350px_350px_435px] justify-items-center md:grid-cols-2 grid-cols-1 text-white laptop12:grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-8 max-md:pb-20 md:pt-20 pb-5">
                 <Link href="#">
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card1-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">
@@ -56,8 +56,8 @@ export default function About() {
                         </span>
                     </div>
                 </Link>
-                <Link className="row-span-2" href={"#"}>
-                    <div className="w-[435px] hover:brightness-90 transition-[filter] duration-300 bg-long-card-bg bg-center bg-no-repeat">
+                <Link className="row-span-1 laptop12:row-span-2 col-span-1 md:col-span-2 laptop12:col-span-1 justify-self-center" href={"#"}>
+                    <div className="mobile:w-[435px] w-[350px] rounded-xl hover:brightness-90 transition-[filter] duration-300 bg-long-card-bg bg-center bg-no-repeat">
                         <div className="p-7 space-y-3">
                             <h3 className="text-lg font-medium leading-3">
                                 Humqadam Magazine
@@ -83,12 +83,12 @@ export default function About() {
                                 clickable: true,
                             }}
                             modules={[EffectCards, Pagination]}
-                            className="h-[500px] !pl-[10%]"
+                            className="mobile:h-[500px] h-[450px] mobile:!pl-[10%] !pl-[8%]"
                         >
                             <SwiperSlide>
                                 <Image
                                     alt="photo"
-                                    className="w-[350px]"
+                                    className="mobile:w-[350px] w-[300px]"
                                     src={"/magazine.png"}
                                     height={2000}
                                     width={2000}
@@ -97,7 +97,7 @@ export default function About() {
                             <SwiperSlide>
                                 <Image
                                     alt="photo"
-                                    className="w-[350px]"
+                                    className="mobile:w-[350px] w-[300px]"
                                     src={"/magazine.png"}
                                     height={2000}
                                     width={2000}
@@ -106,7 +106,7 @@ export default function About() {
                             <SwiperSlide>
                                 <Image
                                     alt="photo"
-                                    className="w-[350px]"
+                                    className="mobile:w-[350px] w-[300px]"
                                     src={"/magazine.png"}
                                     height={2000}
                                     width={2000}

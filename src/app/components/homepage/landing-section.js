@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 export default function Landing() {
     return (
-        <div className="w-full h-screen relative -mt-24 z-0">
+        <div className={`w-full h-fit  relative -mt-24 z-0`}>
             <Swiper
                 style={{
                     "--swiper-pagination-color": "#0ea5e9",
@@ -28,26 +28,48 @@ export default function Landing() {
                     clickable: true,
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
-                className="h-full w-full text-lg overflow-hidden"
+                className=" h-full w-full text-lg overflow-hidden"
             >
                 <SwiperSlide>
-                    <Image alt="photo" src={"/landing-bg.png"} height={2000} width={2000} />
+                    <Image
+                        className="object-cover min-h-[450px] object-center"
+                        alt="photo"
+                        src={"/landing-bg.png"}
+                        height={2000}
+                        width={2000}
+                        loading="eager"
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image alt="photo"
+                    <Image
+                        className="object-cover min-h-[450px] object-center"
+                        alt="photo"
                         src={"/landing-bg2.jpg"}
                         height={2000}
+                        width={2000}
+                        loading="eager"
+
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Image
+                        className="object-cover min-h-[450px] object-center"
+                        alt="photo"
+                        src={"/landing-bg.png"}
+                        height={2000}
+                        loading="eager"
                         width={2000}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image alt="photo" src={"/landing-bg.png"} height={2000} width={2000} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image alt="photo"
+                    <Image
+                        className="object-cover min-h-[450px] object-center"
+                        alt="photo"
                         src={"/landing-bg2.jpg"}
                         height={2000}
                         width={2000}
+                        loading="eager"
+
                     />
                 </SwiperSlide>
             </Swiper>

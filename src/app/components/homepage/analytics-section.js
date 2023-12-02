@@ -37,7 +37,7 @@ export default function Analytics() {
     return (
         <div
             ref={containerRef}
-            className="w-full h-72 bg-analytics-bg bg-cover flex justify-evenly items-center text-white"
+            className="w-full h-72 bg-analytics-bg bg-cover flex flex-wrap px-10 gap-x-4 justify-evenly items-center text-white"
         >
             <div className="flex flex-col items-center gap-2">
                 <p

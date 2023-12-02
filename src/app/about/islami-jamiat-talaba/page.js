@@ -8,7 +8,7 @@ export default function IJT(){
             <div className="h-28 -mt-24 w-full bg-green-800">
             </div>
             <div>
-                <Image alt="banner" src={"/Analytics-bg.png"} height={500} width={2000}/>
+                <Image alt="banner" src={"/analytics-bg.png"} height={500} width={2000}/>
             </div>
             <div className="flex mt-14 gap-20 px-20">
             <main className="w-2/3">

@@ -7,8 +7,8 @@ export default function Member() {
     const [amount,setAmount]=useState();
     const [custom,setCustom]=useState(false)
     return (
-        <div className="w-5/6 mx-auto h-screen relative flex justify-between items-center">
-            <div className="w-[500px] flex flex-col gap-3">
+        <div className="lg:w-5/6 lg:mx-auto sm:mr-4 sm:ml-16 mx-2 h-fit relative flex lg:flex-row flex-col lg:pt-0 pt-8 justify-between items-center">
+            <div className="max-w-[500px] flex flex-col gap-3">
                 <h5 className="text-2xl font-semibold">Be the change</h5>
                 <h4 className="font-inter text-4xl font-extrabold text-blue-700">Join The Journey</h4>
                 <p className="font-medium text-gray-700 leading-7">
@@ -25,12 +25,11 @@ export default function Member() {
                 <button className="bg-blue-700 hover:bg-blue-800 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Join as volunteer</button>
                 <button className="bg-green-600 hover:bg-green-700 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Become a member</button>
             </div></div>
-            <div className="w-[478px] border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-7">
+            <div className="max-w-[478px] my-8 border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-[2vw] pt-6">
                 <h4 className="font-inter text-2xl font-extrabold mx-auto">Make a Donation</h4>
                 <div className="w-full my-2 h-px bg-gray-400"></div>
                 <p className="text-lg font-semibold mb-3">Choose an amount</p>
-                <div className="flex gap-4">
-
+                <div className="flex gap-4 flex-wrap gap-y-10">
                     <div>
                         <input
                             className="hidden peer"
@@ -81,14 +80,14 @@ export default function Member() {
                 disabled={!custom}
                 value={amount}
                 onChange={(e)=>setAmount(e.target.value)}
-                    className="px-5 py-3 border-2 rounded-md"
+                    className="px-5 w-[90%] py-3 border-2 rounded-md"
                     type="number"
                     name="custom"
                     id="amount"
                     placeholder="RS 100-10000000"
                 />
                 <p className="text-lg font-semibold">Make it monthly!</p>
-                <div className="flex gap-4 my-2">
+                <div className="flex gap-4 gap-y-8 my-2 flex-wrap">
                     <div>
                         <input
                             type="radio"

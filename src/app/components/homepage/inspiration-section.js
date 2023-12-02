@@ -21,22 +21,22 @@ export default function Inspiration() {
     };
 
     return (
-        <div className="w-full h-screen relative bg-cover bg-inspiration-bg text-white flex">
+        <div className="w-full md:h-[48vw] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
             <Swiper
                 loop={true}
                 style={{
                     "--swiper-pagination-color": "rgb(56 189 248)",
-                    "--swiper-pagination-bottom": "120px",
+                    "--swiper-pagination-bottom": "3vw",
                     "--swiper-pagination-bullet-size": "13px",
                     "--swiper-pagination-bullet-inactive-color": "transparent",
                     "--swiper-pagination-bullet-inactive-opacity": "1",
                 }}
                 onSlideChange={(swiper)=>changePhoto(swiper.realIndex)}
-                className="w-1/2 h-full select-none"
+                className="md:w-1/2 w-full h-1/2 md:h-full select-none"
                 pagination={pagination}
                 modules={[Pagination]}
             >
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center gap-y-2 pl-32">
+                <SwiperSlide className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -50,7 +50,7 @@ export default function Inspiration() {
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="w-[400px] text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -69,7 +69,7 @@ export default function Inspiration() {
                         />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center gap-y-2 pl-32">
+                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -83,7 +83,7 @@ export default function Inspiration() {
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="w-[400px] text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -102,7 +102,7 @@ export default function Inspiration() {
                         />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center gap-y-2 pl-32">
+                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -116,7 +116,7 @@ export default function Inspiration() {
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="w-[400px] text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -135,7 +135,7 @@ export default function Inspiration() {
                         />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center gap-y-2 pl-32">
+                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -149,7 +149,7 @@ export default function Inspiration() {
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="w-[400px] text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -171,7 +171,7 @@ export default function Inspiration() {
             </Swiper>
             <Image
                 alt="photo"
-                className="w-1/2 object-cover"
+                className="md:w-1/2 w-3/5 md:mb-0 mb-6 object-cover"
                 src={`/inspiration-photo${photo}.png`}
                 height={2000}
                 width={2000}

@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function Message() {
     return (
-        <div className="h-screen w-full relative bg-message-bg bg-cover text-white">
-            <div className="flex flex-col h-full gap-y-2 px-32 pt-20">
+        <div className="h-[48vw] min-h-[600px] w-full relative bg-message-bg bg-cover bg-right text-white">
+            <div className="flex flex-col h-full px-1 mobile:px-[10vw] pt-[6vw]">
                 <p className="text-2xl font-bold font-inter capitalize">Our</p>
-                <h2 className="font-extrabold text-[42px] text-sky-400 font-inter">
+                <h2 className="font-extrabold text-[42px] max-sm:h-[90px] max-sm:leading-[45px] text-sky-400 font-inter">
                     President's Message
                 </h2>
-                <div className="w-[500px] h-[450px] border-gray-400 border-2 mt-8 rounded-2xl relative bg-none shadow">
-                    <div className="rounded-white-scrollbar h-[400px] p-10 text-white font-light text-sm overflow-y-scroll">
+                <div className="w-full sm:w-[500px] xl:h-[450px] h-[350px] max-md:mb-20 border-gray-400 overflow-hidden border-2 mt-[3vw] rounded-2xl relative bg-gray-950 bg-opacity-75 shadow">
+                    <div className="rounded-white-scrollbar xl:h-[400px] h-[300px] p-[3vw] text-white font-light text-sm overflow-y-scroll">
                         <h4 className="text-3xl text-sky-400 font-inter font-semibold mb-3">
                             Shakeel Ahmad
                         </h4>

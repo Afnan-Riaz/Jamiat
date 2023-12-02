@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <div className="h-[500px] bg-gray-950 text-white">
-            <div className="h-[90%] flex justify-between pt-36 px-32">
+        <div className="bg-gray-950 text-white">
+            <div className="flex sm:flex-row flex-col justify-between gap-4 pt-36 px-2 mobile:px-[12vw]">
                 <div>
                     <Image src={"/footer-logo.png"} height={120} width={100} alt="logo"/>
                     <p className="text-sm w-56 mt-4">
@@ -12,7 +12,7 @@ export default function Footer() {
                         developed Pakistan.
                     </p>
                 </div>
-                <div className="flex gap-24">
+                <div className="flex gap-12 flex-wrap lg:gap-24">
                     <div>
                         <h5 className="text-lg font-medium mb-5">Use Cases</h5>
                         <ul className="text-sm leading-8">
@@ -46,11 +46,12 @@ export default function Footer() {
                 </div>
             </div>
             <div className="h-px w-full bg-white"></div>
-            <div className="h-[10%] flex justify-between items-center px-36">
-                <p className="font-light text-xs w-80">© 2021 All Rights Reserved</p>
-                <div className="flex justify-evenly gap-5">
+            <div className="py-3 flex justify-between items-center px-3 gap-3 md:px-[10vw]">
+                <p className="font-light text-xs w-fit lg:w-80">© 2021 All Rights Reserved</p>
+                <div className="flex flex-wrap justify-evenly gap-5">
                     <Link href="#">
                         <Image
+                        className="min-w-fit"
                             alt="icon"
                             src={"/facebook.svg"}
                             width={10}
@@ -59,6 +60,7 @@ export default function Footer() {
                     </Link>
                     <Link href="#">
                         <Image
+                        className="min-w-fit"
                             alt="icon"
                             src={"/instagram.svg"}
                             width={20}
@@ -67,6 +69,7 @@ export default function Footer() {
                     </Link>
                     <Link href="#">
                         <Image
+                        className="min-w-fit"
                             alt="icon"
                             src={"/youtube.svg"}
                             width={20}
@@ -75,6 +78,7 @@ export default function Footer() {
                     </Link>
                     <Link href="#">
                         <Image
+                        className="min-w-fit"
                             alt="icon"
                             src={"/twitter.svg"}
                             width={20}
@@ -82,7 +86,7 @@ export default function Footer() {
                         />
                     </Link>
                 </div>
-                <div className="text-sm flex gap-10">
+                <div className="text-sm flex gap-3 sm:gap-10">
                     <Link href="#">Privacy Policy</Link>
                     <Link href="#">Terms of Use</Link>
                     <Link href="#">Site Map</Link>

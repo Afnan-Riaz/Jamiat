@@ -1,5 +1,4 @@
 "use client"
-import { useState } from "react";
 
 export default function Pakistan({text, onChange}) {
     const handleMouseEnter=(e)=>{
@@ -19,14 +18,14 @@ export default function Pakistan({text, onChange}) {
             <svg
                 baseProfile="tiny"
                 fill="#0097cf"
-                height="550"
+                // height="550"
                 stroke="#ffffff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="4"
                 version="1.2"
                 viewBox="0 0 1000 960"
-                width="500"
+                // width="500"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path

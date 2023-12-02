@@ -12,7 +12,7 @@ import Media from "./components/homepage/media-section";
 export default function Home() {
     return (
         <main>
-            <div className="top-[40%] left-8 fixed flex flex-col gap-4 z-10">
+            <div className="top-[40%] left-8 fixed hidden sm:flex flex-col gap-4 z-10">
                 <input
                     className="appearance-none h-[15px] w-[15px] block bg-none border-2 border-gray-400 rounded-full checked:border-sky-400 checked:bg-sky-400"
                     type="radio"

@@ -19,7 +19,7 @@ module.exports = {
         'card4-bg':"url(/card4-bg.png)",
         'long-card-bg':"url(/long-card-bg.png)",
         'about-bg':"url(/about-bg.png)",
-        'journey-bg1':"url(/journey-bg1.png)",
+        'journey-bg':"url(/journey-bg.png)",
         'inspiration-bg':"url(/inspiration-bg.png)",
         'message-bg':"url(/message-bg.png)",
         'footprint-bg':"url(/footprint-bg.png)",
@@ -35,6 +35,7 @@ module.exports = {
     screens:{
       'laptop13':'1300px',
       'laptop12':'1200px',
+      'mobile':'420px',
       'sm':'640px',
       'md':'768px',
       'lg':'1024px',
