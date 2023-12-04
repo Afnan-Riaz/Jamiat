@@ -17,7 +17,7 @@ export default function Journey() {
         },
     };
     return (
-        <div className="w-full max-h-[695px] relative">
+        <div id="journey-section" className="w-full max-h-[695px] relative">
             <Swiper
                 style={{
                     "--swiper-pagination-color": "none",

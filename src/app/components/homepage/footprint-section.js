@@ -13,7 +13,7 @@ export default function Footprint() {
         setText(t);
     };
     return (
-        <div className="w-full pl-2 mobile:pl-[8vw] pr-[4vw] pt-8 sm:pt-20 relative bg-footprint-bg bg-cover">
+        <div id="footprint-section" className="w-full pl-2 mobile:pl-[8vw] pr-[4vw] pt-8 sm:pt-20 relative bg-footprint-bg bg-cover">
             <div className="flex justify-between md:flex-row flex-col items-center">
                 <div className="flex flex-col h-full w-full md:w-3/5 gap-y-3">
                     <p className="text-2xl font-bold font-inter capitalize">

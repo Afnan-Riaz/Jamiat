@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Message() {
     return (
-        <div className="h-[48vw] min-h-[600px] w-full relative bg-message-bg bg-cover bg-right text-white">
+        <div id="message-section" className="h-[48vw] min-h-[600px] w-full relative bg-message-bg bg-cover bg-right text-white">
             <div className="flex flex-col h-full px-1 mobile:px-[10vw] pt-[6vw]">
                 <p className="text-2xl font-bold font-inter capitalize">Our</p>
                 <h2 className="font-extrabold text-[42px] max-sm:h-[90px] max-sm:leading-[45px] text-sky-400 font-inter">

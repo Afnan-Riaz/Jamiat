@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 export default function Landing() {
     return (
-        <div className={`w-full h-fit  relative -mt-24 z-0`}>
+        <div id="landing-section" className={`w-full h-fit  relative -mt-24 z-0`}>
             <Swiper
                 style={{
                     "--swiper-pagination-color": "#0ea5e9",

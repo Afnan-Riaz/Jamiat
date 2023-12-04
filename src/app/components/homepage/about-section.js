@@ -7,7 +7,7 @@ import { Pagination, EffectCards } from "swiper/modules";
 import Link from "next/link";
 export default function About() {
     return (
-        <div className="w-full relative bg-about-bg bg-cover bg-no-repeat z-0">
+        <div id="about-section" className="w-full relative bg-about-bg bg-cover bg-no-repeat z-0">
             <div className="w-fit grid laptop12:grid-cols-[350px_350px_435px] justify-items-center md:grid-cols-2 grid-cols-1 text-white laptop12:grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-8 max-md:pb-20 md:pt-20 pb-5">
                 <Link href="#">
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card1-bg bg-center bg-no-repeat flex flex-col justify-between">

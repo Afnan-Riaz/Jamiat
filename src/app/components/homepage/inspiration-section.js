@@ -21,7 +21,7 @@ export default function Inspiration() {
     };
 
     return (
-        <div className="w-full md:h-[48vw] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
+        <div id="inspiration-section" className="w-full md:h-[48vw] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
             <Swiper
                 loop={true}
                 style={{

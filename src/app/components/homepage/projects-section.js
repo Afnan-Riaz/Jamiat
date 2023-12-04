@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Projects() {
 
     return (
-        <div className="w-full h-[48vw] min-h-[600px] relative">
+        <div id="projects-section" className="w-full h-[48vw] min-h-[600px] relative">
             <Swiper
                 navigation={{
                     prevEl: ".prev",

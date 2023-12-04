@@ -7,7 +7,7 @@ export default function Member() {
     const [amount,setAmount]=useState();
     const [custom,setCustom]=useState(false)
     return (
-        <div className="lg:w-5/6 lg:mx-auto sm:mr-4 sm:ml-16 mx-2 h-fit relative flex lg:flex-row flex-col lg:pt-0 pt-8 justify-between items-center">
+        <div id="member-section" className="lg:w-5/6 lg:mx-auto sm:mr-4 sm:ml-16 mx-2 h-fit relative flex lg:flex-row flex-col lg:pt-0 pt-8 justify-between items-center">
             <div className="max-w-[500px] flex flex-col gap-3">
                 <h5 className="text-2xl font-semibold">Be the change</h5>
                 <h4 className="font-inter text-4xl font-extrabold text-blue-700">Join The Journey</h4>

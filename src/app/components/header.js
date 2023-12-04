@@ -93,7 +93,7 @@ export default function Header() {
                         <div className="navItem flex flex-col">
                             <Link
                                 className="flex gap-2 hover:text-gray-200"
-                                href="#"
+                                href="/about"
                             >
                                 About Us
                                 <Image
@@ -275,22 +275,37 @@ export default function Header() {
                     <ul className="my-16 mx-4 space-y-5">
                         <li className="flex gap-1 leading-8 items-center">
                             <div className="h-6 w-1 rounded-sm bg-white"></div>
-                            <Link className="hover:text-gray-200" href="#">
+                            <Link
+                                onClick={() => {
+                                    menuRef.current.style.width = "0";
+                                }}
+                                className="hover:text-gray-200"
+                                href="/"
+                            >
                                 Home
                             </Link>
                         </li>
                         <li>
                             <div className="flex gap-1 leading-8 items-center">
                                 <div className="h-6 w-1 rounded-sm bg-white"></div>
-                                <Link className="hover:text-gray-200" href="#">
+                                <Link
+                                    onClick={() => {
+                                        menuRef.current.style.width = "0";
+                                    }}
+                                    className="hover:text-gray-200"
+                                    href="/about"
+                                >
                                     About
                                 </Link>
                             </div>
                             <ul className="ml-4 text-sm">
                                 <li>
                                     <Link
+                                        onClick={() => {
+                                            menuRef.current.style.width = "0";
+                                        }}
                                         className="hover:text-gray-200"
-                                        href="#"
+                                        href="/about/islami-jamiat-talaba"
                                     >
                                         Islami Jamiat Talaba
                                     </Link>
@@ -299,7 +314,13 @@ export default function Header() {
                         </li>
                         <li className="flex gap-1 leading-8 items-center">
                             <div className="h-6 w-1 rounded-sm bg-white"></div>
-                            <Link className="hover:text-gray-200" href="#">
+                            <Link
+                                onClick={() => {
+                                    menuRef.current.style.width = "0";
+                                }}
+                                className="hover:text-gray-200"
+                                href="#"
+                            >
                                 News
                             </Link>
                         </li>
