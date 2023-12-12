@@ -40,7 +40,7 @@ export default function Footer() {
                             <li>Careers</li>
                             <li>FAQs</li>
                             <li>Teams</li>
-                            <li>Contact Us</li>
+                            <li><Link href={"/contactUs"}>Contact Us</Link></li>
                         </ul>
                     </div>
                 </div>

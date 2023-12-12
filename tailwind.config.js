@@ -13,6 +13,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
+        'header-bg':"url(/header-bg.png)",
         'card1-bg':"url(/card1-bg.png)",
         'card2-bg':"url(/card2-bg.png)",
         'card3-bg':"url(/card3-bg.png)",

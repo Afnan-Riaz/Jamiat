@@ -34,7 +34,6 @@ export default function Journey() {
                 }}
                 initialSlide={6}
                 loop={true}
-                spa
                 pagination={pagination}
                 modules={[Pagination, Navigation]}
                 className="mySwiper h-full select-none"
