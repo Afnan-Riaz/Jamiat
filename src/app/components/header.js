@@ -115,6 +115,24 @@ export default function Header() {
                                             Islami Jamiat Talaba
                                         </Link>
                                     </li>
+                                    <li className="flex gap-1 leading-8 items-center">
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href={"/about/team"}
+                                        >
+                                            Our Team
+                                        </Link>
+                                    </li>
+                                    <li className="flex gap-1 leading-8 items-center">
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href={"/about/message"}
+                                        >
+                                            Our Message
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -299,6 +317,28 @@ export default function Header() {
                                         href="/about/islami-jamiat-talaba"
                                     >
                                         Islami Jamiat Talaba
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        onClick={() => {
+                                            menuRef.current.style.width = "0";
+                                        }}
+                                        className="hover:text-gray-200"
+                                        href="/about/team"
+                                    >
+                                        Our Team
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        onClick={() => {
+                                            menuRef.current.style.width = "0";
+                                        }}
+                                        className="hover:text-gray-200"
+                                        href="/about/message"
+                                    >
+                                        Our Message
                                     </Link>
                                 </li>
                             </ul>
