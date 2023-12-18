@@ -253,12 +253,12 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <Link href="#">
+                    <Link href="/join">
                         <button className="hover:bg-red-700 transition-colors w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] bg-red-600 rounded-md">
                             Join Us
                         </button>
                     </Link>
-                    <Link className="!ml-2" href="#">
+                    <Link className="!ml-2" href="/donate">
                         <button className="hover:border-2 hover:text-gray-200 w-[8vw] h-[3vw] min-w-[75px] min-h-[35px] border rounded-md">
                             Donate
                         </button>

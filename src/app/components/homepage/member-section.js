@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useState } from "react"
 
 
@@ -22,8 +23,7 @@ export default function Member() {
                     leadership of CEO and founder Shakeel Ahmed
                 </p>
                 <div className="flex gap-6 mt-3">
-                <button className="bg-blue-700 hover:bg-blue-800 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Join as volunteer</button>
-                <button className="bg-green-600 hover:bg-green-700 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Become a member</button>
+                <Link href={"/join"} className="bg-blue-700 hover:bg-blue-800 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Join Us</Link>
             </div></div>
             <div className="max-w-[478px] my-8 border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-[2vw] pt-6">
                 <h4 className="font-inter text-2xl font-extrabold mx-auto">Make a Donation</h4>
