@@ -56,7 +56,7 @@ export default function Footprint() {
                 <div className="flex max-sm:justify-center gap-4 mb-4 flex-wrap">
                     <Link
                         className="hover:brightness-90 transition-[filter]"
-                        href={"#"}
+                        href={"/activities/activity-1"}
                     >
                         <Image
                             src={"/activity1.png"}
@@ -67,7 +67,7 @@ export default function Footprint() {
                     </Link>
                     <Link
                         className="hover:brightness-90 transition-[filter]"
-                        href={"#"}
+                        href={"/activities/activity-2"}
                     >
                         <Image
                             src={"/activity2.png"}
@@ -78,7 +78,7 @@ export default function Footprint() {
                     </Link>
                     <Link
                         className="hover:brightness-90 transition-[filter]"
-                        href={"#"}
+                        href={"/activities/activity-3"}
                     >
                         <Image
                             src={"/activity3.png"}
@@ -89,8 +89,8 @@ export default function Footprint() {
                     </Link>
                 </div>
                 <Link
-                    className="text-blue-800 hover:text-blue-600 w-full block text-center font-medium underline"
-                    href="#"
+                    className="text-blue-800 hover:text-blue-600 font-medium underline"
+                    href="/activities"
                 >
                     View All
                 </Link>

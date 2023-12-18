@@ -21,7 +21,7 @@ export default function Pakistan({text, onChange}) {
                 stroke="#ffffff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="4"
+                strokeWidth="2"
                 version="1.2"
                 viewBox="0 0 1000 960"
                 xmlns="http://www.w3.org/2000/svg"

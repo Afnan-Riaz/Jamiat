@@ -240,6 +240,15 @@ export default function Header() {
                                             Videos
                                         </Link>
                                     </li>
+                                    <li className="flex gap-1 leading-8 items-center">
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="/media/press"
+                                        >
+                                            Press Release
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -426,6 +435,17 @@ export default function Header() {
                                         href="/media/video"
                                     >
                                         Video
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        onClick={() => {
+                                            menuRef.current.style.width = "0";
+                                        }}
+                                        className="hover:text-gray-200"
+                                        href="/media/press"
+                                    >
+                                        Press Release
                                     </Link>
                                 </li>
                             </ul>

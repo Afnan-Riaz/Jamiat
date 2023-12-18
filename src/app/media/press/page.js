@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Blogs() {
+export default function Press() {
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="min-h-[300px] bg-analytics-bg bg-cover flex items-center justify-center bg-center">
                 <h1 className="text-5xl text-white font-semibold font-inter">
-                    Our Blogs
+                    Press Release
                 </h1>
             </div>
             <div className="container px-5 pt-12 pb-24 mx-auto">
@@ -23,7 +23,7 @@ export default function Blogs() {
                             />
                             <div className="p-6">
                                 <h1 className="text-lg font-medium text-gray-900 mb-3">
-                                    Blog 1
+                                    Release 1
                                 </h1>
                                 <p className="leading-relaxed mb-3">
                                     Lorem ipsum dolor sit amet, consectetur
@@ -35,7 +35,7 @@ export default function Blogs() {
                                 </p>
                                 <div className="flex items-center flex-wrap ">
                                     <Link
-                                        href={`/literature/blogs/blog-1`}
+                                        href={`/media/press/release-1`}
                                         className="text-blue-700 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Read More
@@ -68,7 +68,7 @@ export default function Blogs() {
                             />
                             <div className="p-6">
                                 <h1 className="text-lg font-medium text-gray-900 mb-3">
-                                    Blog 2
+                                    Release 2
                                 </h1>
                                 <p className="leading-relaxed mb-3">
                                     Lorem ipsum dolor sit amet, consectetur
@@ -80,7 +80,7 @@ export default function Blogs() {
                                 </p>
                                 <div className="flex items-center flex-wrap">
                                     <Link
-                                        href={`/literature/blogs/blog-2`}
+                                        href={`/media/press/release-2`}
                                         className="text-blue-700 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Read More
@@ -113,7 +113,7 @@ export default function Blogs() {
                             />
                             <div className="p-6">
                                 <h1 className="text-lg font-medium text-gray-900 mb-3">
-                                    Blog 3
+                                    Release 3
                                 </h1>
                                 <p className="leading-relaxed mb-3">
                                     Lorem ipsum dolor sit amet, consectetur
@@ -125,7 +125,7 @@ export default function Blogs() {
                                 </p>
                                 <div className="flex items-center flex-wrap ">
                                     <Link
-                                        href={`/literature/blogs/blog-3`}
+                                        href={`/media/press/release-3`}
                                         className="text-blue-700 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Read More
