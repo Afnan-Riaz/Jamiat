@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Projects() {
 
@@ -32,41 +33,41 @@ export default function Projects() {
             >
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
                     <h4 className="text-xl text-center font-semibold">Release Dr.Aafia</h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-1"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-farmer-bg">
                     <h4 className="text-xl text-center font-semibold">Farmer Support</h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-2"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-scholarship-bg">
                     <h4 className="text-xl text-center font-semibold">
                         Scholarship Programs
                     </h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-3"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-environment-bg">
                     <h4 className="text-xl text-center font-semibold">Environment</h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-4"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
                     <h4 className="text-xl text-center font-semibold">Release Dr.Aafia</h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-1"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-farmer-bg">
                     <h4 className="text-xl text-center font-semibold">Farmer Support</h4>
-                    <button className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link href={"/projects/project-2"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
                         Read More
-                    </button>
+                    </Link>
                 </SwiperSlide>
                 <div className="prev h-10 w-10 flex justify-center items-center cursor-pointer rounded-full bg-opacity-75 bg-gray-600 absolute top-[45%] left-2 mobile:left-12 rotate-90 z-10">
                     <Image
