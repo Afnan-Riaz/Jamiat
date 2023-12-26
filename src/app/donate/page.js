@@ -70,7 +70,7 @@ export default function Join() {
                                     }}
                                 />
                                 <label
-                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200"
+                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold cursor-pointer peer-checked:bg-sky-200"
                                     htmlFor="100"
                                 >
                                     100 RS
@@ -89,7 +89,7 @@ export default function Join() {
                                     }}
                                 />
                                 <label
-                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200"
+                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold cursor-pointer peer-checked:bg-sky-200"
                                     htmlFor="500"
                                 >
                                     500 RS
@@ -108,7 +108,7 @@ export default function Join() {
                                     }}
                                 />
                                 <label
-                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200"
+                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold cursor-pointer peer-checked:bg-sky-200"
                                     htmlFor="1000"
                                 >
                                     1000 RS
@@ -127,7 +127,7 @@ export default function Join() {
                                     }}
                                 />
                                 <label
-                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200"
+                                    className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold cursor-pointer peer-checked:bg-sky-200"
                                     htmlFor="custom"
                                 >
                                     Custom
@@ -162,7 +162,7 @@ export default function Join() {
                                     required
                                 />
                                 <label
-                                    className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
+                                    className="border-2 cursor-pointer px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
                                     htmlFor="yes"
                                 >
                                     Yes, count me in
@@ -177,7 +177,7 @@ export default function Join() {
                                     className="peer hidden"
                                 />
                                 <label
-                                    className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
+                                    className="border-2 cursor-pointer px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
                                     htmlFor="no"
                                 >
                                     No, donate once

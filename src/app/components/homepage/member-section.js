@@ -29,7 +29,7 @@ export default function Member() {
                 <h4 className="font-inter text-2xl font-extrabold mx-auto">Make a Donation</h4>
                 <div className="w-full my-2 h-px bg-gray-400"></div>
                 <p className="text-lg font-semibold mb-3">Choose an amount</p>
-                <div className="flex gap-4 flex-wrap gap-y-10">
+                <div className="flex gap-x-3 flex-wrap gap-y-10">
                     <div>
                         <input
                             className="hidden peer"
@@ -39,7 +39,7 @@ export default function Member() {
                             value={100}
                             onChange={()=>{setCustom(false); setAmount(100)}}
                         />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="100">100 RS</label>
+                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="100">100 RS</label>
                     </div>
                     <div>
                         <input
@@ -50,7 +50,7 @@ export default function Member() {
                             value={500}
                             onChange={()=>{setCustom(false); setAmount(500)}}
                             />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="500">500 RS</label>
+                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="500">500 RS</label>
                     </div>
                     <div>
                         <input
@@ -61,7 +61,7 @@ export default function Member() {
                             value={1000}
                             onChange={()=>{setCustom(false); setAmount(1000)}}
                             />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="1000">1000 RS</label>
+                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="1000">1000 RS</label>
                     </div>
                     <div>
                         <input
@@ -72,7 +72,7 @@ export default function Member() {
                             value={amount}
                             onChange={()=>{setCustom(true);setAmount("")}}
                         />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200" htmlFor="custom">Custom</label>
+                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="custom">Custom</label>
                     </div>
                 </div>
                 <p className="text-lg font-semibold">Make custom amount</p>
@@ -96,7 +96,7 @@ export default function Member() {
                             value={"yes"}
                             className="peer hidden"
                         />
-                        <label className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="yes">Yes, count me in</label>
+                        <label className="border-2 px-7 py-3 text-sm cursor-pointer rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="yes">Yes, count me in</label>
                     </div>
                     <div>
                         <input
@@ -106,7 +106,7 @@ export default function Member() {
                             value={"no"}
                             className="peer hidden"
                         />
-                        <label className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="no">No, donate once</label>
+                        <label className="border-2 px-7 py-3 text-sm cursor-pointer rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="no">No, donate once</label>
                     </div>
                 </div>
                 <p className="text-sm text-gray-500">

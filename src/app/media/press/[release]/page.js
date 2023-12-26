@@ -12,6 +12,7 @@ export default function Release({params}){
             </div>
             <div className="flex lg:flex-row flex-col mt-14 lg:gap-20 lg:px-20 px-5">
             <main className="lg:w-2/3 w-full">
+                <Image src={"/event-1.png"} width={1000} height={1000} alt="photo"/>
                 <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">Statement</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sapiente, voluptas reiciendis ipsum provident debitis! Quae iure vitae ex placeat eligendi delectus voluptatem atque autem libero. Ad, qui voluptate ipsam distinctio animi dolorem nisi. Dicta ea similique.</p>
                 <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">Full Message</h4>

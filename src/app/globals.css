@@ -31,7 +31,14 @@
     }
 }
 audio::-webkit-media-controls-play-button,
-     audio::-webkit-media-controls-panel {
-     background-color: rgb(255, 255, 255);
-     color: black;
-     }
+    audio::-webkit-media-controls-panel {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }

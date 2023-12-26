@@ -74,7 +74,7 @@ export default function Message() {
                     </div>
                     <Link
                         className="text-sky-400 w-fit font-medium absolute hover:text-sky-500 transition-colors group bottom-4 ml-10 underline"
-                        href="#"
+                        href="/about/message"
                     >
                         Read more
                         <Image

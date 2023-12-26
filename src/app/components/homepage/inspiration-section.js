@@ -57,7 +57,7 @@ export default function Inspiration() {
                     </p>
                     <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="#"
+                        href={"/inspiration/syed-modoodi"}
                     >
                         Read more
                         <Image
@@ -90,7 +90,7 @@ export default function Inspiration() {
                     </p>
                     <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="#"
+                        href="/inspiration/syed-modoodi"
                     >
                         Read more
                         <Image
@@ -123,7 +123,7 @@ export default function Inspiration() {
                     </p>
                     <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="#"
+                        href="/inspiration/syed-modoodi"
                     >
                         Read more
                         <Image
@@ -156,7 +156,7 @@ export default function Inspiration() {
                     </p>
                     <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="#"
+                        href="/inspiration/syed-modoodi"
                     >
                         Read more
                         <Image

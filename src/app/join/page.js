@@ -124,7 +124,7 @@ export default function Join() {
                     ></input>
                 </div>
                 <div className="flex gap-4 my-8 flex-wrap">
-                    <div>
+                    <div className="relative">
                         <input
                             type="radio"
                             id="member"
@@ -133,9 +133,21 @@ export default function Join() {
                             className="peer hidden"
                             required
                         />
-                        <label className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="member">Join as Member</label>
+                        <label className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="member">Join as Member</label>
+                        <div className="absolute -top-1 left-[85%] z-50">
+                                    <Image
+                                        className="peer cursor-help"
+                                        src={"/info-button.svg"}
+                                        width={16}
+                                        height={64}
+                                    />
+                                    <p className="peer-hover:block mt-1 -ml-32 hidden bg-blue-700 text-xs w-40 px-3 py-3 rounded-md text-white">
+                                        A member's role is to be a member.
+                                    </p>
+                                </div>
+
                     </div>
-                    <div>
+                    <div className="relative">
                         <input
                             type="radio"
                             id="volunteer"
@@ -143,7 +155,18 @@ export default function Join() {
                             value={"volunteer"}
                             className="peer hidden"
                         />
-                        <label className="border-2 px-7 py-3 text-sm rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="volunteer">Join as Volunteer</label>
+                        <label className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="volunteer">Join as Volunteer</label>
+                        <div className="absolute -top-1 left-[85%] z-50">
+                                    <Image
+                                        className="peer cursor-help"
+                                        src={"/info-button.svg"}
+                                        width={16}
+                                        height={64}
+                                    />
+                                    <p className="peer-hover:block mt-1 -ml-32 hidden bg-blue-700 text-xs w-40 px-3 py-3 rounded-md text-white">
+                                    A volunteer's role is to be a volunteer.
+                                    </p>
+                                </div>
                     </div>
                 </div>
 

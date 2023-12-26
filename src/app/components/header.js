@@ -176,6 +176,15 @@ export default function Header() {
                                             Books
                                         </Link>
                                     </li>
+                                    <li className="flex gap-1 leading-8 items-center">
+                                        <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                        <Link
+                                            className="hover:text-gray-200"
+                                            href="/literature/magazine"
+                                        >
+                                            Magazine
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -188,7 +197,7 @@ export default function Header() {
                     </Link>
                     <Link
                         className="hidden lg:block hover:text-gray-200"
-                        href="#"
+                        href="/projects"
                     >
                         Our Projects
                     </Link>
@@ -354,16 +363,16 @@ export default function Header() {
                         </li>
                         <li>
                             <div className="flex gap-1 leading-8 items-center">
-                            <div className="h-6 w-1 rounded-sm bg-white"></div>
-                            <Link
-                                onClick={() => {
-                                    menuRef.current.style.width = "0";
-                                }}
-                                className="hover:text-gray-200"
-                                href="#"
-                            >
-                                Literature
-                            </Link>
+                                <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                <Link
+                                    onClick={() => {
+                                        menuRef.current.style.width = "0";
+                                    }}
+                                    className="hover:text-gray-200"
+                                    href="#"
+                                >
+                                    Literature
+                                </Link>
                             </div>
                             <ul className="ml-4 text-sm">
                                 <li>
@@ -388,20 +397,46 @@ export default function Header() {
                                         Books
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link
+                                        onClick={() => {
+                                            menuRef.current.style.width = "0";
+                                        }}
+                                        className="hover:text-gray-200"
+                                        href="/literature/magazine"
+                                    >
+                                        Magazine
+                                    </Link>
+                                </li>
                             </ul>
+                        </li>
+
+                        <li>
+                            <div className="flex gap-1 leading-8 items-center">
+                                <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                <Link
+                                    onClick={() => {
+                                        menuRef.current.style.width = "0";
+                                    }}
+                                    className="hover:text-gray-200"
+                                    href="/projects"
+                                >
+                                    Our Projects
+                                </Link>
+                            </div>
                         </li>
                         <li>
                             <div className="flex gap-1 leading-8 items-center">
-                            <div className="h-6 w-1 rounded-sm bg-white"></div>
-                            <Link
-                                onClick={() => {
-                                    menuRef.current.style.width = "0";
-                                }}
-                                className="hover:text-gray-200"
-                                href="#"
-                            >
-                                Media & News
-                            </Link>
+                                <div className="h-6 w-1 rounded-sm bg-white"></div>
+                                <Link
+                                    onClick={() => {
+                                        menuRef.current.style.width = "0";
+                                    }}
+                                    className="hover:text-gray-200"
+                                    href="#"
+                                >
+                                    Media & News
+                                </Link>
                             </div>
                             <ul className="ml-4 text-sm">
                                 <li>
