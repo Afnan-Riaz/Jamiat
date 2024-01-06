@@ -26,7 +26,7 @@ export default function Header() {
         <header className="text-white bg-none z-10 relative h-24 sm:pt-0 pt-4">
             <div className="hidden sm:flex h-8 p-1 text-xs bg-sky-600 bg-opacity-10 pr-7 backdrop-blur-[22px] items-center justify-end gap-6">
                 <div className="flex justify-evenly gap-4">
-                    <Link href="#">
+                    <Link href="https://www.instagram.com/jamiatpk/">
                         <Image
                             alt="icon"
                             src={"/instagram.svg"}
@@ -34,7 +34,7 @@ export default function Header() {
                             height={50}
                         />
                     </Link>
-                    <Link href="#">
+                    <Link href="https://www.facebook.com/JamiatPK/">
                         <Image
                             alt="icon"
                             src={"/facebook.svg"}
@@ -42,7 +42,7 @@ export default function Header() {
                             height={50}
                         />
                     </Link>
-                    <Link href="#">
+                    <Link href="https://www.youtube.com/JamiatPK">
                         <Image
                             alt="icon"
                             src={"/youtube.svg"}
@@ -50,7 +50,7 @@ export default function Header() {
                             height={50}
                         />
                     </Link>
-                    <Link href="#">
+                    <Link href="https://twitter.com/JamiatPK">
                         <Image
                             alt="icon"
                             src={"/twitter.svg"}
@@ -298,6 +298,7 @@ export default function Header() {
                         src={"/cross.png"}
                         height={30}
                         width={30}
+                        alt="photo"
                     />
                     <ul className="my-16 mx-4 space-y-5">
                         <li className="flex gap-1 leading-8 items-center">

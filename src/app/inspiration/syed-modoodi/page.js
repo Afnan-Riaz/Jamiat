@@ -15,7 +15,7 @@ function Modoodi() {
                     <Image
                         src={"/inspiration-photo1.png"}
                         width={350}
-                        height={200}
+                        height={200} alt="photo"
                     />
                     <div className="flex gap-3">
                         <h3 className="text-xl font-semibold">Name: </h3>

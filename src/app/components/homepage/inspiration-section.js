@@ -36,21 +36,21 @@ export default function Inspiration() {
                 pagination={pagination}
                 modules={[Pagination]}
             >
-                <SwiperSlide className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
+                <SwiperSlide className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-1 lg:gap-y-2 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
-                    <h2 className="outlined-text font-black text-5xl">
+                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
                         Inspiration
                     </h2>
                     <p className="text-lg font-semibold">
                         Bani Islami Jamiat-e-Talba
                     </p>
-                    <p className="text-2xl font-bold font-inter">
+                    <p className="text-xl lg:text-2xl font-bold font-inter">
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -73,17 +73,17 @@ export default function Inspiration() {
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
-                    <h2 className="outlined-text font-black text-5xl">
+                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
                         Inspiration
                     </h2>
                     <p className="text-lg font-semibold">
                         Bani Islami Jamiat-e-Talba
                     </p>
-                    <p className="text-2xl font-bold font-inter">
+                    <p className="text-2xl lg:text-xl font-bold font-inter">
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -106,17 +106,17 @@ export default function Inspiration() {
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
-                    <h2 className="outlined-text font-black text-5xl">
+                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
                         Inspiration
                     </h2>
                     <p className="text-lg font-semibold">
                         Bani Islami Jamiat-e-Talba
                     </p>
-                    <p className="text-2xl font-bold font-inter">
+                    <p className="text-2xl lg:text-xl font-bold font-inter">
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.
@@ -139,17 +139,17 @@ export default function Inspiration() {
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
-                    <h2 className="outlined-text font-black text-5xl">
+                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
                         Inspiration
                     </h2>
                     <p className="text-lg font-semibold">
                         Bani Islami Jamiat-e-Talba
                     </p>
-                    <p className="text-2xl font-bold font-inter">
+                    <p className="text-2xl lg:text-xl font-bold font-inter">
                         Syed Abu-Al-Ala Modoodi
                     </p>
                     <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full text-base font-normal leading-7">
+                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
                         Vivamus suscipit tortor eget felis porttitor volutpat.
                         Mauris blandit aliquet elit, eget tincidunt nibh
                         pulvinar a.

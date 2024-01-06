@@ -1,4 +1,12 @@
-function Audio() {
+const getData = async () => {
+    const data = await fetch("http://localhost:3000/api/media/audio").then(
+        (response) => response.json()
+    );
+    return data;
+};
+
+async function Audio() {
+    let data = await getData();
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -9,186 +17,41 @@ function Audio() {
             </div>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
+                    {data.map((audio)=>(
+                    <div key={audio._id} className="lg:w-1/3 sm:w-1/2 p-4">
                         <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
                             <div className="text-lg font-semibold">
                                 <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
+                                    {audio.title}
                                 </h2>
                                 <p>
-                                    Author:
+                                    Voice of:
                                     <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
+                                        {audio.description}
                                     </span>
                                 </p>
                                 <p>
                                     Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
+                                    <span className="text-gray-600 text-base ml-2">
+                                        {audio.duration}
+                                    </span>
                                 </p>
                                 <p>
                                     Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
+                                    <span className="text-gray-600 text-base ml-2">
+                                        {audio.date}
+                                    </span>
                                 </p>
                             </div>
                             <div className="w-full mt-6">
                                 <audio
-                                    src="/audio-file.mp3"
+                                    src={audio.file}
                                     controls
                                     className="w-full min-w-[250px]"
                                 ></audio>
                             </div>
                         </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
-                            <div className="text-lg font-semibold">
-                                <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
-                                </h2>
-                                <p>
-                                    Author:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
-                                    </span>
-                                </p>
-                                <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
-                                </p>
-                                <p>
-                                    Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
-                                </p>
-                            </div>
-                            <div className="w-full mt-6">
-                                <audio
-                                    src="/audio-file.mp3"
-                                    controls
-                                    className="w-full min-w-[250px]"
-                                ></audio>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
-                            <div className="text-lg font-semibold">
-                                <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
-                                </h2>
-                                <p>
-                                    Author:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
-                                    </span>
-                                </p>
-                                <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
-                                </p>
-                                <p>
-                                    Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
-                                </p>
-                            </div>
-                            <div className="w-full mt-6">
-                                <audio
-                                    src="/audio-file.mp3"
-                                    controls
-                                    className="w-full min-w-[250px]"
-                                ></audio>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
-                            <div className="text-lg font-semibold">
-                                <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
-                                </h2>
-                                <p>
-                                    Author:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
-                                    </span>
-                                </p>
-                                <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
-                                </p>
-                                <p>
-                                    Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
-                                </p>
-                            </div>
-                            <div className="w-full mt-6">
-                                <audio
-                                    src="/audio-file.mp3"
-                                    controls
-                                    className="w-full min-w-[250px]"
-                                ></audio>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
-                            <div className="text-lg font-semibold">
-                                <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
-                                </h2>
-                                <p>
-                                    Author:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
-                                    </span>
-                                </p>
-                                <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
-                                </p>
-                                <p>
-                                    Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
-                                </p>
-                            </div>
-                            <div className="w-full mt-6">
-                                <audio
-                                    src="/audio-file.mp3"
-                                    controls
-                                    className="w-full min-w-[250px]"
-                                ></audio>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
-                            <div className="text-lg font-semibold">
-                                <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
-                                    Audio Title
-                                </h2>
-                                <p>
-                                    Author:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        Jamiat
-                                    </span>
-                                </p>
-                                <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">20:13</span>
-                                </p>
-                                <p>
-                                    Date:
-                                    <span className="text-gray-600 text-base ml-2">20/12/24</span>
-                                </p>
-                            </div>
-                            <div className="w-full mt-6">
-                                <audio
-                                    src="/audio-file.mp3"
-                                    controls
-                                    className="w-full min-w-[250px]"
-                                ></audio>
-                            </div>
-                        </div>
-                    </div>
+                    </div>))}
                 </div>
             </div>
         </div>

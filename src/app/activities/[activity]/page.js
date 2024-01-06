@@ -11,7 +11,7 @@ function Activity({ params }) {
             <div className="container px-5 py-24 mx-auto text-gray-600">
                 <div className="flex flex-wrap -m-4">
                     <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="flex relative">
+                        <div className="flex relative rounded-3xl overflow-hidden group">
                             <Image
                                 width={500}
                                 height={500}
@@ -19,13 +19,15 @@ function Activity({ params }) {
                                 className="relative w-full object-cover object-center"
                                 src={"/activity1.png"}
                             />
-                            <div className="absolute inset-0 px-8 py-10 z-10 w-full border-4 border-gray-200 bg-white transition-opacity opacity-0 hover:opacity-100">
-                                <p className="leading-relaxed">
-                                    Photo description Lorem ipsum dolor, sit
-                                    amet consectetur adipisicing elit. Mollitia
-                                    accusantium, facilis distinctio
-                                </p>
-                            </div>
+                            <div className="absolute inset-0 w-full bg-neutral-900 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80"></div>
+                            <p className="absolute flex items-center justify-center text-xl inset-x-10 top-[100%] group-hover:top-0 inset-0 transition-all duration-300 ease-in-out text-white leading-relaxed opacity-0 group-hover:opacity-100">
+                                Photo description Lorem ipsum dolor, sit amet
+                                consectetur adipisicing elit. Mollitia
+                                consectetur adipisicing elit. Mollitia
+                                accusantium, facilis distinctio. Lorem ipsum
+                                dolor sit, amet duol consectetur adipisicing
+                                elit. Fugiat, sed?
+                            </p>
                         </div>
                     </div>
                     <div className="lg:w-1/3 sm:w-1/2 p-4">

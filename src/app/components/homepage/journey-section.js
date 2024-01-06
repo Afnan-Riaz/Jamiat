@@ -17,7 +17,7 @@ export default function Journey() {
         },
     };
     return (
-        <div id="journey-section" className="w-full max-h-[695px] relative">
+        <div id="journey-section" className="w-full max-h-[730px] relative">
             <Swiper
                 style={{
                     "--swiper-pagination-color": "none",
@@ -84,7 +84,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -132,7 +132,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -180,7 +180,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -228,7 +228,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -276,7 +276,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -324,7 +324,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -372,7 +372,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] min-h-[450px] !flex justify-between items-start md:items-end py-[7vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -420,7 +420,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide min-h-[450px] !flex juhtify-between items-start md:items-end py-[7vw] pl-1 mobile:pl-[9vw] pr-1 mobile:pr-[4vw] bg-journey-bg bg-cover">
                     <div className="h-fit w-[536px]">
@@ -468,7 +468,7 @@ export default function Journey() {
                             </div>
                         </div>
                     </div>
-                    <Image className="h-[30vw] w-fit md:block hidden object-contain" src={"/journey-photo1.png"} height={680} width={680}/>
+                    <Image className="h-[30vw] w-fit md:block hidden object-contain" alt="photo" src={"/journey-photo1.png"} height={680} width={680}/>
                 </SwiperSlide>
                 <div className="prev hidden md:block h-6 w-6 border-2 cursor-pointer rounded-full border-sky-500 absolute bottom-4 left-[10vw] rotate-180 z-10">
                     <Image

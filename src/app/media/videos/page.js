@@ -1,6 +1,14 @@
-import Image from "next/image";
 
-function Videos() {
+
+const getData = async () => {
+    const data = await fetch("http://localhost:3000/api/media/videos").then(
+        (response) => response.json()
+    );
+    return data;
+};
+
+async function Videos() {
+    let data=await getData();
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -9,110 +17,22 @@ function Videos() {
                     Our Videos
                 </h1>
             </div>
-            <div className="container px-5 py-24 mx-auto text-gray-600">
-                <div className="flex flex-wrap -m-4">
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
+            <div className="container mobile:px-5 py-24  mx-auto">
+                <div className="flex flex-wrap mobile:-m-4">
+                    {data.map((item)=>(
+                    <div key={item._id} className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="border-2 rounded-2xl overflow-hidden">
                             <iframe
                                 width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
+                                height="270"
+                                src={item.video}
                                 title="YouTube video player"
                                 allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 className="w-full"
                             ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
                         </div>
                     </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-4 rounded-lg bg-neutral-100">
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=Io3DXcGVaqPb-fTK"
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
-                            <div className="px-4 py-4 w-full">
-                                <h2 className="text-xl font-medium text-blue-700">
-                                    Event Title
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
+))}
                 </div>
             </div>
         </div>

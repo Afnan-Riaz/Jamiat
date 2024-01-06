@@ -38,7 +38,7 @@ export default function Join() {
                         className="object-cover h-full"
                         src={"/landing-bg.png"}
                         width={1000}
-                        height={1000}
+                        height={1000} alt="photo"
                     />
                 </div>
                 <div className="w-full md:w-1/2 px-4">

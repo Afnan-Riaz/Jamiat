@@ -133,13 +133,13 @@ function Magazine() {
                         className="max-w-[350px] h-fit"
                         src={"/magazine.png"}
                         width={350}
-                        height={350}
+                        height={350} alt="photo"
                     />
                     <Image
                         className="max-w-[350px] h-fit"
                         src={"/magazine.png"}
                         width={350}
-                        height={350}
+                        height={350} alt="photo"
                     />
                 </div>
             </div>

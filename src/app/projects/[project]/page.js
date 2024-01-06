@@ -15,7 +15,7 @@ function Project({params}) {
                         className="h-fit"
                         src={"/project-afia.png"}
                         width={400}
-                        height={300}
+                        height={300} alt="photo"
                     />
                     <div className="my-6">
                         <h2 className="text-3xl font-semibold mb-4 text-blue-700">

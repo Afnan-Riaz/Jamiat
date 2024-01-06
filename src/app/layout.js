@@ -6,7 +6,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'Islami Jamiat Talaba',
-  description: 'Developed by Afnan Riaz',
+  description: 'description',
 }
 
 export default function RootLayout({ children }) {

@@ -33,7 +33,7 @@ export default function Join() {
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="flex">
             <div className="w-1/2 md:block hidden">
-                <Image className="object-cover h-full" src={"/landing-bg.png"} width={1000} height={1000}/>
+                <Image className="object-cover h-full" src={"/landing-bg.png"} width={1000} height={1000} alt="photo"/>
             </div>
             <div className="w-full md:w-1/2 px-4">
             <h1 className=" text-4xl font-semibold text-blue-700 mb-4 mt-14">
@@ -135,7 +135,7 @@ export default function Join() {
                         />
                         <label className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="member">Join as Member</label>
                         <div className="absolute -top-1 left-[85%] z-50">
-                                    <Image
+                                    <Image alt="photo"
                                         className="peer cursor-help"
                                         src={"/info-button.svg"}
                                         width={16}
@@ -157,7 +157,7 @@ export default function Join() {
                         />
                         <label className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="volunteer">Join as Volunteer</label>
                         <div className="absolute -top-1 left-[85%] z-50">
-                                    <Image
+                                    <Image alt="photo"
                                         className="peer cursor-help"
                                         src={"/info-button.svg"}
                                         width={16}
