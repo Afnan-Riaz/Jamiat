@@ -25,7 +25,7 @@ async function Videos() {
                             <iframe
                                 width="560"
                                 height="270"
-                                src={item.video}
+                                src={item.link}
                                 title="YouTube video player"
                                 allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 className="w-full"

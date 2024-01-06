@@ -31,12 +31,6 @@ async function Audio() {
                                     </span>
                                 </p>
                                 <p>
-                                    Duration:
-                                    <span className="text-gray-600 text-base ml-2">
-                                        {audio.duration}
-                                    </span>
-                                </p>
-                                <p>
                                     Date:
                                     <span className="text-gray-600 text-base ml-2">
                                         {audio.date}
@@ -45,7 +39,7 @@ async function Audio() {
                             </div>
                             <div className="w-full mt-6">
                                 <audio
-                                    src={audio.file}
+                                    src={audio.link}
                                     controls
                                     className="w-full min-w-[250px]"
                                 ></audio>
