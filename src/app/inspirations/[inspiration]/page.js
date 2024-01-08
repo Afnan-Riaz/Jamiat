@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-function Modoodi() {
+function Modoodi({params}) {
+    
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
