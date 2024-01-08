@@ -3,7 +3,7 @@ export const getData = async () => {
     const data = await fetch("http://localhost:3000/api/").then((response) =>
         response.json()
     );
-    const slug="/about/islami-jamiat-talaba";
+    const slug="islami-jamiat-talaba";
     const filter = data.find((item) => item.slug === slug);
     return filter || null;
 };
