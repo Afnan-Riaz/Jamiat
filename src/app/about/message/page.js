@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getData=async ()=>{
-    const data = await fetch("http://localhost:3000/api/about/message").then((response) =>
+    const data = await fetch("http://localhost:3000/api/profiles/message").then((response) =>
         response.json()
     );
     return data;
@@ -23,10 +23,10 @@ async function Message() {
                         <h2 className="font-semibold text-4xl mb-4 text-blue-700">{section.designation}</h2>
                         <h4 className="font-medium text-2xl">{section.name}</h4>
                         <Image className="-ml-10" src={"/quotes.svg"} width={70} height={100}/>
-                        <p className="max-w-[500px] italic">{section.message}</p>
+                        <p className="max-w-[500px] italic">{section.content}</p>
                     </div>
                     <div className="w-fit rounded-full overflow-hidden">
-                        <Image src={section.photo} height={500} width={500} alt="photo"/>
+                        <Image src={section.image} height={500} width={500} alt="photo"/>
                     </div>
                 </div>
             </div>))}

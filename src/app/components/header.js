@@ -92,13 +92,13 @@ export default function Header() {
                     >
                         <div className="navItem flex flex-col">
                             <Link
-                                className="flex gap-2 hover:text-gray-200"
+                                className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
                                 href="/about"
                             >
                                 About Us
                                 <Image
                                     alt="photo"
-                                    className="cheveron transition-transform duration-300"
+                                    className="cheveron h-3 transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}
@@ -144,13 +144,13 @@ export default function Header() {
                     >
                         <div className="navItem flex flex-col">
                             <Link
-                                className="flex gap-2 hover:text-gray-200"
+                                className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
                                 href="/literature"
                             >
                                 Literature
                                 <Image
                                     alt="photo"
-                                    className="cheveron transition-transform duration-300"
+                                    className="cheveron h-3 transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}
@@ -208,13 +208,13 @@ export default function Header() {
                     >
                         <div className="navItem flex flex-col">
                             <Link
-                                className="flex gap-2 hover:text-gray-200"
+                                className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
                                 href="/media"
                             >
                                 Media & News
                                 <Image
                                     alt="photo"
-                                    className="cheveron transition-transform duration-300"
+                                    className="cheveron h-3 transition-transform duration-300"
                                     src={"/cheveron.svg"}
                                     width={13}
                                     height={13}

@@ -13,7 +13,7 @@ export default function Journey() {
         bulletActiveClass: "swiper-pagination-bullet-active",
         renderBullet: function (index, className) {
             const year = 1940 + index * 10;
-            return `<span class="${className}">${year}'s</span>`;
+            return `<span className="${className}">${year}'s</span>`;
         },
     };
     return (

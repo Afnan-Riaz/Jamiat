@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 const getData=async ()=>{
-    const data = await fetch("http://localhost:3000/api/about/team").then((response) =>
+    const data = await fetch("http://localhost:3000/api/profiles/team").then((response) =>
         response.json()
     );
     return data;
@@ -17,25 +17,25 @@ async function Team() {
                     Our Team
                 </h1>
             </div>
-            <div class="container px-5 py-24 mx-auto">
-                <div class="flex flex-wrap -m-4">
+            <div className="container px-5 py-24 mx-auto">
+                <div className="flex flex-wrap -m-4">
                     {data.map((member)=>(
-                    <div key={member._id} class="p-4 lg:w-1/4 md:w-1/2">
-                        <div class="h-full flex flex-col items-center text-center">
+                    <div key={member._id} className="p-4 lg:w-1/4 md:w-1/2">
+                        <div className="h-full flex flex-col items-center text-center">
                             <Image
                                 alt="team"
-                                class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                                className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
                                 width={300}
                                 height={300}
-                                src={member.photo}
+                                src={member.image}
                             />
-                            <div class="w-full">
-                                <h2 class="font-medium text-lg text-gray-900">
+                            <div className="w-full">
+                                <h2 className="font-medium text-lg text-gray-900">
                                     {member.name}
                                 </h2>
-                                <h3 class="text-gray-500 mb-3">{member.role}</h3>
-                                <p class="mb-4">
-                                    {member.bio}
+                                <h3 className="text-gray-500 mb-3">{member.designation}</h3>
+                                <p className="mb-4">
+                                    {member.content}
                                 </p>
                             </div>
                         </div>

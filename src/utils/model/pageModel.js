@@ -7,7 +7,7 @@ const pageModel = new mongoose.Schema(
         canonical: String,
         page_title: String,
         slug: String,
-        content: { type: String, required:false },
+        content: { type: String, required:false }
     },
     { versionKey: false }
 );

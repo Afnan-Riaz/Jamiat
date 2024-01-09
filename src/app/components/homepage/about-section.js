@@ -56,7 +56,7 @@ export default function About() {
                         </span>
                     </div>
                 </Link>
-                <Link className="row-span-1 laptop12:row-span-2 col-span-1 md:col-span-2 laptop12:col-span-1 justify-self-center" href={"/literature/books"}>
+                <div className="row-span-1 laptop12:row-span-2 col-span-1 md:col-span-2 laptop12:col-span-1 justify-self-center">
                     <div className="mobile:w-[435px] w-[350px] rounded-xl hover:brightness-90 transition-[filter] duration-300 bg-long-card-bg bg-center bg-no-repeat">
                         <div className="p-7 space-y-3">
                             <h3 className="text-lg font-medium leading-3">
@@ -72,7 +72,7 @@ export default function About() {
                                     "#919191",
                                 "--swiper-pagination-bullet-inactive-opacity":
                                     "1",
-                                "--swiper-pagination-bullet-size": "12px",
+                                "--swiper-pagination-bullet-size": "18px",
                                 "--swiper-pagination-bullet-horizontal-gap":
                                     "6px",
                             }}
@@ -86,6 +86,7 @@ export default function About() {
                             className="mobile:h-[500px] h-[450px] mobile:!pl-[10%] !pl-[8%]"
                         >
                             <SwiperSlide>
+                                <Link href={"#"}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
@@ -93,8 +94,10 @@ export default function About() {
                                     height={2000}
                                     width={2000}
                                 />
+                                </Link>
                             </SwiperSlide>
                             <SwiperSlide>
+                                <Link href={"#"}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
@@ -102,8 +105,10 @@ export default function About() {
                                     height={2000}
                                     width={2000}
                                 />
+                                </Link>
                             </SwiperSlide>
                             <SwiperSlide>
+                                <Link href={"#"}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
@@ -111,10 +116,11 @@ export default function About() {
                                     height={2000}
                                     width={2000}
                                 />
+                                </Link>
                             </SwiperSlide>
                         </Swiper>
                     </div>
-                </Link>
+                </div>
                 <Link href={"/about/islami-jamiat-talaba"}>
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card2-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">

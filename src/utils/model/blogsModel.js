@@ -8,6 +8,6 @@ const blogsModel=new mongoose.Schema({
     type:String,
     title:String,
     image:mongoose.Schema.Types.Mixed,
-    content:String,
+    content:String
 },{versionKey:false});
 export const Blogs = mongoose.models.blogs || mongoose.model("blogs",blogsModel,"blogs");
