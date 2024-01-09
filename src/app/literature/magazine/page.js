@@ -1,7 +1,15 @@
 import Link from "next/link";
-import React from "react";
 import Image from "next/image";
-function Magazine() {
+
+const getData = async () => {
+    const magazines = await fetch("http://localhost:3000/api/media/magazines").then(
+        (response) => response.json()
+    );
+    return magazines;
+};
+
+async function Magazine() {
+    let magazines = await getData();
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -16,131 +24,36 @@ function Magazine() {
                         Index
                     </h2>
                     <ul className="space-y-3 list-disc text-lg">
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine January 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine Feburary 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine March 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine April 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine May 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine June 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine July 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine August 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine September 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
-                        <li className="flex justify-between gap-x-20">
-                            Hamqadam Magazine October 2023
-                            <Link
-                                href={
-                                    "http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"
-                                }
-                                className="underline"
-                            >
-                                Read Here
-                            </Link>
-                        </li>
+                        {magazines.map((magazine) => (
+                            <li key={magazine._id} className="flex justify-between gap-x-20">
+                                {magazine.title}
+                                <Link
+                                    href={magazine.link}
+                                    className="underline"
+                                >
+                                    Read Here
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
-                <div className="space-y-10">
-                    <Image
+                <div>
+                    <Link className="block mb-10" href={magazines[0].link}><Image
                         className="max-w-[350px] h-fit"
-                        src={"/magazine.png"}
+                        src={magazines[0].description}
                         width={350}
-                        height={350} alt="photo"
+                        height={350}
+                        alt="photo"
                     />
-                    <Image
+                    </Link>
+                    <Link href={magazines[1].link}><Image
                         className="max-w-[350px] h-fit"
-                        src={"/magazine.png"}
+                        src={magazines[1].description}
                         width={350}
-                        height={350} alt="photo"
+                        height={350}
+                        alt="photo"
                     />
+                    </Link>
                 </div>
             </div>
         </div>

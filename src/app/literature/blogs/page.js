@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const getData = async () => {
+const getData = async () => {
     const data = await fetch("http://localhost:3000/api/blogs/blog").then(
         (response) => response.json()
     );

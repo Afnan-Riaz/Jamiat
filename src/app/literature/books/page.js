@@ -1,6 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function Books() {
+
+const getData = async () => {
+    const data = await fetch("http://localhost:3000/api/media/books").then(
+        (response) => response.json()
+    );
+    return data;
+};
+
+export default async function Books() {
+    let data = await getData();
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -11,60 +20,21 @@ export default function Books() {
             </div>
             <div className="container pt-12 pb-24 mx-auto">
                 <div className="flex flex-wrap justify-center gap-6">
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
-                    <Link href={"http://www.tazkeer.org/literature/read/dastoor-islami-jamiat-talaba/1701"} className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden">
-                        <Image
-                            width={1000}
-                            height={500}
-                            className="h-full w-full object-contain object-center"
-                            src="/magazine.png"
-                            alt="blog"
-                        />
-                    </Link>
+                    {data.map((book) => (
+                        <Link
+                            key={book._id}
+                            href={book.link}
+                            className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden"
+                        >
+                            <Image
+                                width={1000}
+                                height={500}
+                                className="h-full w-full object-contain object-center"
+                                src={book.title}
+                                alt="book"
+                            />
+                        </Link>
+                    ))}
                 </div>
             </div>
         </section>
