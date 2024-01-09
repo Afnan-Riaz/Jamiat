@@ -34,4 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-src/utils/db.js
+
+
+
+#for mongosh
+#mongodb+srv://afnanriaz:BkGrQ0vzj283JbxJ@cluster0.ovilnum.mongodb.net/Jamiat?retryWrites=true&w=majority
