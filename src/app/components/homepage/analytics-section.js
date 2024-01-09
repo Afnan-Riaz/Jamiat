@@ -1,15 +1,22 @@
 "use client";
-import { useRef, useEffect } from "react";
-
+import { useRef, useEffect, useState } from "react";
 export default function Analytics() {
     const containerRef = useRef(null);
     const numberRefs = useRef([]);
-    const targetValues = [1941, 150570, 1400, 140];
+    const [analyticsData, setAnalyticsData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch("http://localhost:3000/api/analytics");
+            const data = await response.json();
+            setAnalyticsData(data);
+        };
+        fetchData();
+    }, []);
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && analyticsData) {
                 numberRefs.current.forEach((numberRef, index) => {
-                    animateNumber(index, 0, targetValues[index], 2000);
+                    animateNumber(index, 0, analyticsData[index].count, 2000);
                 });
                 observer.disconnect();
             }
@@ -18,7 +25,7 @@ export default function Analytics() {
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [analyticsData]);
     const animateNumber = (index, start, end, duration) => {
         const startTime = performance.now();
         const updateNumber = () => {
@@ -37,47 +44,30 @@ export default function Analytics() {
     return (
         <div
             ref={containerRef}
-            className="w-full h-72 bg-analytics-bg bg-cover flex flex-wrap px-10 gap-x-4 justify-evenly items-center text-white"
+            className="w-full h-72 bg-analytics-bg bg-cover flex flex-wrap mobile:px-10 gap-x-4 justify-evenly items-center text-white"
         >
-            <div className="flex flex-col items-center gap-2 w-[99px]">
-                <p
-                    ref={(el) => (numberRefs.current[0] = el)}
-                    className="font-inter text-[42px] font-extrabold"
-                >
-                    0
-                </p>
-                <p className="text-xl font-semibold">Members</p>
-            </div>
-            <div className="flex flex-col items-center gap-2 w-[161px]">
-                <p
-                    ref={(el) => (numberRefs.current[1] = el)}
-                    className="font-inter text-[42px] font-extrabold"
-                >
-                    0
-                </p>
-                <p className="text-xl font-semibold">Volunteers</p>
-            </div>
-            <div className="flex flex-col items-center gap-2 w-[110px]">
-                <p
-                    ref={(el) => (numberRefs.current[2] = el)}
-                    className="font-inter text-[42px] font-extrabold"
-                >
-                    0
-                </p>
-                <p className="text-xl font-semibold">Units</p>
-            </div>
-            <div className="flex flex-col items-center w-[110px]">
-                <div>
-                <span
-                    ref={(el) => (numberRefs.current[3] = el)}
-                    className="font-inter text-[42px] font-extrabold"
-                >
-                0
-                </span>
-                <span className="font-inter text-[42px] font-extrabold">K</span>
-                </div>
-                <p className="text-xl font-semibold">Activities</p>
-            </div>
+            {analyticsData &&
+                analyticsData.map((analytic, index) => (
+                    <div
+                        key={analytic._id}
+                        className="flex flex-col items-center gap-2 w-fit"
+                    >
+                        <p
+                            ref={(el) => (numberRefs.current[index] = el)}
+                            className="font-inter text-[42px] font-extrabold"
+                        >
+                            0
+                        </p>
+                        {/* {index === analyticsData.length - 1 && (
+                            <span className="font-inter text-[42px] font-extrabold">
+                                K
+                            </span>
+                        )} */}
+                        <p className="text-xl font-semibold">
+                            {analytic.title}
+                        </p>
+                    </div>
+                ))}
         </div>
     );
 }
