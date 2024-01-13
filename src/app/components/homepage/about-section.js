@@ -5,9 +5,28 @@ import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import { Pagination, EffectCards } from "swiper/modules";
 import Link from "next/link";
+import { useState,useEffect } from "react";
+
+const getData = async () => {
+    const magazines = await fetch("http://localhost:3000/api/media/magazines").then(
+        (response) => response.json()
+    );
+    return magazines;
+};
+
 export default function About() {
+    const [swiperLoaded, setSwiperLoaded] = useState(false);
+    const [magazines,setMagazines]=useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getData();
+            setMagazines(data);
+            setSwiperLoaded(true);
+        }
+        fetchData();
+    }, []);
     return (
-        <div id="about-section" className="w-full relative bg-about-bg bg-cover bg-no-repeat z-0">
+        <div id="about-section" className="w-full relative bg-about-bg bg-cover overflow-x-hidden bg-no-repeat z-0">
             <div className="w-fit grid laptop12:grid-cols-[350px_350px_435px] justify-items-center md:grid-cols-2 grid-cols-1 text-white laptop12:grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-8 max-md:pb-20 md:pt-20 pb-5">
                 <Link href="/media/press">
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card1-bg bg-center bg-no-repeat flex flex-col justify-between">
@@ -64,7 +83,7 @@ export default function About() {
                             </h3>
                             <div className="h-px w-full bg-white"></div>
                         </div>
-                        <Swiper
+                        {swiperLoaded&&<Swiper
                             style={{
                                 "--swiper-pagination-bottom": "20px",
                                 "--swiper-pagination-color": "#ffffff",
@@ -86,39 +105,39 @@ export default function About() {
                             className="mobile:h-[500px] h-[450px] mobile:!pl-[10%] !pl-[8%]"
                         >
                             <SwiperSlide>
-                                <Link href={"#"}>
+                                <Link href={magazines[1].link}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
-                                    src={"/magazine.png"}
+                                    src={magazines[1].description}
                                     height={2000}
                                     width={2000}
                                 />
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Link href={"#"}>
+                                <Link href={magazines[0].link}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
-                                    src={"/magazine.png"}
+                                    src={magazines[0].description}
                                     height={2000}
                                     width={2000}
                                 />
                                 </Link>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Link href={"#"}>
+                                <Link href={magazines[2].link}>
                                 <Image
                                     alt="photo"
                                     className="mobile:w-[350px] w-[300px]"
-                                    src={"/magazine.png"}
+                                    src={magazines[2].description}
                                     height={2000}
                                     width={2000}
                                 />
                                 </Link>
                             </SwiperSlide>
-                        </Swiper>
+                        </Swiper>}
                     </div>
                 </div>
                 <Link href={"/about/islami-jamiat-talaba"}>

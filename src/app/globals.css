@@ -16,6 +16,9 @@
     border-radius: 100px;
     background-clip: padding-box;
 }
+.rounded-white-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(209, 209, 209);
+}
 .rounded-white-scrollbar::-webkit-scrollbar-track {
     background-color: transparent;
 }

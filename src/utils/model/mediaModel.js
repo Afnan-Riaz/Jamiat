@@ -4,7 +4,7 @@ const mediaModel=new mongoose.Schema({
     type: String,
     link: String,
     title: {
-        type: String,
+        type: mongoose.Schema.Types.Mixed,
         required: false
     },
     description: {
@@ -12,8 +12,8 @@ const mediaModel=new mongoose.Schema({
         required: false
     },
     date: {
-        type: String,
+        type: Date,
         required: false
-    }
+    },
 },{versionKey:false});
 export const Media = mongoose.models.media || mongoose.model("media",mediaModel,"media");

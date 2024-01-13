@@ -5,17 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footprint() {
     const [analyticsData, setAnalyticsData] = useState([]);
+    const [activities, setActivities] = useState([]);
     const [text, setText] = useState(null);
     const handleChange = (t) => {
         setText(t);
     };
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(
+            let response = await fetch(
                 "http://localhost:3000/api/analytics/footprints"
             );
-            const data = await response.json();
+            let data = await response.json();
             setAnalyticsData(data);
+            response=await fetch("http://localhost:3000/api/blogs/activities");
+            data=await response.json();
+            setActivities(data.slice(0,3));
         };
         fetchData();
     }, []);
@@ -25,7 +29,7 @@ export default function Footprint() {
     return (
         <div
             id="footprint-section"
-            className="w-full pl-2 mobile:pl-[8vw] pr-[4vw] pt-8 sm:pt-20 relative bg-footprint-bg bg-cover"
+            className="w-full pl-2 mobile:pl-[8vw] pr-[4vw] pt-8 sm:pt-20 relative overflow-x-hidden bg-footprint-bg bg-cover"
         >
             <div className="flex justify-between md:flex-row flex-col items-center">
                 <div className="flex flex-col h-full w-full md:w-3/5 gap-y-3">
@@ -75,42 +79,21 @@ export default function Footprint() {
                     Activities
                 </h4>
                 <div className="flex max-sm:justify-center gap-4 mb-4 flex-wrap">
-                    <Link
+                    {activities.map((activity)=>(<Link
+                    key={activity._id}
                         className="hover:brightness-90 transition-[filter]"
-                        href={"/activities/activity-1"}
+                        href={`/activities/${activity.slug}`}
                     >
                         <Image
-                            src={"/activity1.png"}
+                            src={activity.image}
                             height={160}
                             width={190}
                             alt="photo"
                         />
-                    </Link>
-                    <Link
-                        className="hover:brightness-90 transition-[filter]"
-                        href={"/activities/activity-2"}
-                    >
-                        <Image
-                            src={"/activity2.png"}
-                            height={160}
-                            width={190}
-                            alt="photo"
-                        />
-                    </Link>
-                    <Link
-                        className="hover:brightness-90 transition-[filter]"
-                        href={"/activities/activity-3"}
-                    >
-                        <Image
-                            src={"/activity3.png"}
-                            height={160}
-                            width={190}
-                            alt="photo"
-                        />
-                    </Link>
+                    </Link>))}
                 </div>
                 <Link
-                    className="text-blue-800 hover:text-blue-600 font-medium underline"
+                    className="text-blue-800 hover:text-blue-600 block md:inline text-center text-lg font-medium underline"
                     href="/activities"
                 >
                     View All

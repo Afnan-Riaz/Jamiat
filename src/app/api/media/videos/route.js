@@ -5,6 +5,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(){
     await mongoose.connect(connectionStr);
-    const data=await Media.find({type:"video"},{ title: 0, description: 0, date: 0, type:0 });
+    const data=await Media.find({type:"video"});
     return NextResponse.json(data);
 }

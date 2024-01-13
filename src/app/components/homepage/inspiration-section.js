@@ -5,15 +5,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
+
+const getData = async (slug) => {
+    const data = await fetch("http://localhost:3000/api/profiles/inspirations").then(
+        (response) => response.json()
+    );
+    return data;
+}
 export default function Inspiration() {
-    const [photo,setPhoto]=useState(1);
+    const [photo,setPhoto]=useState(0);
+    const [swiperLoaded, setSwiperLoaded] = useState(false);
+    const [inspirations,setInspirations]=useState([]);
     const changePhoto=(index)=>{
         if(index!=null){
-            setPhoto(index+1);
+            setPhoto(index);
+            console.log(index);
         }
     }
+    const shorten=(content)=>{
+        const words = content.split(' ');
+        const first20 = words.slice(0, 20).join(' ');
+        return first20;
+    }
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getData();
+            setInspirations(data);
+            setSwiperLoaded(true);
+        }
+        fetchData();
+    }, []);
     const pagination = {
         clickable: true,
         bulletClass: "swiper-pagination-bullet !border-2 !border-white",
@@ -21,8 +44,8 @@ export default function Inspiration() {
     };
 
     return (
-        <div id="inspiration-section" className="w-full md:h-[48vw] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
-            <Swiper
+        <div id="inspiration-section" className="w-full h-[48vw] max-h-[730px] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
+            {swiperLoaded&&<Swiper
                 loop={true}
                 style={{
                     "--swiper-pagination-color": "rgb(56 189 248)",
@@ -36,7 +59,7 @@ export default function Inspiration() {
                 pagination={pagination}
                 modules={[Pagination]}
             >
-                <SwiperSlide className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-1 lg:gap-y-2 pl-2 mobile:pl-[10vw]">
+                {inspirations.map((inspiration)=>(<SwiperSlide key={inspiration._id} className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-1 lg:gap-y-4 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -44,20 +67,18 @@ export default function Inspiration() {
                         Inspiration
                     </h2>
                     <p className="text-lg font-semibold">
-                        Bani Islami Jamiat-e-Talba
+                        {inspiration.designation}
                     </p>
                     <p className="text-xl lg:text-2xl font-bold font-inter">
-                        Syed Abu-Al-Ala Modoodi
+                        {inspiration.name}
                     </p>
-                    <p className="text-base font-normal leading-7">1903-1979</p>
+                    <p className="text-base font-normal leading-7">{inspiration.dob} - {inspiration.dod}</p>
                     <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar a.
+                        {shorten(inspiration.content)}
                     </p>
                     <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href={"/inspirations/syed-modoodi"}
+                        href={`/inspirations/${inspiration.slug}`}
                     >
                         Read more
                         <Image
@@ -68,111 +89,12 @@ export default function Inspiration() {
                             width={25}
                         />
                     </Link>
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
-                    <p className="text-2xl font-bold font-inter capitalize">
-                        Our
-                    </p>
-                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
-                        Inspiration
-                    </h2>
-                    <p className="text-lg font-semibold">
-                        Bani Islami Jamiat-e-Talba
-                    </p>
-                    <p className="text-2xl lg:text-xl font-bold font-inter">
-                        Syed Abu-Al-Ala Modoodi
-                    </p>
-                    <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar a.
-                    </p>
-                    <Link
-                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="/inspirations/syed-modoodi"
-                    >
-                        Read more
-                        <Image
-                            alt="photo"
-                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
-                            src={"/arrow-blue.svg"}
-                            height={12}
-                            width={25}
-                        />
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
-                    <p className="text-2xl font-bold font-inter capitalize">
-                        Our
-                    </p>
-                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
-                        Inspiration
-                    </h2>
-                    <p className="text-lg font-semibold">
-                        Bani Islami Jamiat-e-Talba
-                    </p>
-                    <p className="text-2xl lg:text-xl font-bold font-inter">
-                        Syed Abu-Al-Ala Modoodi
-                    </p>
-                    <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar a.
-                    </p>
-                    <Link
-                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="/inspirations/syed-modoodi"
-                    >
-                        Read more
-                        <Image
-                            alt="photo"
-                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
-                            src={"/arrow-blue.svg"}
-                            height={12}
-                            width={25}
-                        />
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full !flex flex-col justify-center my-10 md:my-0 gap-y-2 pl-2 mobile:pl-[10vw]">
-                    <p className="text-2xl font-bold font-inter capitalize">
-                        Our
-                    </p>
-                    <h2 className="outlined-text font-black text-4xl lg:text-5xl">
-                        Inspiration
-                    </h2>
-                    <p className="text-lg font-semibold">
-                        Bani Islami Jamiat-e-Talba
-                    </p>
-                    <p className="text-2xl lg:text-xl font-bold font-inter">
-                        Syed Abu-Al-Ala Modoodi
-                    </p>
-                    <p className="text-base font-normal leading-7">1903-1979</p>
-                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
-                        Vivamus suscipit tortor eget felis porttitor volutpat.
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar a.
-                    </p>
-                    <Link
-                        className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href="/inspirations/syed-modoodi"
-                    >
-                        Read more
-                        <Image
-                            alt="photo"
-                            className="ml-2 inline group-hover:translate-x-4 transition-transform"
-                            src={"/arrow-blue.svg"}
-                            height={12}
-                            width={25}
-                        />
-                    </Link>
-                </SwiperSlide>
-            </Swiper>
+                </SwiperSlide>))}
+            </Swiper>}
             <Image
                 alt="photo"
                 className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 object-cover"
-                src={`/inspiration-photo${photo}.png`}
+                src={inspirations[photo].image}
                 height={2000}
                 width={2000}
             />

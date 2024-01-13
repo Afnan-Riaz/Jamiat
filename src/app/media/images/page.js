@@ -21,21 +21,19 @@ async function Images() {
                 <div className="flex flex-wrap -m-4">
                     {data.map((image) => (
                         <div key={image._id} className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
+                            <div className="flex relative rounded-3xl overflow-hidden group">
                                 <Image
                                     width={500}
                                     height={500}
                                     alt="gallery"
-                                    className="absolute inset-0 w-full h-full object-cover object-center"
+                                    className="relative w-full object-cover object-center"
                                     src={image.link}
                                 />
-                                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white transition-opacity opacity-0 hover:opacity-100">
-                                    <h1 className="text-lg font-medium text-blue-700 mb-3">
+                                <div className="absolute inset-0 w-full bg-neutral-900 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80"></div>
+                                <div className="absolute flex flex-col items-center justify-center inset-x-10 top-[100%] group-hover:top-0 inset-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                                    <h1 className="text-xl font-medium text-white mb-3">
                                         {image.title}
                                     </h1>
-                                    <p className="leading-relaxed">
-                                        {image.description}
-                                    </p>
                                 </div>
                             </div>
                         </div>

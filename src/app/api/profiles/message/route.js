@@ -5,6 +5,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(){
     await mongoose.connect(connectionStr);
-    const data=await Profiles.find({ type: 'message' }).select({image:1,designation:1,content:1,name:1});
+    const data=await Profiles.find({ type: 'message' });
     return NextResponse.json(data);
 }

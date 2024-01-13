@@ -3,21 +3,58 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+const getAudio = async () => {
+    const data = await fetch("http://localhost:3000/api/media/audio").then(
+        (response) => response.json()
+    );
+    return data;
+};
+const getVideos = async () => {
+    const data = await fetch("http://localhost:3000/api/media/videos").then(
+        (response) => response.json()
+    );
+    return data;
+};
+const getReleases = async () => {
+    const data = await fetch("http://localhost:3000/api/blogs/releases").then(
+        (response) => response.json()
+    );
+    return data;
+};
+
+
 export default function Media() {
     const [activeTabMedia, setActiveTabMedia] = useState(1);
     const [activeTabSocial, setActiveTabSocial] = useState(1);
-    const [audio, setAudio] = useState("/audio-file.mp3");
-
+    const [audio, setAudio] = useState([]);
+    const [videos, setVideos] = useState([]);
+    const [releases, setReleases] = useState([]);
+    const formatDate=(date)=>{
+        let d=new Date(date);
+        const formattedDate=d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
+        return formattedDate;
+    }
     useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://platform.twitter.com/widgets.js';
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
         script.async = true;
         document.head.appendChild(script);
 
         return () => {
-          document.head.removeChild(script);
+            document.head.removeChild(script);
         };
-      }, []);
+    }, []);
+    useEffect(()=>{
+        async function fetchData() {
+            let data = await getReleases();
+            setReleases(data);
+            data = await getAudio();
+            setAudio(data);
+            data = await getVideos();
+            setVideos(data);
+        }
+        fetchData();
+    })
     return (
         <div className="w-full bg-media-bg bg-cover">
             <div className="w-full flex flex-wrap py-20 gap-5 justify-center">
@@ -80,66 +117,42 @@ export default function Media() {
                             className="bg-white absolute h-full w-full p-5"
                             hidden={activeTabMedia != 1}
                         >
-                            <div className="mb-2">
+                            {releases.map((release)=>(<div className="mb-4">
                                 <Image
                                     alt="photo"
-                                    src={"/press-release-img.png"}
+                                    src={release.image}
                                     height={200}
                                     width={500}
                                 />
-                                <div className="flex justify-between mx-2 my-3">
-                                    <p className="text-sm">1 June</p>
-                                    <div className="flex gap-4">
-                                        <Image
-                                            src={"/facebook-dark.svg"}
-                                            width={7}
-                                            height={10}
-                                            alt="icon"
-                                        />
-                                        <Image
-                                            src={"/twitter-dark.svg"}
-                                            width={15}
-                                            height={20}
-                                            alt="icon"
-                                        />
-                                        <Image
-                                            src={"/linkedin-dark.svg"}
-                                            width={15}
-                                            height={20}
-                                            alt="icon"
-                                        />
-                                    </div>
-                                </div>
+                                <p className="text-sm my-2">{formatDate(release.date)}</p>
                                 <h3 className="text-lg font-semibold">
-                                    jamiat online studies and portal for
-                                    students.
+                                    {release.title}
                                 </h3>
-                            </div>
+                            </div>))}
                         </div>
                         <div
                             className="bg-white absolute h-full w-full p-5"
                             hidden={activeTabMedia != 2}
                         >
-                            <div className="w-full bg-[#f1f3f4] p-2 px-3  rounded-md">
-                                <p className="text-lg font-semibold">Audio 1</p>
-
+                            {audio.map((aud)=>(<div className="w-full bg-[#f1f3f4] p-2 px-3  rounded-md">
+                                <p className="text-lg font-semibold">{aud.title}</p>
                                 <audio
                                     className="mt-3 w-full"
-                                    src={audio}
+                                    src={aud.link}
                                     controls
                                 ></audio>
-                            </div>
+                            </div>))}
                         </div>
                         <div
                             className="bg-white absolute h-full w-full p-5"
                             hidden={activeTabMedia != 3}
                         >
-                            <iframe
+                            {videos.map((video)=>(<iframe
                                 className="w-full mb-4 h-48 rounded-lg"
-                                src="https://www.youtube.com/embed/Ozcpet7-KaI?si=3JEB8LpBX84DftKQ"
+                                src={video.link}
                                 title="YouTube video player"
                                 allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            ></iframe>
+                            ></iframe>))}
                         </div>
                     </div>
                 </div>
@@ -227,7 +240,14 @@ export default function Media() {
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 1}
                         >
-                            <Link className="twitter-timeline" data-width="350" data-height="650" href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw">Tweets by JamiatPK</Link>
+                            <Link
+                                className="twitter-timeline"
+                                data-width="350"
+                                data-height="650"
+                                href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw"
+                            >
+                                Tweets by JamiatPK
+                            </Link>
                         </div>
                         <div
                             className="bg-white absolute h-full w-full"

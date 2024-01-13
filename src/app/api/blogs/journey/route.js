@@ -1,10 +1,10 @@
 import { connectionStr } from "@/utils/db";
-import { Media } from "@/utils/model/mediaModel";
+import { Blogs } from "@/utils/model/blogsModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function GET(){
     await mongoose.connect(connectionStr);
-    const data=await Media.find({ type: 'book'});
+    const data=await Blogs.find({ type: 'journey'});
     return NextResponse.json(data);
 }

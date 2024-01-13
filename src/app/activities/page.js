@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const getData = async () => {
+const getData = async () => {
     const data = await fetch("http://localhost:3000/api/blogs/activities").then(
         (response) => response.json()
     );
@@ -28,7 +28,7 @@ export default async function Activities() {
                                 width={500}
                                 height={500}
                                 className=" w-full object-cover object-center"
-                                src={activity.image[0]}
+                                src={activity.image}
                                 alt="activity"
                                 />
                             <div className="p-6">

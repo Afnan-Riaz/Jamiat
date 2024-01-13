@@ -4,26 +4,46 @@ import "swiper/css";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
+import { useState,useEffect } from "react";
+
+const getData = async () => {
+    const data = await fetch("http://localhost:3000/api/blogs/projects").then(
+        (response) => response.json()
+    );
+    return data;
+};
 
 export default function Projects() {
-
+    const [swiperLoaded, setSwiperLoaded] = useState(false);
+    const [projects,setProjects]=useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getData();
+            setProjects(data);
+            setSwiperLoaded(true);
+        }
+        fetchData();
+    }, []);
     return (
-        <div id="projects-section" className="w-full h-[48vw] min-h-[600px] relative">
-            <Swiper
+        <div
+            id="projects-section"
+            className="w-full h-[48vw] min-h-[600px] relative"
+        >
+            {swiperLoaded&&<Swiper
                 navigation={{
                     prevEl: ".prev",
                     nextEl: ".next",
                 }}
-                breakpoints= {{
+                breakpoints={{
                     480: {
                         slidesPerView: 2,
-                      },
-                      768: {
+                    },
+                    768: {
                         slidesPerView: 3,
-                      },
-                      1024: {
+                    },
+                    1024: {
                         slidesPerView: 4,
-                      },
+                    },
                 }}
                 loop={true}
                 modules={[Navigation]}
@@ -31,44 +51,17 @@ export default function Projects() {
                 className="mySwiper h-full"
                 spaceBetween={-1}
             >
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
-                    <h4 className="text-xl text-center font-semibold">Release Dr.Aafia</h4>
-                    <Link href={"/projects/project-1"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
-                        Read More
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-farmer-bg">
-                    <h4 className="text-xl text-center font-semibold">Farmer Support</h4>
-                    <Link href={"/projects/project-2"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
-                        Read More
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-scholarship-bg">
+                {projects.map((project)=>(<SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
                     <h4 className="text-xl text-center font-semibold">
-                        Scholarship Programs
+                        Release Dr.Aafia
                     </h4>
-                    <Link href={"/projects/project-3"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
+                    <Link
+                        href={"/projects/release-dr-afia"}
+                        className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md"
+                    >
                         Read More
                     </Link>
-                </SwiperSlide>
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-environment-bg">
-                    <h4 className="text-xl text-center font-semibold">Environment</h4>
-                    <Link href={"/projects/project-4"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
-                        Read More
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
-                    <h4 className="text-xl text-center font-semibold">Release Dr.Aafia</h4>
-                    <Link href={"/projects/project-1"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
-                        Read More
-                    </Link>
-                </SwiperSlide>
-                <SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-farmer-bg">
-                    <h4 className="text-xl text-center font-semibold">Farmer Support</h4>
-                    <Link href={"/projects/project-2"} className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md">
-                        Read More
-                    </Link>
-                </SwiperSlide>
+                </SwiperSlide>))}
                 <div className="prev h-10 w-10 flex justify-center items-center cursor-pointer rounded-full bg-opacity-75 bg-gray-600 absolute top-[45%] left-2 mobile:left-12 rotate-90 z-10">
                     <Image
                         alt="photo"
@@ -85,7 +78,7 @@ export default function Projects() {
                         width={16}
                     />
                 </div>
-            </Swiper>
+            </Swiper>}
             <div className="flex absolute text-white bottom-8 left-8 flex-col z-10">
                 <p>07</p>
                 <div className="h-px w-full bg-sky-400"></div>

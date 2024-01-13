@@ -3,46 +3,20 @@ import Image from "next/image";
 
 export default function Message() {
     return (
-        <div id="message-section" className="h-[48vw] min-h-[600px] w-full relative bg-message-bg bg-cover bg-right text-white">
-            <div className="flex flex-col h-full px-1 mobile:px-[10vw] pt-[6vw]">
+        <div id="message-section" className="w-full relative bg-message-bg bg-cover bg-right text-white">
+            <div className="flex flex-col px-1 mobile:px-[10vw] py-[6vw]">
                 <p className="text-2xl font-bold font-inter capitalize">Our</p>
                 <h2 className="font-extrabold text-[42px] max-sm:h-[90px] max-sm:leading-[45px] text-sky-400 font-inter">
                     President's Message
                 </h2>
-                <div className="w-full sm:w-[500px] xl:h-[450px] h-[350px] max-md:mb-20 border-gray-400 overflow-hidden border-2 mt-[3vw] rounded-2xl relative bg-gray-950 bg-opacity-75 shadow">
-                    <div className="rounded-white-scrollbar xl:h-[400px] h-[300px] p-[3vw] text-white font-light text-sm overflow-y-scroll">
+                <div className="w-full sm:w-[580px] h-[450px] max-md:mb-20 border-gray-400 overflow-hidden border-2 mt-[3vw] rounded-2xl relative bg-gray-950 bg-opacity-75 shadow">
+                    <div className="rounded-white-scrollbar h-[400px] p-[3vw] text-white font-light text-sm overflow-y-scroll">
                         <h4 className="text-3xl text-sky-400 font-inter font-semibold mb-3">
                             Shakeel Ahmad
                         </h4>
                         <h5 className="text-lg font-semibold">
                             CEO & Founder Islami Jamiat-e-Talba
                         </h5>
-                        <div className="flex justify-start gap-4 my-3">
-                            <Link href="#">
-                                <Image
-                                    alt="photo"
-                                    src={"/instagram.svg"}
-                                    width={20}
-                                    height={50}
-                                />
-                            </Link>
-                            <Link href="#">
-                                <Image
-                                    alt="photo"
-                                    src={"/facebook.svg"}
-                                    width={10}
-                                    height={50}
-                                />
-                            </Link>
-                            <Link href="#">
-                                <Image
-                                    alt="photo"
-                                    src={"/twitter.svg"}
-                                    width={20}
-                                    height={50}
-                                />
-                            </Link>
-                        </div>
                         <div className="h-px w-full bg-white my-5"></div>
                         <p>
                             Islami Jamiat e Talaba, True to its name, is an
