@@ -13,11 +13,11 @@ export default function Footprint() {
     useEffect(() => {
         const fetchData = async () => {
             let response = await fetch(
-                `api/analytics/footprints`
+                `${process.env.NEXT_PUBLIC_DOMAIN}/api/analytics/footprints`
             );
             let data = await response.json();
             setAnalyticsData(data);
-            response=await fetch(`api/blogs/activities`);
+            response=await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`);
             data=await response.json();
             setActivities(data.slice(0,3));
         };

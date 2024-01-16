@@ -1,7 +1,7 @@
 
 
 const getData = async () => {
-    const data = await fetch(`api/media/videos`).then(
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/videos`).then(
         (response) => response.json()
     );
     return data;

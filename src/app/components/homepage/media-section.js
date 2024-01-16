@@ -4,19 +4,19 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const getAudio = async () => {
-    const data = await fetch(`api/media/audio`).then(
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/audio`).then(
         (response) => response.json()
     );
     return data;
 };
 const getVideos = async () => {
-    const data = await fetch(`api/media/videos`).then(
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/videos`).then(
         (response) => response.json()
     );
     return data;
 };
 const getReleases = async () => {
-    const data = await fetch(`api/blogs/releases`).then(
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/releases`).then(
         (response) => response.json()
     );
     return data;

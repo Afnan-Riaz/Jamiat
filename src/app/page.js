@@ -26,7 +26,7 @@ export default function Home() {
         if(sectionRef)
             sectionRef.current.scrollIntoView({ behavior: "smooth",block:"start"});
     };
-    console.log(process.env.domain);
+    console.log(process.env.NEXT_PUBLIC_DOMAIN);
 
     return (
         <main>
