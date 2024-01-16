@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-    const magazines = await fetch(`${process.env.domain}/api/media/magazines`).then(
+    const magazines = await fetch(`api/media/magazines`).then(
         (response) => response.json()
     );
     return magazines;

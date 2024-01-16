@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.domain}/api/profiles/inspirations`).then(
+    const data = await fetch(`api/profiles/inspirations`).then(
         (response) => response.json()
     );
     return data;
