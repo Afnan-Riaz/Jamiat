@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 const getData = async () => {
     const data = await fetch(
-        "http://localhost:3000/api/media/images/landing"
+        `${process.env.domain}/api/media/images/landing`
     ).then((response) => response.json());
     return data;
 };

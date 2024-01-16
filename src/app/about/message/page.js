@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getData=async ()=>{
-    const data = await fetch("http://localhost:3000/api/profiles/message").then((response) =>
+    const data = await fetch(`${process.env.domain}/api/profiles/message`).then((response) =>
         response.json()
     );
     return data;

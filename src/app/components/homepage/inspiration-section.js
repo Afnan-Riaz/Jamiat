@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 
 const getData = async (slug) => {
-    const data = await fetch("http://localhost:3000/api/profiles/inspirations").then(
+    const data = await fetch(`${process.env.domain}/api/profiles/inspirations`).then(
         (response) => response.json()
     );
     return data;
@@ -21,7 +21,6 @@ export default function Inspiration() {
     const changePhoto=(index)=>{
         if(index!=null){
             setPhoto(index);
-            console.log(index);
         }
     }
     const shorten=(content)=>{
@@ -91,13 +90,15 @@ export default function Inspiration() {
                     </Link>
                 </SwiperSlide>))}
             </Swiper>}
-            <Image
-                alt="photo"
-                className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 object-cover"
-                src={inspirations[photo].image}
-                height={2000}
-                width={2000}
-            />
+            {swiperLoaded&&
+                <Image
+                    alt="photo"
+                    className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 object-cover"
+                    src={inspirations[photo].image}
+                    height={2000}
+                    width={2000}
+                />
+            }
             <div className="flex absolute text-white bottom-8 left-8 flex-col z-10">
                 <p>04</p>
                 <div className="h-px w-full bg-sky-400"></div>

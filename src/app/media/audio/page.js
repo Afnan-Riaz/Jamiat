@@ -1,5 +1,5 @@
 const getData = async () => {
-    const data = await fetch("http://localhost:3000/api/media/audio").then(
+    const data = await fetch(`${process.env.domain}/api/media/audio`).then(
         (response) => response.json()
     );
     return data;

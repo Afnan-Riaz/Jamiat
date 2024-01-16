@@ -4,19 +4,19 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const getAudio = async () => {
-    const data = await fetch("http://localhost:3000/api/media/audio").then(
+    const data = await fetch(`${process.env.domain}/api/media/audio`).then(
         (response) => response.json()
     );
     return data;
 };
 const getVideos = async () => {
-    const data = await fetch("http://localhost:3000/api/media/videos").then(
+    const data = await fetch(`${process.env.domain}/api/media/videos`).then(
         (response) => response.json()
     );
     return data;
 };
 const getReleases = async () => {
-    const data = await fetch("http://localhost:3000/api/blogs/releases").then(
+    const data = await fetch(`${process.env.domain}/api/blogs/releases`).then(
         (response) => response.json()
     );
     return data;
@@ -46,15 +46,15 @@ export default function Media() {
     }, []);
     useEffect(()=>{
         async function fetchData() {
-            let data = await getReleases();
-            setReleases(data);
-            data = await getAudio();
-            setAudio(data);
-            data = await getVideos();
-            setVideos(data);
+            let releaseData = await getReleases();
+            setReleases(releaseData);
+            let audioData = await getAudio();
+            setAudio(audioData);
+            let videoData = await getVideos();
+            setVideos(videoData);
         }
         fetchData();
-    })
+    },[])
     return (
         <div className="w-full bg-media-bg bg-cover">
             <div className="w-full flex flex-wrap py-20 gap-5 justify-center">
@@ -114,10 +114,10 @@ export default function Media() {
                     </div>
                     <div className="h-[630px] max-h-[90vh]  w-full relative">
                         <div
-                            className="bg-white absolute h-full w-full p-5"
+                            className="bg-white absolute h-full w-full overflow-y-auto p-5"
                             hidden={activeTabMedia != 1}
                         >
-                            {releases.map((release)=>(<div className="mb-4">
+                            {releases.map((release)=>(<div className="py-3 border-b-2 border-neutral-300">
                                 <Image
                                     alt="photo"
                                     src={release.image}
@@ -131,10 +131,10 @@ export default function Media() {
                             </div>))}
                         </div>
                         <div
-                            className="bg-white absolute h-full w-full p-5"
+                            className="bg-white absolute h-full w-full overflow-y-auto p-5"
                             hidden={activeTabMedia != 2}
                         >
-                            {audio.map((aud)=>(<div className="w-full bg-[#f1f3f4] p-2 px-3  rounded-md">
+                            {audio.map((aud)=>(<div className="w-full bg-neutral-200 p-2 px-3 my-3 rounded-md">
                                 <p className="text-lg font-semibold">{aud.title}</p>
                                 <audio
                                     className="mt-3 w-full"
@@ -144,7 +144,7 @@ export default function Media() {
                             </div>))}
                         </div>
                         <div
-                            className="bg-white absolute h-full w-full p-5"
+                            className="bg-white absolute h-full w-full overflow-y-auto p-5"
                             hidden={activeTabMedia != 3}
                         >
                             {videos.map((video)=>(<iframe
@@ -160,8 +160,8 @@ export default function Media() {
                     <div className="py-2 w-full flex justify-center items-center bg-blue-900 text-white text-lg font-semibold">
                         Events
                     </div>
-                    <div className="h-[630px] max-h-[90vh]  w-full bg-white">
-                        <div className="w-full p-5 mb-4">
+                    <div className="h-[630px] max-h-[90vh] w-full bg-white">
+                        <div className="w-full p-5 mb-4 overflow-y-auto">
                             <Image
                                 className="w-full"
                                 src={"/event-1.png"}

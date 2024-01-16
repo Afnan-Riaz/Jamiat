@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getData = async (slug) => {
-    const data = await fetch("http://localhost:3000/api/blogs/releases").then(
+    const data = await fetch(`${process.env.domain}/api/blogs/releases`).then(
         (response) => response.json()
     );
     const filter=data.find(obj=>obj.slug===slug);

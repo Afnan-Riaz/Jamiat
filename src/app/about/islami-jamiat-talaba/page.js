@@ -1,6 +1,6 @@
 import Image from "next/image";
 export const getData = async () => {
-    const data = await fetch("http://localhost:3000/api/").then((response) =>
+    const data = await fetch(`${process.env.domain}/api/`).then((response) =>
         response.json()
     );
     const slug="islami-jamiat-talaba";
