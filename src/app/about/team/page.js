@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 const getData=async ()=>{
-    const data = await fetch(`https://jamiat.vercel.app/api/profiles/team`).then((response) =>
+    const data = await fetch(`${process.env.domain}/api/profiles/team`).then((response) =>
         response.json()
     );
     return data;

@@ -26,8 +26,6 @@ export default function Home() {
         if(sectionRef)
             sectionRef.current.scrollIntoView({ behavior: "smooth",block:"start"});
     };
-    console.log(process.env.NEXT_PUBLIC_DOMAIN);
-
     return (
         <main>
             <div className="top-[40%] left-8 fixed hidden sm:flex flex-col gap-4 z-10">

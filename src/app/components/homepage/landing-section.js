@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 const getData = async () => {
     const data = await fetch(
-        `https://jamiat.vercel.app/api/media/images/landing`
+        `${process.env.domain}/api/media/images/landing`
     ).then((response) => response.json());
     return data;
 };

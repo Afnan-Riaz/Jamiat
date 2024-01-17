@@ -4,19 +4,19 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const getAudio = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/media/audio`).then(
+    const data = await fetch(`${process.env.domain}/api/media/audio`).then(
         (response) => response.json()
     );
     return data;
 };
 const getVideos = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/media/videos`).then(
+    const data = await fetch(`${process.env.domain}/api/media/videos`).then(
         (response) => response.json()
     );
     return data;
 };
 const getReleases = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/blogs/releases`).then(
+    const data = await fetch(`${process.env.domain}/api/blogs/releases`).then(
         (response) => response.json()
     );
     return data;

@@ -1,7 +1,7 @@
 import Audio from "./page";
 
 export const getData = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/`).then((response) =>
+    const data = await fetch(`${process.env.domain}/api/`).then((response) =>
         response.json()
     );
     const slug="audio";

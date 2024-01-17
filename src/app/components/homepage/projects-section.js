@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useState,useEffect } from "react";
 
 const getData = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/blogs/projects`).then(
+    const data = await fetch(`${process.env.domain}/api/blogs/projects`).then(
         (response) => response.json()
     );
     return data;

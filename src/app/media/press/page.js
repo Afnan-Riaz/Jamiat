@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-    const data = await fetch(`https://jamiat.vercel.app/api/blogs/releases`).then(
+    const data = await fetch(`${process.env.domain}/api/blogs/releases`).then(
         (response) => response.json()
     );
     return data;
