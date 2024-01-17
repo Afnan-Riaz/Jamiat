@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`).then(
+    const data = await fetch(`https://jamiat.vercel.app/api/blogs/activities`).then(
         (response) => response.json()
     );
     const filter = data.find((obj) => obj.slug === slug);

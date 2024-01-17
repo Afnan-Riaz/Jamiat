@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/books`).then(
+    const data = await fetch(`https://jamiat.vercel.app/api/media/books`).then(
         (response) => response.json()
     );
     return data;

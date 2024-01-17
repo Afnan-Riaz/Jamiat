@@ -1,6 +1,6 @@
 import Image from "next/image";
 export const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/`).then((response) =>
+    const data = await fetch(`https://jamiat.vercel.app/api/`).then((response) =>
         response.json()
     );
     const slug="islami-jamiat-talaba";

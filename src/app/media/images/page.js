@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/images`).then(
+    const data = await fetch(`https://jamiat.vercel.app/api/media/images`).then(
         (response) => response.json()
     );
     return data;
