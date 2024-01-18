@@ -1,18 +1,22 @@
 import Image from "next/image";
 export const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then(
-        (response) => {
-            if (!response.ok) {
-                console.error(
-                    `Error: ${response.status} - ${response.statusText}`
-                );
-                return [];
+    try {
+        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then(
+            (response) => {
+                if (!response.ok) {
+                    console.error(
+                        `Error: ${response.status} - ${response.statusText}`
+                    );
+                    return [];
+                }
             }
-        }
-    );
-    const slug = "islami-jamiat-talaba";
-    const filter = data.find((item) => item.slug === slug);
-    return filter || null;
+        );
+        const slug = "islami-jamiat-talaba";
+        const filter = data.find((item) => item.slug === slug);
+        return filter || null;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 export default async function IJT() {
     let data = await getData();

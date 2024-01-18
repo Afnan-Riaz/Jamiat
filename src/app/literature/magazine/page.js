@@ -2,15 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-    const magazines = await fetch(
-        `${process.env.domain}/api/media/magazines`
-    ).then((response) => {
-        if (!response.ok) {
-            console.error(`Error: ${response.status} - ${response.statusText}`);
-            return [];
-        }
-    });
-    return magazines;
+    try {
+        const magazines = await fetch(
+            `${process.env.domain}/api/media/magazines`
+        ).then((response) => {
+            if (!response.ok) {
+                console.error(
+                    `Error: ${response.status} - ${response.statusText}`
+                );
+                return [];
+            }
+        });
+        return magazines;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 
 async function Magazine() {

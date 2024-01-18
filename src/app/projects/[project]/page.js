@@ -1,18 +1,22 @@
 import Image from "next/image";
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.domain}/api/blogs/projects`).then(
-        (response) => {
+    try {
+        const data = await fetch(
+            `${process.env.domain}/api/blogs/projects`
+        ).then((response) => {
             if (!response.ok) {
                 console.error(
                     `Error: ${response.status} - ${response.statusText}`
                 );
                 return [];
             }
-        }
-    );
-    const filter = data.find((obj) => obj.slug === slug);
-    return filter;
+        });
+        const filter = data.find((obj) => obj.slug === slug);
+        return filter;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 
 async function Project({ params }) {

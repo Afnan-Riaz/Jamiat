@@ -1,17 +1,21 @@
 import Image from "next/image";
 
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/profiles/team`).then(
-        (response) => {
+    try {
+        const data = await fetch(
+            `${process.env.domain}/api/profiles/team`
+        ).then((response) => {
             if (!response.ok) {
                 console.error(
                     `Error: ${response.status} - ${response.statusText}`
                 );
                 return [];
             }
-        }
-    );
-    return data;
+        });
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 async function Team() {
     let data = await getData();

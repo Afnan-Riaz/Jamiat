@@ -1,17 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/blogs/projects`).then(
-        (response) => {
+    try {
+        const data = await fetch(
+            `${process.env.domain}/api/blogs/projects`
+        ).then((response) => {
             if (!response.ok) {
                 console.error(
                     `Error: ${response.status} - ${response.statusText}`
                 );
                 return [];
             }
-        }
-    );
-    return data;
+        });
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 
 export default async function Projects() {

@@ -2,17 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/media/books`).then(
-        (response) => {
-            if (!response.ok) {
-                console.error(
-                    `Error: ${response.status} - ${response.statusText}`
-                );
-                return [];
+    try {
+        const data = await fetch(`${process.env.domain}/api/media/books`).then(
+            (response) => {
+                if (!response.ok) {
+                    console.error(
+                        `Error: ${response.status} - ${response.statusText}`
+                    );
+                    return [];
+                }
             }
-        }
-    );
-    return data;
+        );
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 
 export default async function Books() {

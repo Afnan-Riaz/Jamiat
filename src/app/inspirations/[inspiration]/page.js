@@ -2,16 +2,22 @@ import Image from "next/image";
 import React from "react";
 
 const getData = async (slug) => {
-    const data = await fetch(
-        `${process.env.domain}/api/profiles/inspirations`
-    ).then((response) => {
-        if (!response.ok) {
-            console.error(`Error: ${response.status} - ${response.statusText}`);
-            return [];
-        }
-    });
-    const filter = data.find((obj) => obj.slug === slug);
-    return filter;
+    try {
+        const data = await fetch(
+            `${process.env.domain}/api/profiles/inspirations`
+        ).then((response) => {
+            if (!response.ok) {
+                console.error(
+                    `Error: ${response.status} - ${response.statusText}`
+                );
+                return [];
+            }
+        });
+        const filter = data.find((obj) => obj.slug === slug);
+        return filter;
+    } catch (error) {
+        console.error("Error fetching data:", error.message);
+    }
 };
 
 async function Inspiration({ params }) {
