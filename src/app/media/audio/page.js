@@ -1,6 +1,6 @@
 const getData = async () => {
     try {
-        const data = await fetch(`${process.env.domain}/api/media/audio`).then(
+        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/audio`).then(
             (response) => {
                 if (!response.ok) {
                     console.error(

@@ -1,7 +1,7 @@
 import Image from "next/image";
 export const getData = async () => {
     try {
-        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then(
+        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/`).then(
             (response) => {
                 if (!response.ok) {
                     console.error(

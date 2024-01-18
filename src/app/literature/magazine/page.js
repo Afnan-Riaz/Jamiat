@@ -4,7 +4,7 @@ import Image from "next/image";
 const getData = async () => {
     try {
         const magazines = await fetch(
-            `${process.env.domain}/api/media/magazines`
+            `${process.env.NEXT_PUBLIC_DOMAIN}/api/media/magazines`
         ).then((response) => {
             if (!response.ok) {
                 console.error(

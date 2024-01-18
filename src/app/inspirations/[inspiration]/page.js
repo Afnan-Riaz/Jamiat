@@ -4,7 +4,7 @@ import React from "react";
 const getData = async (slug) => {
     try {
         const data = await fetch(
-            `${process.env.domain}/api/profiles/inspirations`
+            `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/inspirations`
         ).then((response) => {
             if (!response.ok) {
                 console.error(

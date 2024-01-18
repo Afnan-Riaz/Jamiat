@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState,useEffect } from "react";
 
 const getData = async () => {
-    const magazines = await fetch(`${process.env.domain}/api/media/magazines`).then(
+    const magazines = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/magazines`).then(
         (response) => response.json()
     );
     return magazines;

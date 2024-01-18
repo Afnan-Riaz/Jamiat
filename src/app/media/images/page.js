@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const getData = async () => {
     try {
-        const data = await fetch(`${process.env.domain}/api/media/images`).then(
+        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/images`).then(
             (response) => {
                 if (!response.ok) {
                     console.error(

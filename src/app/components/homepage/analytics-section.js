@@ -6,7 +6,7 @@ export default function Analytics() {
     const [analyticsData, setAnalyticsData] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.domain}/api/analytics`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/analytics`);
             const data = await response.json();
             setAnalyticsData(data);
         };
