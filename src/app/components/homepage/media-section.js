@@ -34,16 +34,16 @@ export default function Media() {
         const formattedDate=d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
         return formattedDate;
     }
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://platform.twitter.com/widgets.js";
-        script.async = true;
-        document.head.appendChild(script);
+    // useEffect(() => {
+    //     const script = document.createElement("script");
+    //     script.src = "https://platform.twitter.com/widgets.js";
+    //     script.async = true;
+    //     document.head.appendChild(script);
 
-        return () => {
-            document.head.removeChild(script);
-        };
-    }, []);
+    //     return () => {
+    //         document.head.removeChild(script);
+    //     };
+    // }, []);
     useEffect(()=>{
         async function fetchData() {
             let releaseData = await getReleases();
@@ -240,24 +240,24 @@ export default function Media() {
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 1}
                         >
-                            <Link
+                            {/* <Link
                                 className="twitter-timeline"
                                 data-width="350"
                                 data-height="650"
                                 href="https://twitter.com/JamiatPK?ref_src=twsrc%5Etfw"
                             >
                                 Tweets by JamiatPK
-                            </Link>
+                            </Link> */}
                         </div>
                         <div
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 2}
                         >
-                            <iframe
+                            {/* <iframe
                                 className="border-0 h-full w-full overflow-hidden"
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJamiatPK%2F&tabs=timeline&width=350&height=650&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                            ></iframe>
+                            ></iframe> */}
                         </div>
                     </div>
                 </div>
