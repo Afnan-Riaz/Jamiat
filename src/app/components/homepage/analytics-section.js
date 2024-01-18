@@ -50,11 +50,11 @@ export default function Analytics() {
                 analyticsData.map((analytic, index) => (
                     <div
                         key={analytic._id}
-                        className="flex flex-col items-center gap-2 w-fit"
+                        className="flex flex-col items-center gap-2 w-32 mobile:w-40"
                     >
                         <p
                             ref={(el) => (numberRefs.current[index] = el)}
-                            className="font-inter text-[42px] font-extrabold"
+                            className="font-inter text-3xl mobile:text-5xl font-extrabold"
                         >
                             0
                         </p>
