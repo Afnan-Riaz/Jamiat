@@ -43,7 +43,7 @@ export default function Inspiration() {
     };
 
     return (
-        <div id="inspiration-section" className="w-full h-[48vw] max-h-[730px] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
+        <div id="inspiration-section" className="w-full md:h-[48vw] relative bg-cover bg-inspiration-bg text-white flex md:flex-row flex-col items-center">
             {swiperLoaded&&<Swiper
                 loop={true}
                 style={{
@@ -58,7 +58,7 @@ export default function Inspiration() {
                 pagination={pagination}
                 modules={[Pagination]}
             >
-                {inspirations.map((inspiration)=>(<SwiperSlide key={inspiration._id} className="w-full h-full !flex justify-center flex-col my-10 md:my-0 gap-y-1 lg:gap-y-4 pl-2 mobile:pl-[10vw]">
+                {inspirations.map((inspiration)=>(<SwiperSlide key={inspiration._id} className="w-full h-full !flex pb-10 justify-center flex-col my-10 md:my-0 gap-y-1 lg:gap-y-4 pl-2 mobile:pl-[10vw]">
                     <p className="text-2xl font-bold font-inter capitalize">
                         Our
                     </p>
@@ -71,8 +71,8 @@ export default function Inspiration() {
                     <p className="text-xl lg:text-2xl font-bold font-inter">
                         {inspiration.name}
                     </p>
-                    <p className="text-base font-normal leading-7">{inspiration.dob} - {inspiration.dod}</p>
-                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-7">
+                    <p className="text-sm lg:text-base font-normal">{inspiration.dob} - {inspiration.dod}</p>
+                    <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
                         {shorten(inspiration.content)}
                     </p>
                     <Link
