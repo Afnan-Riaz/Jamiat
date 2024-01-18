@@ -1,22 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Blogs } from "@/utils/model/blogsModel";
+import { Media } from "@/utils/model/mediaModel";
 
 const getData = async () => {
-    try {
-        const data = await fetch(
-            `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`
-        ).then((response) => {
-            if (!response.ok) {
-                console.error(
-                    `Error: ${response.status} - ${response.statusText}`
-                );
-                return [];
-            }
-        });
-        return data;
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-    }
+    // try {
+    //     const data = await fetch(
+    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`
+    //     ).then((response) => {
+    //         if (!response.ok) {
+    //             console.error(
+    //                 `Error: ${response.status} - ${response.statusText}`
+    //             );
+    //             return [];
+    //         }
+    //     });
+    //     return data;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+    await mongoose.connect(connectionStr);
+    const data = await Blogs.find({ type: "activity" });
+    const activities = await Promise.all(
+        data.map(async (activity) => {
+            const images = await Media.find({
+                type: "activity",
+                title: activity._id,
+            });
+            return { ...activity.toObject(), images };
+        })
+    );
+    return activities;
 };
 
 export default async function Activities() {

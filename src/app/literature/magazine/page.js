@@ -1,29 +1,36 @@
 import Link from "next/link";
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Media } from "@/utils/model/mediaModel";
 
-// const getData = async () => {
-//     try {
-//         const magazines = await fetch(
-//             `${process.env.NEXT_PUBLIC_DOMAIN}/api/media/magazines`
-//         ).then((response) => {
-//             if (!response.ok) {
-//                 console.error(
-//                     `Error: ${response.status} - ${response.statusText}`
-//                 );
-//                 return [];
-//             }
-//         });
-//         return magazines;
-//     } catch (error) {
-//         console.error("Error fetching data:", error.message);
-//     }
-// };
+const getData = async () => {
+    //     try {
+    //         const magazines = await fetch(
+    //             `${process.env.NEXT_PUBLIC_DOMAIN}/api/media/magazines`
+    //         ).then((response) => {
+    //             if (!response.ok) {
+    //                 console.error(
+    //                     `Error: ${response.status} - ${response.statusText}`
+    //                 );
+    //                 return [];
+    //             }
+    //         });
+    //         return magazines;
+    //     } catch (error) {
+    //         console.error("Error fetching data:", error.message);
+    //     }
+
+    await mongoose.connect(connectionStr);
+    const data = await Media.find({ type: "magazine" }).sort({ date: -1 });
+    return data;
+};
 
 async function Magazine() {
-    // let magazines = await getData();
+    let magazines = await getData();
     return (
         <div>
-            {/* <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
+            <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="min-h-[300px] bg-analytics-bg bg-cover flex items-center justify-center bg-center">
                 <h1 className="text-5xl text-white font-semibold font-inter">
                     Hamqadam Magazine
@@ -71,7 +78,7 @@ async function Magazine() {
                         />
                     </Link>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 }

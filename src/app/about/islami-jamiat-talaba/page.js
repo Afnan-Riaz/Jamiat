@@ -1,28 +1,37 @@
 import Image from "next/image";
-// export const getData = async () => {
-//     try {
-//         const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`).then(
-//             (response) => {
-//                 if (!response.ok) {
-//                     console.error(
-//                         `Error: ${response.status} - ${response.statusText}`
-//                     );
-//                     return [];
-//                 }
-//             }
-//         );
-//         const slug = "islami-jamiat-talaba";
-//         const filter = data.find((item) => item.slug === slug);
-//         return filter || null;
-//     } catch (error) {
-//         console.error("Error fetching data:", error.message);
-//     }
-// };
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Page } from "@/utils/model/pageModel";
+
+export const getData = async () => {
+    // try {
+    //     const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`).then(
+    //         (response) => {
+    //             if (!response.ok) {
+    //                 console.error(
+    //                     `Error: ${response.status} - ${response.statusText}`
+    //                 );
+    //                 return [];
+    //             }
+    //         }
+    //     );
+    //     const slug = "islami-jamiat-talaba";
+    //     const filter = data.find((item) => item.slug === slug);
+    //     return filter || null;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+    await mongoose.connect(connectionStr);
+    const data = await Page.find();
+    const slug = "islami-jamiat-talaba";
+    const filter = data.find((item) => item.slug === slug);
+    return filter || [];
+};
 export default async function IJT() {
-    // let data = await getData();
+    let data = await getData();
     return (
         <div className="mb-20">
-            {/* <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
+            <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="min-h-[300px] bg-analytics-bg bg-cover flex items-center justify-center">
                 <h1 className="text-5xl text-white font-semibold font-inter">
                     Jamiat
@@ -35,7 +44,7 @@ export default async function IJT() {
                             {/* <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">
                                 {section.heading}
                             </h4>
-                            <p>{section.content}</p> }
+                    <p>{section.content}</p> */}
                             {data.content}
                         </div>
                     }
@@ -84,7 +93,7 @@ export default async function IJT() {
                         </div>
                     </div>
                 </aside>
-            </div> */}
+            </div>
         </div>
     );
 }

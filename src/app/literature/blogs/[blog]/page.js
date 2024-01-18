@@ -1,22 +1,29 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Blogs } from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
-    try {
-        const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/blog`).then(
-            (response) => {
-                if (!response.ok) {
-                    console.error(
-                        `Error: ${response.status} - ${response.statusText}`
-                    );
-                    return [];
-                }
-            }
-        );
-        const filter = data.find((obj) => obj.slug === slug);
-        return filter;
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-    }
+    // try {
+    //     const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/blog`).then(
+    //         (response) => {
+    //             if (!response.ok) {
+    //                 console.error(
+    //                     `Error: ${response.status} - ${response.statusText}`
+    //                 );
+    //                 return [];
+    //             }
+    //         }
+    //     );
+    //     const filter = data.find((obj) => obj.slug === slug);
+    //     return filter;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+
+    await mongoose.connect(connectionStr);
+    const data = await Blogs.find({ type: "blog", slug: slug });
+    return data;
 };
 
 export default async function Blog({ params }) {

@@ -1,21 +1,27 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import { Profiles } from "@/utils/model/profilesModel";
+import mongoose from "mongoose";
 
 const getData = async () => {
-    try {
-        const data = await fetch(
-            `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/team`
-        ).then((response) => {
-            if (!response.ok) {
-                console.error(
-                    `Error: ${response.status} - ${response.statusText}`
-                );
-                return [];
-            }
-        });
-        return data;
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-    }
+    // try {
+    //     const data = await fetch(
+    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/team`
+    //     ).then((response) => {
+    //         if (!response.ok) {
+    //             console.error(
+    //                 `Error: ${response.status} - ${response.statusText}`
+    //             );
+    //             return [];
+    //         }
+    //     });
+    //     return data;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+    await mongoose.connect(connectionStr);
+    const data=await Profiles.find({ type: 'team' });
+    return data;
 };
 async function Team() {
     let data = await getData();

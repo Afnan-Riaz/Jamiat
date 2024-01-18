@@ -1,23 +1,28 @@
 import Image from "next/image";
-import React from "react";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Profiles } from "@/utils/model/profilesModel";
 
 const getData = async (slug) => {
-    try {
-        const data = await fetch(
-            `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/inspirations`
-        ).then((response) => {
-            if (!response.ok) {
-                console.error(
-                    `Error: ${response.status} - ${response.statusText}`
-                );
-                return [];
-            }
-        });
-        const filter = data.find((obj) => obj.slug === slug);
-        return filter;
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-    }
+    // try {
+    //     const data = await fetch(
+    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/inspirations`
+    //     ).then((response) => {
+    //         if (!response.ok) {
+    //             console.error(
+    //                 `Error: ${response.status} - ${response.statusText}`
+    //             );
+    //             return [];
+    //         }
+    //     });
+    //     const filter = data.find((obj) => obj.slug === slug);
+    //     return filter;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+    await mongoose.connect(connectionStr);
+    const data=await Profiles.find({ type: 'inspiration' ,slug:slug});
+    return data;
 };
 
 async function Inspiration({ params }) {
