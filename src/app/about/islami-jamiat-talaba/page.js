@@ -22,10 +22,9 @@ export const getData = async () => {
     //     console.error("Error fetching data:", error.message);
     // }
     await mongoose.connect(connectionStr);
-    const data = await Page.find();
     const slug = "islami-jamiat-talaba";
-    const filter = data.find((item) => item.slug === slug);
-    return filter || [];
+    const data = Page.findOne({slug:slug});
+    return data || [];
 };
 export default async function IJT() {
     let data = await getData();

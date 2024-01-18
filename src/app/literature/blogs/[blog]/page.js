@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
-import { Blogs } from "@/utils/model/blogsModel";
+import Blogs from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
     // try {
@@ -22,7 +22,7 @@ const getData = async (slug) => {
     // }
 
     await mongoose.connect(connectionStr);
-    const data = await Blogs.find({ type: "blog", slug: slug });
+    const data = await Blogs.findOne({ type: "blog", slug: slug });
     return data;
 };
 

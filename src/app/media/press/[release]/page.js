@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
+import Blogs from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
     // try {
@@ -21,12 +22,13 @@ const getData = async (slug) => {
     // }
 
     await mongoose.connect(connectionStr);
-    const data = await Blogs.find({ type: "release", slug: slug });
+    const data = await Blogs.findOne({ type: "release", slug: slug });
     return data;
 };
 
 export default async function Release({ params }) {
     let data = await getData(params.release);
+    console.log(data);
     const shorten = (content) => {
         const words = content.split(" ");
         const first50 = words.slice(0, 50).join(" ");
@@ -36,7 +38,7 @@ export default async function Release({ params }) {
         <div className="mb-20">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="min-h-[300px] bg-analytics-bg bg-cover flex items-center justify-center bg-center">
-                <h1 className="text-5xl text-white font-semibold font-inter">
+                <h1 className="text-5xl text-white font-semibold max-w-3xl text-center leading-tight font-inter">
                     {data.title}
                 </h1>
             </div>

@@ -21,7 +21,7 @@ export const getData = async () => {
     // }
 
     await mongoose.connect(connectionStr);
-    const data = await Page.find({ slug: slug });
+    const data = await Page.findOne({ slug: slug });
     return data;
 };
 

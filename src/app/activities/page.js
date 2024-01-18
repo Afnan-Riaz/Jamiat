@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
-import { Blogs } from "@/utils/model/blogsModel";
+import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
 const getData = async () => {

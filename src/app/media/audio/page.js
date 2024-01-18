@@ -26,6 +26,14 @@ const getData = async () => {
 
 async function Audio() {
     let data = await getData();
+    const parseDate = (d) => {
+        const date = d.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        });
+        return date;
+    };
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -52,7 +60,7 @@ async function Audio() {
                                     <p>
                                         Date:
                                         <span className="text-gray-600 text-base ml-2">
-                                            {audio.date}
+                                            {parseDate(audio.date)}
                                         </span>
                                     </p>
                                 </div>

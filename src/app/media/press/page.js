@@ -1,4 +1,4 @@
-import { Blogs } from "@/utils/model/blogsModel";
+import Blogs from "@/utils/model/blogsModel";
 import Image from "next/image";
 import Link from "next/link";
 import { connectionStr } from "@/utils/db";

@@ -21,7 +21,7 @@ const getData = async (slug) => {
     //     console.error("Error fetching data:", error.message);
     // }
     await mongoose.connect(connectionStr);
-    const data=await Profiles.find({ type: 'inspiration' ,slug:slug});
+    const data=await Profiles.findOne({ type: 'inspiration' ,slug:slug});
     return data;
 };
 

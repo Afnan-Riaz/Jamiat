@@ -26,4 +26,6 @@ const blogsModel=new mongoose.Schema({
         required: false
     }
 },{versionKey:false});
-export const Blogs = mongoose.models.blogs || mongoose.model("blogs",blogsModel,"blogs");
+
+const Blogs = mongoose.models.blogs || mongoose.model("blogs",blogsModel,"blogs");
+export default Blogs;

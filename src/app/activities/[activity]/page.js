@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
-import { Blogs } from "@/utils/model/blogsModel";
+import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
 const getData = async (slug) => {
@@ -22,7 +22,7 @@ const getData = async (slug) => {
     //     console.error("Error fetching data:", error.message);
     // }
     await mongoose.connect(connectionStr);
-    const data = await Blogs.find({ type: 'activity' ,slug:slug});
+    const data = await Blogs.findOne({ type: 'activity' ,slug:slug});
     const images = await Media.find({type:"activity", title: data._id });
     return { ...data.toObject(), images };
 };

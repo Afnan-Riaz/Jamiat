@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
-import { Blogs } from "@/utils/model/blogsModel";
+import BlogsModel from "@/utils/model/blogsModel";
 const getData = async () => {
     //     try {
     //         const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/blog`).then(
@@ -21,7 +21,7 @@ const getData = async () => {
     //     }
 
     await mongoose.connect(connectionStr);
-    const data = await Blogs.find({ type: "blog" });
+    const data = await BlogsModel.find({ type: "blog" });
     return data;
 };
 
