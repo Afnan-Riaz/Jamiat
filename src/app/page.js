@@ -22,7 +22,6 @@ export default function Home() {
         projects: useRef(null),
     };
     const scrollSection = (sectionRef) => {
-        console.log(sectionRef)
         if(sectionRef)
             sectionRef.current.scrollIntoView({ behavior: "smooth",block:"start"});
     };

@@ -5,22 +5,6 @@ import mongoose from "mongoose";
 import Blogs  from "@/utils/model/blogsModel";
 
 const getData = async () => {
-    // try {
-    //     const data = await fetch(
-    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/projects`
-    //     ).then((response) => {
-    //         if (!response.ok) {
-    //             console.error(
-    //                 `Error: ${response.status} - ${response.statusText}`
-    //             );
-    //             return [];
-    //         }
-    //     });
-    //     return data;
-    // } catch (error) {
-    //     console.error("Error fetching data:", error.message);
-    // }
-
     await mongoose.connect(connectionStr);
     const data = await Blogs.find({ type: "project" });
     return data;

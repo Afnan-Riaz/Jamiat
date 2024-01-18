@@ -4,22 +4,6 @@ import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
 import { Media } from "@/utils/model/mediaModel";
 const getData = async () => {
-    // try {
-    //     const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/media/books`).then(
-    //         (response) => {
-    //             if (!response.ok) {
-    //                 console.error(
-    //                     `Error: ${response.status} - ${response.statusText}`
-    //                 );
-    //                 return [];
-    //             }
-    //         }
-    //     );
-    //     return data;
-    // } catch (error) {
-    //     console.error("Error fetching data:", error.message);
-    // }
-
     await mongoose.connect(connectionStr);
     const data=await Media.find({ type: 'book'});
     return data;

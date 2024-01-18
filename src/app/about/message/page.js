@@ -3,21 +3,6 @@ import { Profiles } from "@/utils/model/profilesModel";
 import mongoose from "mongoose";
 import Image from "next/image";
 const getData = async () => {
-    // try {
-    //     const data = await fetch(
-    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/message`
-    //     ).then((response) => {
-    //         if (!response.ok) {
-    //             console.error(
-    //                 `Error: ${response.status} - ${response.statusText}`
-    //             );
-    //             return [];
-    //         }
-    //     });
-    //     return data;
-    // } catch (error) {
-    //     console.error("Error fetching data:", error.message);
-    // }
     await mongoose.connect(connectionStr);
     const data=await Profiles.find({ type: 'message' });
     return data;

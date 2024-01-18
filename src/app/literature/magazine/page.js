@@ -5,22 +5,6 @@ import mongoose from "mongoose";
 import { Media } from "@/utils/model/mediaModel";
 
 const getData = async () => {
-    //     try {
-    //         const magazines = await fetch(
-    //             `${process.env.NEXT_PUBLIC_DOMAIN}/api/media/magazines`
-    //         ).then((response) => {
-    //             if (!response.ok) {
-    //                 console.error(
-    //                     `Error: ${response.status} - ${response.statusText}`
-    //                 );
-    //                 return [];
-    //             }
-    //         });
-    //         return magazines;
-    //     } catch (error) {
-    //         console.error("Error fetching data:", error.message);
-    //     }
-
     await mongoose.connect(connectionStr);
     const data = await Media.find({ type: "magazine" }).sort({ date: -1 });
     return data;

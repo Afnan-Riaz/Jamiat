@@ -4,23 +4,6 @@ import mongoose from "mongoose";
 import Blogs from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
-    // try {
-    //     const data = await fetch(
-    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/releases`
-    //     ).then((response) => {
-    //         if (!response.ok) {
-    //             console.error(
-    //                 `Error: ${response.status} - ${response.statusText}`
-    //             );
-    //             return [];
-    //         }
-    //     });
-    //     const filter = data.find((obj) => obj.slug === slug);
-    //     return filter;
-    // } catch (error) {
-    //     console.error("Error fetching data:", error.message);
-    // }
-
     await mongoose.connect(connectionStr);
     const data = await Blogs.findOne({ type: "release", slug: slug });
     return data;
@@ -28,7 +11,6 @@ const getData = async (slug) => {
 
 export default async function Release({ params }) {
     let data = await getData(params.release);
-    console.log(data);
     const shorten = (content) => {
         const words = content.split(" ");
         const first50 = words.slice(0, 50).join(" ");
