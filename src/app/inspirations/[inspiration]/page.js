@@ -2,16 +2,20 @@ import Image from "next/image";
 import React from "react";
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.domain}/api/profiles/inspirations`).then(
-        (response) => response.json()
-    );
+    const data = await fetch(
+        `${process.env.domain}/api/profiles/inspirations`
+    ).then((response) => {
+        if (!response.ok) {
+            console.error(`Error: ${response.status} - ${response.statusText}`);
+            return [];
+        }
+    });
     const filter = data.find((obj) => obj.slug === slug);
     return filter;
 };
 
-
-async function Inspiration({params}) {
-    let data=await getData(params.inspiration)
+async function Inspiration({ params }) {
+    let data = await getData(params.inspiration);
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -25,7 +29,8 @@ async function Inspiration({params}) {
                     <Image
                         src={data.image}
                         width={350}
-                        height={200} alt="photo"
+                        height={200}
+                        alt="photo"
                     />
                     <div className="flex gap-3">
                         <h3 className="text-xl font-semibold">Name: </h3>
@@ -35,10 +40,12 @@ async function Inspiration({params}) {
                         <h3 className="text-xl font-semibold">Born: </h3>
                         <p className="text-lg">{data.dob}</p>
                     </div>
-                    {data.dod&&(<div className="flex gap-3">
-                        <h3 className="text-xl font-semibold">Died: </h3>
-                        <p className="text-lg">{data.dod}</p>
-                    </div>)}
+                    {data.dod && (
+                        <div className="flex gap-3">
+                            <h3 className="text-xl font-semibold">Died: </h3>
+                            <p className="text-lg">{data.dod}</p>
+                        </div>
+                    )}
                     <div className="flex gap-3">
                         <h3 className="text-xl font-semibold">Designation: </h3>
                         <p className="text-lg">{data.designation}</p>

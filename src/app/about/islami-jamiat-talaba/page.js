@@ -1,9 +1,16 @@
 import Image from "next/image";
 export const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then((response) =>
-        response.json()
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then(
+        (response) => {
+            if (!response.ok) {
+                console.error(
+                    `Error: ${response.status} - ${response.statusText}`
+                );
+                return [];
+            }
+        }
     );
-    const slug="islami-jamiat-talaba";
+    const slug = "islami-jamiat-talaba";
     const filter = data.find((item) => item.slug === slug);
     return filter || null;
 };

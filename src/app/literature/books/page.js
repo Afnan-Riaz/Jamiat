@@ -3,7 +3,14 @@ import Link from "next/link";
 
 const getData = async () => {
     const data = await fetch(`${process.env.domain}/api/media/books`).then(
-        (response) => response.json()
+        (response) => {
+            if (!response.ok) {
+                console.error(
+                    `Error: ${response.status} - ${response.statusText}`
+                );
+                return [];
+            }
+        }
     );
     return data;
 };
