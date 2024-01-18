@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import Blogs from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.domain}/api/blogs/blog`).then(
-        (response) => response.json()
-    );
-    const filter = data.find((obj) => obj.slug === slug);
-    return filter;
+    await mongoose.connect(connectionStr);
+    const data = await Blogs.findOne({ type: "blog", slug: slug });
+    return data;
 };
 
 export default async function Blog({ params }) {

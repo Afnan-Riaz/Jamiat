@@ -1,20 +1,17 @@
+import { Page } from "@/utils/model/pageModel";
 import Audio from "./page";
 
 export const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/`).then((response) =>
-        response.json()
-    );
-    const slug="audio";
-    const filter = data.find((item) => item.slug === slug);
-    return filter || null;
+    await mongoose.connect(connectionStr);
+    const data = await Page.findOne({ slug: slug });
+    return data;
 };
 
-
-export async function generateMetadata({params}){
-    const metadata=await getData();
-    return{
-        title:metadata.meta_title,
-        description:metadata.meta_description,
-    }
+export async function generateMetadata({ params }) {
+    const metadata = await getData();
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+    };
 }
 export default Audio;

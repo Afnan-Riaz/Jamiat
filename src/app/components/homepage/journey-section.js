@@ -6,7 +6,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/blogs/journey`).then(
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/journey`).then(
         (response) => response.json()
     );
     return data;

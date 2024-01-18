@@ -1,14 +1,15 @@
-
+import { connectionStr } from "@/utils/db";
+import { Media } from "@/utils/model/mediaModel";
+import mongoose from "mongoose";
 
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/media/videos`).then(
-        (response) => response.json()
-    );
+    await mongoose.connect(connectionStr);
+    const data=await Media.find({type:"video"});
     return data;
 };
 
 async function Videos() {
-    let data=await getData();
+    let data = await getData();
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -19,20 +20,20 @@ async function Videos() {
             </div>
             <div className="container mobile:px-5 py-24  mx-auto">
                 <div className="flex flex-wrap mobile:-m-4">
-                    {data.map((item)=>(
-                    <div key={item._id} className="lg:w-1/3 sm:w-1/2 p-4">
-                        <div className="border-2 rounded-2xl overflow-hidden">
-                            <iframe
-                                width="560"
-                                height="270"
-                                src={item.link}
-                                title="YouTube video player"
-                                allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                className="w-full"
-                            ></iframe>
+                    {data.map((item) => (
+                        <div key={item._id} className="lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="border-2 rounded-2xl overflow-hidden">
+                                <iframe
+                                    width="560"
+                                    height="270"
+                                    src={item.link}
+                                    title="YouTube video player"
+                                    allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    className="w-full"
+                                ></iframe>
+                            </div>
                         </div>
-                    </div>
-))}
+                    ))}
                 </div>
             </div>
         </div>

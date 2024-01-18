@@ -1,5 +1,5 @@
 import { connectionStr } from "@/utils/db";
-import { Blogs } from "@/utils/model/blogsModel";
+import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";

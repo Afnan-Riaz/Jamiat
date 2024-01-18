@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Media } from "@/utils/model/mediaModel";
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/media/books`).then(
-        (response) => response.json()
-    );
+    await mongoose.connect(connectionStr);
+    const data=await Media.find({ type: 'book'});
     return data;
 };
 

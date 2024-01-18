@@ -1,11 +1,13 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Page } from "@/utils/model/pageModel";
+
 export const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}api/`).then((response) =>
-        response.json()
-    );
-    const slug="islami-jamiat-talaba";
-    const filter = data.find((item) => item.slug === slug);
-    return filter || null;
+    await mongoose.connect(connectionStr);
+    const slug = "islami-jamiat-talaba";
+    const data = Page.findOne({slug:slug});
+    return data || [];
 };
 export default async function IJT() {
     let data = await getData();
@@ -24,7 +26,7 @@ export default async function IJT() {
                             {/* <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">
                                 {section.heading}
                             </h4>
-                            <p>{section.content}</p> */}
+                    <p>{section.content}</p> */}
                             {data.content}
                         </div>
                     }

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import Blogs  from "@/utils/model/blogsModel";
+
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/blogs/projects`).then(
-        (response) => response.json()
-    );
+    await mongoose.connect(connectionStr);
+    const data = await Blogs.find({ type: "project" });
     return data;
 };
 
@@ -20,7 +23,10 @@ export default async function Projects() {
             <div className="container pt-12 pb-24 mx-auto">
                 <div className="flex flex-wrap justify-center gap-8">
                     {projects.map((project) => (
-                        <div key={project._id} className="relative mb-6 hover:brightness-90 transition-all w-fit h-fit md:rounded-lg rounded-3xl overflow-hidden">
+                        <div
+                            key={project._id}
+                            className="relative mb-6 hover:brightness-90 transition-all w-fit h-fit md:rounded-lg rounded-3xl overflow-hidden"
+                        >
                             <Image
                                 width={1000}
                                 height={500}

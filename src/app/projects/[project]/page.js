@@ -1,15 +1,32 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import Blogs from "@/utils/model/blogsModel";
 
 const getData = async (slug) => {
-    const data = await fetch(`${process.env.domain}/api/blogs/projects`).then(
-        (response) => response.json()
-    );
-    const filter = data.find((obj) => obj.slug === slug);
-    return filter;
+    // try {
+    //     const data = await fetch(
+    //         `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/projects`
+    //     ).then((response) => {
+    //         if (!response.ok) {
+    //             console.error(
+    //                 `Error: ${response.status} - ${response.statusText}`
+    //             );
+    //             return [];
+    //         }
+    //     });
+    //     const filter = data.find((obj) => obj.slug === slug);
+    //     return filter;
+    // } catch (error) {
+    //     console.error("Error fetching data:", error.message);
+    // }
+
+    await mongoose.connect(connectionStr);
+    const data = await Blogs.findOne({ type: "project", slug: slug });
+    return data;
 };
 
-
-async function Project({params}) {
+async function Project({ params }) {
     let data = await getData(params.project);
     return (
         <div>
@@ -25,7 +42,8 @@ async function Project({params}) {
                         className="h-fit"
                         src={data.image}
                         width={400}
-                        height={300} alt="photo"
+                        height={300}
+                        alt="photo"
                     />
                     <div className="my-6">
                         {/* <h2 className="text-2xl font-semibold text-black">

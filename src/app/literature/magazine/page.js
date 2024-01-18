@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import { Media } from "@/utils/model/mediaModel";
 
 const getData = async () => {
-    const magazines = await fetch(`${process.env.domain}/api/media/magazines`).then(
-        (response) => response.json()
-    );
-    return magazines;
+    await mongoose.connect(connectionStr);
+    const data = await Media.find({ type: "magazine" }).sort({ date: -1 });
+    return data;
 };
 
 async function Magazine() {
@@ -25,7 +27,10 @@ async function Magazine() {
                     </h2>
                     <ul className="space-y-3 list-disc text-lg">
                         {magazines.map((magazine) => (
-                            <li key={magazine._id} className="flex justify-between gap-x-20">
+                            <li
+                                key={magazine._id}
+                                className="flex justify-between gap-x-20"
+                            >
                                 {magazine.title}
                                 <Link
                                     href={magazine.link}
@@ -38,21 +43,23 @@ async function Magazine() {
                     </ul>
                 </div>
                 <div>
-                    <Link className="block mb-10" href={magazines[0].link}><Image
-                        className="max-w-[350px] h-fit"
-                        src={magazines[0].description}
-                        width={350}
-                        height={350}
-                        alt="photo"
-                    />
+                    <Link className="block mb-10" href={magazines[0].link}>
+                        <Image
+                            className="max-w-[350px] h-fit"
+                            src={magazines[0].description}
+                            width={350}
+                            height={350}
+                            alt="photo"
+                        />
                     </Link>
-                    <Link href={magazines[1].link}><Image
-                        className="max-w-[350px] h-fit"
-                        src={magazines[1].description}
-                        width={350}
-                        height={350}
-                        alt="photo"
-                    />
+                    <Link href={magazines[1].link}>
+                        <Image
+                            className="max-w-[350px] h-fit"
+                            src={magazines[1].description}
+                            width={350}
+                            height={350}
+                            alt="photo"
+                        />
                     </Link>
                 </div>
             </div>

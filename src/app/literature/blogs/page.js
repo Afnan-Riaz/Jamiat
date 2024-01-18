@@ -1,20 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { connectionStr } from "@/utils/db";
+import mongoose from "mongoose";
+import BlogsModel from "@/utils/model/blogsModel";
 const getData = async () => {
-    const data = await fetch(`${process.env.domain}/api/blogs/blog`).then(
-        (response) => response.json()
-    );
+    await mongoose.connect(connectionStr);
+    const data = await BlogsModel.find({ type: "blog" });
     return data;
 };
 
 export default async function Blogs() {
     let data = await getData();
-    const shorten=(content)=>{
-        const words = content.split(' ');
-        const first50 = words.slice(0, 50).join(' ');
+    const shorten = (content) => {
+        const words = content.split(" ");
+        const first50 = words.slice(0, 50).join(" ");
         return first50;
-    }
+    };
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>

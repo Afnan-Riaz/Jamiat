@@ -1,14 +1,15 @@
 import Image from "next/image";
+import { connectionStr } from "@/utils/db";
+import { Profiles } from "@/utils/model/profilesModel";
+import mongoose from "mongoose";
 
-
-const getData=async ()=>{
-    const data = await fetch(`${process.env.domain}/api/profiles/team`).then((response) =>
-        response.json()
-    );
+const getData = async () => {
+    await mongoose.connect(connectionStr);
+    const data=await Profiles.find({ type: 'team' });
     return data;
-}
+};
 async function Team() {
-    let data=await getData();
+    let data = await getData();
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -19,28 +20,28 @@ async function Team() {
             </div>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
-                    {data.map((member)=>(
-                    <div key={member._id} className="p-4 lg:w-1/4 md:w-1/2">
-                        <div className="h-full flex flex-col items-center text-center">
-                            <Image
-                                alt="team"
-                                className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                                width={300}
-                                height={300}
-                                src={member.image}
-                            />
-                            <div className="w-full">
-                                <h2 className="font-medium text-lg text-gray-900">
-                                    {member.name}
-                                </h2>
-                                <h3 className="text-gray-500 mb-3">{member.designation}</h3>
-                                <p className="mb-4">
-                                    {member.content}
-                                </p>
+                    {data.map((member) => (
+                        <div key={member._id} className="p-4 lg:w-1/4 md:w-1/2">
+                            <div className="h-full flex flex-col items-center text-center">
+                                <Image
+                                    alt="team"
+                                    className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                                    width={300}
+                                    height={300}
+                                    src={member.image}
+                                />
+                                <div className="w-full">
+                                    <h2 className="font-medium text-lg text-gray-900">
+                                        {member.name}
+                                    </h2>
+                                    <h3 className="text-gray-500 mb-3">
+                                        {member.designation}
+                                    </h3>
+                                    <p className="mb-4">{member.content}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-))}
+                    ))}
                 </div>
             </div>
         </div>
