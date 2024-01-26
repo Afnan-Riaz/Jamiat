@@ -22,12 +22,7 @@ export default async function IJT() {
             <div className="flex lg:flex-row flex-col mt-14 lg:gap-20 lg:px-20 px-5">
                 <main className="lg:w-2/3 w-full">
                     {
-                        <div key={data._id}>
-                            {/* <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">
-                                {section.heading}
-                            </h4>
-                    <p>{section.content}</p> */}
-                            {data.content}
+                        <div className="revert-tailwind" key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
                         </div>
                     }
                 </main>

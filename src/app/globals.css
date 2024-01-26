@@ -45,3 +45,10 @@ audio::-webkit-media-controls-panel {
 .backface-hidden {
     backface-visibility: hidden;
 }
+
+.revert-tailwind{
+    all: initial;
+}
+.revert-tailwind > * {
+    all: revert;
+}
