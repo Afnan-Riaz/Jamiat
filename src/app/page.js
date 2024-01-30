@@ -4,7 +4,7 @@ import Inspiration from "./components/homepage/inspiration-section";
 import Journey from "./components/homepage/journey-section";
 import Landing from "./components/homepage/landing-section";
 import Footprint from "./components/homepage/footprint-section";
-import Message from "./components/homepage/message-section";
+import President from "./components/homepage/president-section";
 import Projects from "./components/homepage/projects-section";
 import Member from "./components/homepage/member-section";
 import Analytics from "./components/homepage/analytics-section";
@@ -17,7 +17,7 @@ export default function Home() {
         about: useRef(null),
         journey: useRef(null),
         inspiration: useRef(null),
-        message: useRef(null),
+        president: useRef(null),
         footprint: useRef(null),
         projects: useRef(null),
     };
@@ -58,7 +58,7 @@ export default function Home() {
                     id="section4"
                 />
                 <input
-                    onClick={()=>{scrollSection(sectionRefs.message)}}
+                    onClick={()=>{scrollSection(sectionRefs.president)}}
                     className="appearance-none h-[15px] w-[15px] cursor-pointer block bg-none border-2 border-gray-400 rounded-full checked:border-sky-400 checked:bg-sky-400"
                     type="radio"
                     name="vertical-slider"
@@ -83,7 +83,7 @@ export default function Home() {
             <div ref={sectionRefs.about}><About /></div>
             <div ref={sectionRefs.journey}><Journey /></div>
             <div ref={sectionRefs.inspiration}><Inspiration /></div>
-            <div ref={sectionRefs.message}><Message /></div>
+            <div ref={sectionRefs.president}><President /></div>
             <div ref={sectionRefs.footprint}><Footprint /></div>
             <div ref={sectionRefs.projects}><Projects /></div>
             <Member />

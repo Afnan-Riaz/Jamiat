@@ -75,7 +75,7 @@ export default function Inspiration() {
                     <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
                         {shorten(inspiration.content)}
                     </p>
-                    <Link
+                    {/* <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                         href={`/inspirations/${inspiration.slug}`}
                     >
@@ -87,7 +87,7 @@ export default function Inspiration() {
                             height={12}
                             width={25}
                         />
-                    </Link>
+                    </Link> */}
                 </SwiperSlide>))}
             </Swiper>}
             {swiperLoaded&&

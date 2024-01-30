@@ -28,7 +28,7 @@ export default function About() {
     return (
         <div id="about-section" className="w-full relative bg-about-bg bg-cover overflow-x-hidden bg-no-repeat z-0">
             <div className="w-fit grid laptop12:grid-cols-[350px_350px_435px] justify-items-center md:grid-cols-2 grid-cols-1 text-white laptop12:grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-8 max-md:pb-20 md:pt-20 pb-5">
-                <Link href="/media/press">
+                <Link href="#">
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card1-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">
                             <h3 className="text-lg font-medium leading-3">
@@ -39,7 +39,7 @@ export default function About() {
                                 Party's official narative
                             </p>
                         </div>
-                        <span className="text-sm">
+                        {/* <span className="text-sm">
                             Read more
                             <Image
                                 alt="photo"
@@ -48,7 +48,7 @@ export default function About() {
                                 width={30}
                                 height={30}
                             />
-                        </span>
+                        </span> */}
                     </div>
                 </Link>
                 <Link href="/about/team">
@@ -59,8 +59,7 @@ export default function About() {
                             </h3>
                             <div className="h-px w-full bg-white"></div>
                             <p className="text-sm font-light">
-                                Vivamus suscipit tortor eget felis porttitor
-                                volutpat. Mauris blandit aliquet elit, egetr a.
+                            Empowering through faith, Islami Jamiat Talaba fosters visionary leadership, nurturing minds with Islamic principles for excellence.
                             </p>
                         </div>
                         <span className="text-sm">
@@ -148,9 +147,7 @@ export default function About() {
                             </h3>
                             <div className="h-px w-full bg-white"></div>
                             <p className="text-sm font-light">
-                                Vivamus suscipit tortor eget felis porttitor
-                                volutpat. Mauris blandit aliquet elit, eget
-                                tincidunt nibh pulvinar a.Vivamus
+                            An Islamic Organization with a vision to seek the pleasure of Allah (SWT) by ordering human life in accordance with the principles of Allah (SWT) and His Messenger Muhammad (PBUH)
                             </p>
                         </div>
                         <span className="text-sm">
@@ -165,7 +162,7 @@ export default function About() {
                         </span>
                     </div>
                 </Link>
-                <Link href={"/literature/blogs"}>
+                <Link href={"#"}>
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card3-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">
                             <h3 className="text-lg font-medium leading-3">
@@ -173,10 +170,10 @@ export default function About() {
                             </h3>
                             <div className="h-px w-full bg-white"></div>
                             <p className="text-sm font-light">
-                                Vivamus suscipit tortor eget felis porttitor
+                                Our blog posts
                             </p>
                         </div>
-                        <span className="text-sm">
+                        {/* <span className="text-sm">
                             View all blogs
                             <Image
                                 alt="photo"
@@ -185,7 +182,7 @@ export default function About() {
                                 width={30}
                                 height={30}
                             />
-                        </span>
+                        </span> */}
                     </div>
                 </Link>
             </div>

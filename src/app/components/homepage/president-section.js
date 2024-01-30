@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Message() {
+export default function President() {
     return (
         <div id="message-section" className="w-full relative bg-message-bg bg-cover bg-right text-white">
             <div className="flex flex-col px-1 mobile:px-[10vw] py-[6vw]">
                 <p className="text-2xl font-bold font-inter capitalize">Our</p>
-                <h2 className="font-extrabold text-[42px] max-sm:h-[90px] max-sm:leading-[45px] text-sky-400 font-inter">
-                    President's Message
+                <h2 className="font-extrabold text-[45px] max-sm:h-[90px] max-sm:leading-[45px] text-sky-400 font-inter">
+                    President
                 </h2>
                 <div className="w-full sm:w-[580px] h-[450px] max-md:mb-20 border-gray-400 overflow-hidden border-2 mt-[3vw] rounded-2xl relative bg-gray-950 bg-opacity-75 shadow">
                     <div className="rounded-white-scrollbar h-[400px] p-[3vw] text-white font-light text-sm overflow-y-scroll">
@@ -46,7 +46,7 @@ export default function Message() {
                             نور توحید کا اتمام ابھی باقی ہے۔
                         </p>
                     </div>
-                    <Link
+                    {/* <Link
                         className="text-sky-400 w-fit font-medium absolute hover:text-sky-500 transition-colors group bottom-4 ml-10 underline"
                         href="/about/message"
                     >
@@ -58,7 +58,7 @@ export default function Message() {
                             height={12}
                             width={25}
                         />
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
             <div className="flex absolute text-white bottom-8 left-8 flex-col z-10">

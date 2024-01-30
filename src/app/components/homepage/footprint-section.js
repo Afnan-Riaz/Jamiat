@@ -8,7 +8,7 @@ export default function Footprint() {
     const [activities, setActivities] = useState([]);
     const [text, setText] = useState(null);
     const handleChange = (t) => {
-        setText(t);
+        // setText(t);
     };
     useEffect(() => {
         const fetchData = async () => {

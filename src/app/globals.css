@@ -48,6 +48,7 @@ audio::-webkit-media-controls-panel {
 
 .revert-tailwind{
     all: initial;
+    font-family:'Poppins', 'sans-serif';
 }
 .revert-tailwind > * {
     all: revert;
