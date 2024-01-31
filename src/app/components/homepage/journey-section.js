@@ -52,7 +52,7 @@ export default function Journey() {
                     prevEl: ".prev",
                     nextEl: ".next",
                 }}
-                initialSlide={0}
+                initialSlide={6}
                 loop={true}
                 pagination={pagination}
                 modules={[Pagination, Navigation]}
@@ -64,8 +64,8 @@ export default function Journey() {
                             Our Journey
                         </h2>
                         <div className="w-full h-[450px] border-sky-500 border-2 rounded-2xl  bg-white bg-opacity-10 shadow">
-                            <div className="rounded-white-scrollbar h-[430px] p-[3vw] text-white overflow-y-scroll">
-                                <h4 className="text-3xl font-inter font-semibold mb-3">
+                            <div className="rounded-white-scrollbar h-[430px] pt-[3vw] text-white overflow-y-scroll">
+                                <h4 className="text-3xl ml-8 font-inter text-center md:text-left font-semibold mb-3">
                                     {slide.title}'s
                                 </h4>
                                 <p className="revert-tailwind" style={{color:"white",fontSize:"small"}} key={slide._id} dangerouslySetInnerHTML={{ __html:slide.content}}></p>

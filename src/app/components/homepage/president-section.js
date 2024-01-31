@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function President() {
+const getData = async () => {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/president`).then(
+        (response) => response.json()
+    );
+    return data;
+};
+export default async function President() {
+    let data=await getData()
     return (
         <div id="message-section" className="w-full relative bg-message-bg bg-cover bg-right text-white">
             <div className="flex flex-col px-1 mobile:px-[10vw] py-[6vw]">
@@ -12,38 +19,13 @@ export default function President() {
                 <div className="w-full sm:w-[580px] h-[450px] max-md:mb-20 border-gray-400 overflow-hidden border-2 mt-[3vw] rounded-2xl relative bg-gray-950 bg-opacity-75 shadow">
                     <div className="rounded-white-scrollbar h-[400px] p-[3vw] text-white font-light text-sm overflow-y-scroll">
                         <h4 className="text-3xl text-sky-400 font-inter font-semibold mb-3">
-                            Shakeel Ahmad
+                            {data.name}
                         </h4>
                         <h5 className="text-lg font-semibold">
-                            CEO & Founder Islami Jamiat-e-Talba
+                            {data.designation}
                         </h5>
                         <div className="h-px w-full bg-white my-5"></div>
-                        <p>
-                            Islami Jamiat e Talaba, True to its name, is an
-                            Islamic society of Students. With a legacy of 75
-                            golden years, and counting, Jamiat has groomed and
-                            nurtured countless Leaders, Thinkers , Artists,
-                            Scholars and Social workers who have played their
-                            part in the Service of Islam and development of
-                            Pakistan. In an era of materialism and selfish
-                            indulgence, Jamiat calls its workers to be selfless
-                            servants to the cause of Islam. In times where Islam
-                            is being misrepresented by Muslims and others alike,
-                            we call Muslims to inculcate Islamic values in their
-                            own lives, become the beacons that lead others by
-                            lighting the way themselves, and lead the Ummah
-                            towards the teachings of Quran And Sunnah. In times
-                            where Ummah has fallen in an inferiority complex, we
-                            remind them that:
-                            <br />
-                            پرے ہے چرخ نیلی فام سے منزل مسلماں کی
-                            <br />
-                            ستارے جس کی گرد راہ ہیں، وہ کارواں تو ہے <br />
-                            The journey has been long and eventful, but we must
-                            be reminded in the words of Iqbal ,<br />
-                            وقت فرصت ہے کہاں، کام ابھی باقی ہے
-                            <br />
-                            نور توحید کا اتمام ابھی باقی ہے۔
+                        <p className="revert-tailwind" style={{color:"white",fontSize:"small"}} key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
                         </p>
                     </div>
                     {/* <Link

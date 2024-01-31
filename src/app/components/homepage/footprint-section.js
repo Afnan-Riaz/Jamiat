@@ -42,7 +42,7 @@ export default function Footprint() {
                     {text && (
                         <div>
                             <p className="max-w-[480px] text-3xl font-extrabold font-inter">
-                                Jamiat led 1400 units around {text.title}
+                                Jamiat lead {text.count.edu+text.count.res} units around {text.title}
                             </p>
                             <div className="max-w-[510px] h-28 p-2 border-2 border-black rounded-lg flex justify-evenly items-center my-5">
                                 <div className="flex flex-col items-center">

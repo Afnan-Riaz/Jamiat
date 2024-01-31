@@ -51,7 +51,7 @@ export default function Projects() {
                 className="mySwiper h-full"
                 spaceBetween={-1}
             >
-                {projects.map((project)=>(<SwiperSlide className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
+                {projects.map((project)=>(<SwiperSlide key={project._id} className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
                     <h4 className="text-xl text-center font-semibold">
                         Release Dr.Aafia
                     </h4>

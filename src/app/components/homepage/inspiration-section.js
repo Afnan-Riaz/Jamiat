@@ -23,11 +23,11 @@ export default function Inspiration() {
             setPhoto(index);
         }
     }
-    const shorten=(content)=>{
-        const words = content.split(' ');
-        const first20 = words.slice(0, 20).join(' ');
-        return first20;
-    }
+    // const shorten=(content)=>{
+    //     const words = content.split(' ');
+    //     const first20 = words.slice(0, 20).join(' ');
+    //     return first20;
+    // }
     useEffect(() => {
         async function fetchData() {
             const data = await getData();
@@ -73,7 +73,7 @@ export default function Inspiration() {
                     </p>
                     <p className="text-sm lg:text-base font-normal">{inspiration.dob} - {inspiration.dod}</p>
                     <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
-                        {shorten(inspiration.content)}
+                        {inspiration.content}
                     </p>
                     {/* <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
