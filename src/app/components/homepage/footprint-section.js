@@ -17,9 +17,11 @@ export default function Footprint() {
             );
             let data = await response.json();
             setAnalyticsData(data);
-            response=await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`);
-            data=await response.json();
-            setActivities(data.slice(0,3));
+            response = await fetch(
+                `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/activities`
+            );
+            data = await response.json();
+            setActivities(data.slice(0, 3));
         };
         fetchData();
     }, []);
@@ -42,7 +44,8 @@ export default function Footprint() {
                     {text && (
                         <div>
                             <p className="max-w-[480px] text-3xl font-extrabold font-inter">
-                                Jamiat lead {text.count.edu+text.count.res} units around {text.title}
+                                Jamiat lead {text.count.edu + text.count.res}{" "}
+                                units around {text.title}
                             </p>
                             <div className="max-w-[510px] h-28 p-2 border-2 border-black rounded-lg flex justify-evenly items-center my-5">
                                 <div className="flex flex-col items-center">
@@ -79,18 +82,21 @@ export default function Footprint() {
                     Activities
                 </h4>
                 <div className="flex max-sm:justify-center gap-4 mb-4 flex-wrap">
-                    {activities.map((activity)=>(<Link
-                    key={activity._id}
-                        className="hover:brightness-90 transition-[filter]"
-                        href={`/activities/${activity.slug}`}
-                    >
-                        <Image
-                            src={activity.image}
-                            height={160}
-                            width={190}
-                            alt="photo"
-                        />
-                    </Link>))}
+                    {activities.map((activity) => (
+                        <Link
+                            key={activity._id}
+                            className="hover:brightness-90 transition-[filter]"
+                            href={`/activities/${activity.slug}`}
+                        >
+                            <Image
+                                src={activity.image}
+                                height={160}
+                                width={190}
+                                className="w-52 h-52 object-cover rounded-xl"
+                                alt="photo"
+                            />
+                        </Link>
+                    ))}
                 </div>
                 <Link
                     className="text-blue-800 hover:text-blue-600 block md:inline text-center text-lg font-medium underline"

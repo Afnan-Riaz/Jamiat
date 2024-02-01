@@ -31,7 +31,7 @@ async function Activity({ params }) {
                                     width={500}
                                     height={500}
                                     alt="activity"
-                                    className="relative w-full object-cover object-center"
+                                    className="relative w-full h-96 object-cover object-center"
                                     src={activity.link}
                                 />
                                 <div className="absolute inset-0 w-full bg-neutral-900 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80"></div>

@@ -22,6 +22,14 @@ const getData = async () => {
 
 export default async function Activities() {
     let activities = await getData();
+    const parseDate = (d) => {
+        const date = d.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        });
+        return date;
+    };
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -33,19 +41,22 @@ export default async function Activities() {
             <div className="container px-5 pt-12 pb-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
                     {activities.map((activity) => (
-                        <div key={activity._id} className="p-4 md:w-1/4">
-                            <div className="h-full border-2 border-gray-200 border-opacity-60 md:rounded-lg rounded-3xl overflow-hidden">
+                        <div key={activity._id} className="p-4 md:w-1/3">
+                            <div className="h-full border-2 border-gray-200 bg-neutral-100 border-opacity-60 md:rounded-xl rounded-3xl overflow-hidden">
                                 <Image
                                     width={500}
                                     height={500}
-                                    className=" w-full object-cover object-center"
+                                    className="w-full h-72 object-cover object-center"
                                     src={activity.image}
                                     alt="activity"
                                 />
                                 <div className="p-6">
-                                    <h1 className="text-lg font-medium text-gray-900 mb-3">
+                                    <div className="flex justify-between">
+                                    <h1 className="text-xl font-medium text-gray-950 mb-3">
                                         {activity.title}
                                     </h1>
+                                    <span>{parseDate(activity.date)}</span>
+                                    </div>
                                     <p className="leading-relaxed mb-3">
                                         {activity.content}
                                     </p>

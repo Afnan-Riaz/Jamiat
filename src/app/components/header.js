@@ -93,7 +93,7 @@ export default function Header() {
                         <div className="navItem flex flex-col">
                             <Link
                                 className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
-                                href="/about"
+                                href="/"
                             >
                                 About Us
                                 <Image
@@ -124,7 +124,7 @@ export default function Header() {
                                             Our Team
                                         </Link>
                                     </li>
-                                    <li className="flex gap-1 leading-8 items-center">
+                                    {/* <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-white"></div>
                                         <Link
                                             className="hover:text-gray-200"
@@ -132,7 +132,7 @@ export default function Header() {
                                         >
                                             Our Message
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ export default function Header() {
                         <div className="navItem flex flex-col">
                             <Link
                                 className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
-                                href="/literature"
+                                href="/"
                             >
                                 Literature
                                 <Image
@@ -209,7 +209,7 @@ export default function Header() {
                         <div className="navItem flex flex-col">
                             <Link
                                 className="flex gap-2 items-center pr-[1.5px] hover:text-gray-200"
-                                href="/media"
+                                href="/"
                             >
                                 Media & News
                                 <Image
