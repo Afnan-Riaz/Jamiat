@@ -3,6 +3,8 @@ import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
 import { Page } from "@/utils/model/pageModel";
 
+export const revalidate=10;
+
 export const getData = async () => {
     await mongoose.connect(connectionStr);
     const slug = "islami-jamiat-talaba";

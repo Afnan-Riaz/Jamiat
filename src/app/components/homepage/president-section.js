@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import mongoose from "mongoose";
+import { connectionStr } from "@/utils/db";
+import { Profiles } from "@/utils/model/profilesModel";
 const getData = async () => {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/president`).then(
-        (response) => response.json()
-    );
-    return data;
+    await mongoose.connect(connectionStr);
+    const data=await Profiles.findOne({ type: 'president' });
+    return data
 };
 export default async function President() {
     let data=await getData()

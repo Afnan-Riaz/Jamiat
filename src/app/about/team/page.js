@@ -8,6 +8,7 @@ const getData = async () => {
     const data=await Profiles.find({ type: 'team' });
     return data;
 };
+
 async function Team() {
     let data = await getData();
     return (
