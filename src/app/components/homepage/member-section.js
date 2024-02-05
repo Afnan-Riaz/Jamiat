@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { useState } from "react"
 
-
-
 export default function Member() {
     const [amount,setAmount]=useState();
     const [custom,setCustom]=useState(false)

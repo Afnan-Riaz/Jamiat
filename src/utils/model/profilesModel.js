@@ -8,7 +8,7 @@ const profilesModel = new mongoose.Schema(
         canonical: { type: String, required: false },
         slug: { type: String, required: false },
         name: String,
-        image: mongoose.Schema.Types.Mixed,
+        image: {type: mongoose.Schema.Types.Mixed,required:false},
         designation: String,
         content: String,
         dob: { type: String, required: false },
@@ -17,5 +17,5 @@ const profilesModel = new mongoose.Schema(
     { versionKey: false }
 );
 export const Profiles =
-    mongoose.models.profiles ||
+    mongoose.models?.profiles ||
     mongoose.model("profiles", profilesModel, "profiles");

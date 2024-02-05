@@ -1,15 +1,24 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
-import mongoose from "mongoose";
-import { connectionStr } from "@/utils/db";
-import { Profiles } from "@/utils/model/profilesModel";
+import { useEffect, useState } from "react";
+
 const getData = async () => {
-    await mongoose.connect(connectionStr);
-    const data=await Profiles.findOne({ type: 'president' });
-    return data
+    const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/profiles/president`).then(
+        (response) => response.json()
+    );
+    return data;
 };
-export default async function President() {
-    let data=await getData()
+
+export default function President() {
+    const [data,setData]=useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getData();
+            setData(data);
+        }
+        fetchData();
+    }, []);
     return (
         <div id="message-section" className="w-full relative bg-message-bg bg-cover bg-right text-white">
             <div className="flex flex-col px-1 mobile:px-[10vw] py-[6vw]">
