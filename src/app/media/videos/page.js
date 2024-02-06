@@ -2,6 +2,8 @@ import { connectionStr } from "@/utils/db";
 import { Media } from "@/utils/model/mediaModel";
 import mongoose from "mongoose";
 
+export const revalidate=0
+
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data=await Media.find({type:"video"});

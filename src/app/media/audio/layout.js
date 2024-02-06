@@ -1,6 +1,8 @@
 import { Page } from "@/utils/model/pageModel";
 import Audio from "./page";
 
+export const revalidate=0
+
 export const getData = async () => {
     await mongoose.connect(connectionStr);
     const data = await Page.findOne({ slug: slug });

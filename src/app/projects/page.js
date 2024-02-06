@@ -4,6 +4,8 @@ import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
 import Blogs  from "@/utils/model/blogsModel";
 
+export const revalidate=0
+
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data = await Blogs.find({ type: "project" });

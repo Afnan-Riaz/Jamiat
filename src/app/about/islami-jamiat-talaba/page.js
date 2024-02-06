@@ -3,7 +3,7 @@ import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
 import { Page } from "@/utils/model/pageModel";
 
-export const revalidate=10;
+export const revalidate=0
 
 export const getData = async () => {
     await mongoose.connect(connectionStr);

@@ -1,6 +1,7 @@
 import IJT from "./page";
 import { getData } from "./page";
 
+export const revalidate=0
 
 export async function generateMetadata({params}){
     const metadata=await getData();

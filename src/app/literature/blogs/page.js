@@ -3,6 +3,9 @@ import Link from "next/link";
 import { connectionStr } from "@/utils/db";
 import mongoose from "mongoose";
 import BlogsModel from "@/utils/model/blogsModel";
+
+export const revalidate=0
+
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data = await BlogsModel.find({ type: "blog" });

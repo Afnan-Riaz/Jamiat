@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
+export const revalidate=0
+
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data = await Blogs.find({ type: "activity" });

@@ -2,6 +2,9 @@ import { connectionStr } from "@/utils/db";
 import { Profiles } from "@/utils/model/profilesModel";
 import mongoose from "mongoose";
 import Image from "next/image";
+
+export const revalidate=0
+
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data=await Profiles.find({ type: 'message' });
