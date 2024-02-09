@@ -39,7 +39,7 @@ export default function About() {
                                 Party's official narative
                             </p>
                         </div>
-                        {/* <span className="text-sm">
+                        <span className="text-sm">
                             Read more
                             <Image
                                 alt="photo"
@@ -48,7 +48,7 @@ export default function About() {
                                 width={30}
                                 height={30}
                             />
-                        </span> */}
+                        </span>
                     </div>
                 </Link>
                 <Link href="/about/team">
@@ -173,7 +173,7 @@ export default function About() {
                                 Our blog posts
                             </p>
                         </div>
-                        {/* <span className="text-sm">
+                        <span className="text-sm">
                             View all blogs
                             <Image
                                 alt="photo"
@@ -182,7 +182,7 @@ export default function About() {
                                 width={30}
                                 height={30}
                             />
-                        </span> */}
+                        </span>
                     </div>
                 </Link>
             </div>

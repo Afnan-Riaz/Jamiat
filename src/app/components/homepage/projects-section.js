@@ -51,12 +51,13 @@ export default function Projects() {
                 className="mySwiper h-full"
                 spaceBetween={-1}
             >
-                {projects.map((project)=>(<SwiperSlide key={project._id} className="!flex flex-col justify-end items-center text-white bg-cover bg-project-afia-bg">
+                {projects.map((project)=>(<SwiperSlide key={project._id} className="!flex flex-col relative justify-end items-center text-white">
+                    <Image src={`${project.image}`} width={400} height={400} className="absolute inset-0 w-full h-full -z-10"/>
                     <h4 className="text-xl text-center font-semibold">
-                        Release Dr.Aafia
+                        {project.title}
                     </h4>
                     <Link
-                        href={"/projects/release-dr-afia"}
+                        href={`/`}
                         className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md"
                     >
                         Read More

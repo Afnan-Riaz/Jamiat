@@ -28,7 +28,7 @@ async function Team() {
                             <div className="h-full flex flex-col items-center text-center">
                                 <Image
                                     alt="team"
-                                    className="flex-shrink-0 rounded-lg w-full h-56 object-contain object-center mb-4"
+                                    className="flex-shrink-0 rounded-lg w-72 h-56 object-cover object-top mb-4"
                                     width={300}
                                     height={300}
                                     src={member.image}

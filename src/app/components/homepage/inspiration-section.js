@@ -75,9 +75,10 @@ export default function Inspiration() {
                     <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
                         {inspiration.content}
                     </p>
-                    {/* <Link
+                    <Link
                         className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                        href={`/inspirations/${inspiration.slug}`}
+                        href={`#`}
+                        // href={`/inspirations/${inspiration.slug}`}
                     >
                         Read more
                         <Image
@@ -87,13 +88,13 @@ export default function Inspiration() {
                             height={12}
                             width={25}
                         />
-                    </Link> */}
+                    </Link>
                 </SwiperSlide>))}
             </Swiper>}
             {swiperLoaded&&
                 <Image
                     alt="photo"
-                    className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 object-cover"
+                    className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 md:h-full object-cover"
                     src={inspirations[photo].image}
                     height={2000}
                     width={2000}

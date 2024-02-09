@@ -41,22 +41,22 @@ export default function Landing() {
                         "--swiper-pagination-bullet-horizontal-gap": "6px",
                     }}
                     slidesPerView={1}
-                    spaceBetween={5}
+                    spaceBetween={1}
                     loop={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     }}
                     pagination={{
                         clickable: true,
                     }}
                     modules={[Pagination, Navigation, Autoplay]}
-                    className=" h-full w-full text-lg overflow-hidden"
+                    className="h-fit w-full text-lg overflow-hidden"
                 >
                     {images.map((image) => (
                         <SwiperSlide key={image._id}>
                             <Image
-                                className="object-cover w-full min-h-[450px] object-center"
+                                className="object-cover w-full min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800] object-center"
                                 alt="photo"
                                 src={image.link}
                                 height={2000}
@@ -69,6 +69,7 @@ export default function Landing() {
             ) : (
                 <Image
                     src={"/landing-bg.png"}
+                    className="object-cover w-full min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800] object-center"
                     width={2000}
                     height={2000}
                     alt="photo"
