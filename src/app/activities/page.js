@@ -10,16 +10,7 @@ export const revalidate=0
 const getData = async () => {
     await mongoose.connect(connectionStr);
     const data = await Blogs.find({ type: "activity" });
-    const activities = await Promise.all(
-        data.map(async (activity) => {
-            const images = await Media.find({
-                type: "activity",
-                title: activity._id,
-            });
-            return { ...activity.toObject(), images };
-        })
-    );
-    return activities;
+    return data;
 };
 
 export default async function Activities() {

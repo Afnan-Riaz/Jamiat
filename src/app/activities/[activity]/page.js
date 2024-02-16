@@ -7,7 +7,7 @@ import { Media } from "@/utils/model/mediaModel";
 const getData = async (slug) => {
     await mongoose.connect(connectionStr);
     const data = await Blogs.findOne({ type: 'activity' ,slug:slug});
-    const images = await Media.find({type:"activity", title: data._id });
+    const images = await Media.find({type:"activity", title: data._id.toString() });
     return { ...data.toObject(), images };
 };
 

@@ -14,6 +14,13 @@ const getData = async () => {
 
 async function Magazine() {
     let magazines = await getData();
+    const parseDate = (d) => {
+        const date = d.toLocaleDateString("en-US", {
+            month: "long",
+            year: "numeric",
+        });
+        return date;
+    };
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -33,7 +40,8 @@ async function Magazine() {
                                 key={magazine._id}
                                 className="flex justify-between gap-x-20"
                             >
-                                {magazine.title}
+                                <div className="space-x-3"><span className="font-medium">{magazine.title}</span>
+                                <span>{parseDate(magazine.date)}</span></div>
                                 <Link
                                     href={magazine.link}
                                     className="underline"
