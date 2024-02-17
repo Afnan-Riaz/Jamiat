@@ -11,8 +11,8 @@ const profilesModel = new mongoose.Schema(
         image: {type: mongoose.Schema.Types.Mixed,required:false},
         designation: String,
         content: String,
-        dob: { type: String, required: false },
-        dod: { type: String, required: false },
+        dob: { type: Date, required: false },
+        dod: { type: Date, required: false },
     },
     { versionKey: false }
 );

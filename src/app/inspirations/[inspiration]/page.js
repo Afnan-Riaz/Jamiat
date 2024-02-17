@@ -11,6 +11,14 @@ const getData = async (slug) => {
 
 async function Inspiration({ params }) {
     let data = await getData(params.inspiration);
+    const parseDate = (d) => {
+        const date = d.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        });
+        return date;
+    };
     return (
         <div>
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -35,12 +43,12 @@ async function Inspiration({ params }) {
                         </div>
                         <div className="flex gap-3 items-center">
                             <h3 className="text-xl font-semibold">Born: </h3>
-                            <p className="text-base">{data.dob}</p>
+                            <p className="text-base">{parseDate(data.dob)}</p>
                         </div>
                         {data.dod && (
                             <div className="flex gap-3 items-center">
                                 <h3 className="text-xl font-semibold">Died: </h3>
-                                <p className="text-base">{data.dod}</p>
+                                <p className="text-base">{parseDate(data.dod)}</p>
                             </div>
                         )}
                         <div className="flex gap-3 items-center">
@@ -55,27 +63,9 @@ async function Inspiration({ params }) {
                             Heading 1
                         </h2>
                         <p className="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Similique dolores debitis deleniti placeat
-                            vel, quo doloribus itaque ea. Distinctio
-                            reprehenderit nesciunt iure cupiditate fuga ullam
-                            rerum voluptates, laudantium possimus magnam eius
-                            maxime voluptatum dolor corrupti dolorum minus! Sit
-                            ducimus asperiores aspernatur debitis molestiae
-                            deleniti perferendis magnam commodi reiciendis
-                            maxime! Inventore obcaecati id eligendi eum
-                            perferendis veniam, velit voluptatem, voluptates
-                            dicta ea impedit animi ab quae nesciunt pariatur,
-                            nisi praesentium. Dignissimos iste totam repudiandae
-                            suscipit? Nihil inventore voluptate, obcaecati
-                            voluptatum temporibus odit, explicabo, natus earum
-                            voluptatibus cumque, ex aspernatur maxime vel libero
-                            odio consequatur tenetur perferendis. Rem odio
-                            corporis aliquid voluptatum, deserunt adipisci sunt
-                            necessitatibus quod similique, totam aspernatur
-                            nihil.
                         </p>
-                        {data.content}
+                        {<div className="revert-tailwind" key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
+                        </div>}
                     </div>
                 </div>
             </div>
