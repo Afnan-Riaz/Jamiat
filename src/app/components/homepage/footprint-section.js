@@ -8,7 +8,7 @@ export default function Footprint() {
     const [activities, setActivities] = useState([]);
     const [text, setText] = useState(null);
     const handleChange = (t) => {
-        // setText(t);
+        setText(t);
     };
     useEffect(() => {
         const fetchData = async () => {
@@ -87,7 +87,7 @@ export default function Footprint() {
                             key={activity._id}
                             className="hover:brightness-90 transition-[filter]"
                             href={`#`}
-                            // href={`/activities/${activity.slug}`}
+                            href={`/activities/${activity.slug}`}
                         >
                             <Image
                                 src={activity.image}

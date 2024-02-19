@@ -38,9 +38,9 @@ export default function President() {
                         <p className="revert-tailwind" style={{color:"white",fontSize:"small"}} key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
                         </p>
                     </div>
-                    {/* <Link
+                    <Link
                         className="text-sky-400 w-fit font-medium absolute hover:text-sky-500 transition-colors group bottom-4 ml-10 underline"
-                        href="/about/message"
+                        href="/about/team"
                     >
                         Read more
                         <Image
@@ -50,7 +50,7 @@ export default function President() {
                             height={12}
                             width={25}
                         />
-                    </Link> */}
+                    </Link>
                 </div>
             </div>
             <div className="flex absolute text-white bottom-8 left-8 flex-col z-10">

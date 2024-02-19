@@ -29,27 +29,6 @@ async function Project({ params }) {
                         alt="photo"
                     />
                     <div className="my-6">
-                        {/* <h2 className="text-2xl font-semibold text-black">
-                            Heading
-                        </h2>
-                        <p className="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Voluptatibus nam vel officia. Iusto eligendi
-                            quas excepturi. Distinctio eos, saepe perspiciatis,
-                            adipisci voluptatibus itaque delectus ipsa nemo
-                            facere dolorem ex placeat exercitationem quam aut
-                            sapiente sequi, cum nam architecto non! Itaque qui
-                            maxime, aut illo debitis explicabo nam nostrum
-                            deleniti assumenda voluptatibus exercitationem! Modi
-                            blanditiis impedit velit exercitationem tenetur
-                            perferendis similique praesentium magnam optio rem
-                            esse fuga enim vero magni saepe nisi harum quo
-                            debitis, mollitia labore corporis veritatis nostrum
-                            porro quibusdam! Quo, vero quae assumenda sit animi
-                            minima magnam accusamus nulla distinctio eveniet,
-                            quia cupiditate soluta, ad id architecto
-                            necessitatibus sunt ipsam et in amet.
-                        </p> */}
                         <p>{data.content}</p>
                     </div>
                 </div>

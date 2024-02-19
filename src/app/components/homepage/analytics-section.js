@@ -58,11 +58,6 @@ export default function Analytics() {
                         >
                             0
                         </p>
-                        {/* {index === analyticsData.length - 1 && (
-                            <span className="font-inter text-[42px] font-extrabold">
-                                K
-                            </span>
-                        )} */}
                         <p className="text-xl font-semibold">
                             {analytic.title}
                         </p>

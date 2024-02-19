@@ -32,7 +32,7 @@ async function Audio() {
                 <div className="flex flex-wrap -m-4">
                     {data.map((audio) => (
                         <div key={audio._id} className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="px-4 py-4 border-4 rounded-lg bg-blue-50">
+                            <div className="px-4 py-4 h-full border-4 rounded-lg bg-blue-50">
                                 <div className="text-lg font-semibold">
                                     <h2 className="text-xl mb-2 text-center font-medium text-blue-700">
                                         {audio.title}

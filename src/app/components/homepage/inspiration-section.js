@@ -22,11 +22,11 @@ export default function Inspiration() {
             setPhoto(index);
         }
     };
-    // const shorten=(content)=>{
-    //     const words = content.split(' ');
-    //     const first20 = words.slice(0, 20).join(' ');
-    //     return first20;
-    // }
+    const shorten=(content)=>{
+        const words = content.split(' ');
+        const first20 = words.slice(0, 20).join(' ');
+        return first20+'...';
+    }
     const parseDate = (d) => {
         const date = new Date(d).toLocaleDateString("en-US", {
             month: "long",
@@ -100,15 +100,14 @@ export default function Inspiration() {
                                         style={{color:"white"}}
                                         key={inspiration._id}
                                         dangerouslySetInnerHTML={{
-                                            __html: inspiration.content,
+                                            __html: shorten(inspiration.content),
                                         }}
                                     ></div>
                                 }
                             </p>
                             <Link
                                 className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
-                                href={`#`}
-                                // href={`/inspirations/${inspiration.slug}`}
+                                href={`/inspirations/${inspiration.slug}`}
                             >
                                 Read more
                                 <Image
