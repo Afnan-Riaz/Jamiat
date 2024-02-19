@@ -9,6 +9,12 @@ const getAudio = async () => {
     ).then((response) => response.json());
     return data;
 };
+const getEvents = async () => {
+    const data = await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs/events`
+    ).then((response) => response.json());
+    return data;
+};
 const getVideos = async () => {
     const data = await fetch(
         `${process.env.NEXT_PUBLIC_DOMAIN}/api/media/videos`
@@ -24,10 +30,11 @@ const getReleases = async () => {
 
 export default function Media() {
     const [activeTabMedia, setActiveTabMedia] = useState(1);
-    const [activeTabSocial, setActiveTabSocial] = useState(1);
+    const [activeTabSocial, setActiveTabSocial] = useState(2);
     const [audio, setAudio] = useState([]);
     const [videos, setVideos] = useState([]);
     const [releases, setReleases] = useState([]);
+    const [events, setEvents] = useState([]);
     const formatDate = (date) => {
         let d = new Date(date);
         const formattedDate = d.toLocaleDateString("en-US", {
@@ -37,20 +44,34 @@ export default function Media() {
         });
         return formattedDate;
     };
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://platform.twitter.com/widgets.js";
-        script.async = true;
-        document.head.appendChild(script);
+    const formatDateTime = (d) => {
+        const date = new Date(d).toLocaleString("en-US", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+        });
+        return date;
+    };
 
-        return () => {
-            document.head.removeChild(script);
-        };
-    }, []);
+    // useEffect(() => {
+    //     const script = document.createElement("script");
+    //     script.src = "https://platform.twitter.com/widgets.js";
+    //     script.async = true;
+    //     document.head.appendChild(script);
+
+    //     return () => {
+    //         document.head.removeChild(script);
+    //     };
+    // }, []);
     useEffect(() => {
         async function fetchData() {
             let releaseData = await getReleases();
             setReleases(releaseData);
+            let eventsData = await getEvents();
+            setEvents(eventsData);
             let audioData = await getAudio();
             setAudio(audioData);
             let videoData = await getVideos();
@@ -182,26 +203,43 @@ export default function Media() {
                     </div>
                     <div className="h-[630px] max-h-[90vh] w-full bg-white">
                         <div className="w-full p-5 mb-4 overflow-y-auto">
-                            <Image
-                                className="w-full"
-                                src={"/event-1.png"}
-                                height={400}
-                                width={400}
-                                alt="event"
-                            />
-                            <div className="flex my-2 text-sm justify-between">
-                                <p>22 june</p>
-                                <p>04:00-06:00</p>
-                            </div>
-                            <h3 className="font-semibold mb-2 text-lg">
-                                jamiat online studies and portal for students.
-                            </h3>
-                            <button
-                                className="w-full py-3 text-sm bg-blue-700 text-white rounded-md"
-                                type="button"
-                            >
-                                Upcoming
-                            </button>
+                            {events.map((event) => (
+                                <div
+                                    key={event._id}
+                                    className="py-3 border-b-2 border-neutral-300"
+                                >
+                                    <Image
+                                        className="w-full"
+                                        src={event.image}
+                                        height={400}
+                                        width={400}
+                                        alt="event"
+                                    />
+                                    <h3 className="font-semibold my-2 text-lg">
+                                        {event.title}
+                                    </h3>
+                                    <div>
+                                        <div className="flex gap-1">
+                                            <Image
+                                                src={"clock.svg"}
+                                                width={20}
+                                                height={20}
+                                                alt="icon"
+                                            />
+                                            <p>{formatDateTime(event.date)}</p>
+                                        </div>
+                                        <div className="flex gap-1">
+                                            <Image
+                                                src={"map-pin.svg"}
+                                                width={20}
+                                                height={20}
+                                                alt="icon"
+                                            />
+                                            <p>{event.content}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -210,7 +248,7 @@ export default function Media() {
                         <div className="py-2 w-full flex-[3_3_0%] rounded-t-xl mr-2 flex justify-center items-center bg-blue-900 text-white text-lg font-semibold">
                             Social Stream
                         </div>
-                        <div className="flex-1">
+                        {/* <div className="flex-1">
                             <input
                                 type="radio"
                                 id="twitter"
@@ -231,8 +269,8 @@ export default function Media() {
                                     width={25}
                                 />
                             </label>
-                        </div>
-                        {/* <div className="flex-1">
+                        </div> */}
+                        <div className="flex-1">
                             <input
                                 type="radio"
                                 id="facebook"
@@ -253,10 +291,10 @@ export default function Media() {
                                     width={12}
                                 />
                             </label>
-                        </div> */}
+                        </div>
                     </div>
                     <div className="h-[630px] max-h-[90vh]  w-full relative">
-                        <div
+                        {/* <div
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 1}
                         >
@@ -268,8 +306,8 @@ export default function Media() {
                             >
                                 Tweets by JamiatPK
                             </Link>
-                        </div>
-                        {/*<div
+                        </div> */}
+                        <div
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 2}
                         >
@@ -278,7 +316,7 @@ export default function Media() {
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJamiatPK%2F&tabs=timeline&width=350&height=650&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             ></iframe>
-                        </div>*/}
+                        </div>
                     </div>
                 </div>
             </div>
