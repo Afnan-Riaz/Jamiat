@@ -57,7 +57,7 @@ export default function Projects() {
                         {project.title}
                     </h4>
                     <Link
-                        href={`/`}
+                        href={`/projects/${project.slug}`}
                         className="text-base hover:text-gray-300 hover:scale-105 transition-all my-10 border-2 px-5 py-2 rounded-md"
                     >
                         Read More

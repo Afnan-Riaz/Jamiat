@@ -1,15 +1,31 @@
-"use client"
+"use client";
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react"
+import { useState, useRef } from "react";
 
 export default function Member() {
-    const [amount,setAmount]=useState();
-    const [custom,setCustom]=useState(false)
+    const formRef = useRef(null);
+    const [display, setDisplay] = useState(false);
+    const handleSubmission = (e) => {
+        e.preventDefault();
+        if (formRef.current.checkValidity()) {
+            setDisplay(true);
+            formRef.current.reset();
+        } else {
+            formRef.current.reportValidity();
+        }
+    };
+
     return (
-        <div id="member-section" className="lg:w-5/6 lg:mx-auto sm:mr-4 sm:ml-16 mx-2 h-fit relative flex lg:flex-row flex-col lg:pt-0 pt-8 justify-between items-center">
+        <div
+            id="member-section"
+            className="lg:w-5/6 lg:mx-auto sm:mr-4 sm:ml-16 mx-2 h-fit relative flex lg:flex-row flex-col lg:pt-0 pt-8 justify-between items-center"
+        >
             <div className="max-w-[500px] flex flex-col gap-3">
                 <h5 className="text-2xl font-semibold">Be the change</h5>
-                <h4 className="font-inter text-4xl font-extrabold text-blue-700">Join The Journey</h4>
+                <h4 className="font-inter text-4xl font-extrabold text-blue-700">
+                    Join The Journey
+                </h4>
                 <p className="font-medium text-gray-700 leading-7">
                     Jamiat is devoutly committed to building a strong and
                     developed Pakistan which is unimaginable without the trust
@@ -20,99 +36,163 @@ export default function Member() {
                     witness the rise of New Pakistan under the charismatic
                     leadership of CEO and founder Shakeel Ahmed
                 </p>
-                <div className="flex gap-6 mt-3">
-                <Link href={"/join"} className="bg-blue-700 hover:bg-blue-800 transition-colors font-inter w-fit px-4 py-3 rounded-lg text-white">Join Us</Link>
-            </div></div>
+            </div>
             <div className="max-w-[478px] my-8 border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-[2vw] pt-6">
-                <h4 className="font-inter text-2xl font-extrabold mx-auto">Make a Donation</h4>
-                <div className="w-full my-2 h-px bg-gray-400"></div>
-                <p className="text-lg font-semibold mb-3">Choose an amount</p>
-                <div className="flex gap-x-3 flex-wrap gap-y-10">
+                <form
+                    ref={formRef}
+                    className="mx-auto mobile:px-10 lg:px-0"
+                >
                     <div>
+                        <label
+                            htmlFor="name"
+                            className="uppercase text-sm text-gray-600 font-bold"
+                        >
+                            Full Name
+                        </label>
                         <input
-                            className="hidden peer"
-                            type="radio"
-                            id="100"
-                            name="amount"
-                            value={100}
-                            onChange={()=>{setCustom(false); setAmount(100)}}
+                            id="name"
+                            name="name"
+                            className="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-400"
+                            type="text"
+                            placeholder="Enter your Name"
+                            required
                         />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="100">100 RS</label>
                     </div>
-                    <div>
+                    <div className="mt-2">
+                        <label
+                            htmlFor="email"
+                            className="uppercase text-sm text-gray-600 font-bold"
+                        >
+                            Email
+                        </label>
                         <input
-                            className="hidden peer"
-                            type="radio"
-                            id="500"
-                            name="amount"
-                            value={500}
-                            onChange={()=>{setCustom(false); setAmount(500)}}
+                            id="email"
+                            name="email"
+                            className="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-400"
+                            type="email"
+                            placeholder="Enter your email address"
+                            required
+                        />
+                    </div>
+                    <div className="mt-2">
+                        <label
+                            htmlFor="phone"
+                            className="uppercase text-sm text-gray-600 font-bold"
+                        >
+                            Phone Number
+                        </label>
+                        <input
+                            required
+                            id="phone"
+                            name="phone"
+                            className="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-400"
+                            type="tel"
+                            placeholder="Enter your Phone Number"
+                        />
+                    </div>
+                    <div className="mt-2">
+                        <label
+                            htmlFor="address"
+                            className="uppercase text-sm text-gray-600 font-bold"
+                        >
+                            Address
+                        </label>
+                        <input
+                            required
+                            id="address"
+                            name="address"
+                            className="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-400"
+                            type="text"
+                            placeholder="Enter your Address"
+                        />
+                    </div>
+                    <div className="mt-2">
+                        <label
+                            htmlFor="Education"
+                            className="uppercase text-sm text-gray-600 font-bold"
+                        >
+                            Education
+                        </label>
+                        <input
+                            type="text"
+                            id="Education"
+                            name="Education"
+                            className="w-full bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter your Education"
+                            required
+                        ></input>
+                    </div>
+                    <div className="flex gap-x-3 gap-y-7 my-8 flex-wrap">
+                        <div className="relative">
+                            <input
+                                type="radio"
+                                id="member"
+                                name="choice"
+                                value={"member"}
+                                className="peer hidden"
+                                required
                             />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="500">500 RS</label>
-                    </div>
-                    <div>
-                        <input
-                            className="hidden peer"
-                            type="radio"
-                            id="1000"
-                            name="amount"
-                            value={1000}
-                            onChange={()=>{setCustom(false); setAmount(1000)}}
+                            <label
+                                className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
+                                htmlFor="member"
+                            >
+                                Join as Member
+                            </label>
+                            <div className="absolute -top-1 left-[85%] z-50">
+                                <Image
+                                    alt="photo"
+                                    className="peer cursor-help"
+                                    src={"/info-button.svg"}
+                                    width={16}
+                                    height={64}
+                                />
+                                <p className="peer-hover:block mt-1 -ml-32 hidden bg-blue-700 text-xs w-40 px-3 py-3 rounded-md text-white">
+                                    A member's role is to be a part of
+                                    organization.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="relative">
+                            <input
+                                type="radio"
+                                id="volunteer"
+                                name="choice"
+                                value={"volunteer"}
+                                className="peer hidden"
                             />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="1000">1000 RS</label>
+                            <label
+                                className="border-2 pr-6 pl-4 py-3 text-sm rounded-md cursor-pointer peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200"
+                                htmlFor="volunteer"
+                            >
+                                Join as Volunteer
+                            </label>
+                            <div className="absolute -top-1 left-[85%] z-50">
+                                <Image
+                                    alt="photo"
+                                    className="peer cursor-help"
+                                    src={"/info-button.svg"}
+                                    width={16}
+                                    height={64}
+                                />
+                                <p className="peer-hover:block mt-1 -ml-32 hidden bg-blue-700 text-xs w-40 px-3 py-3 rounded-md text-white">
+                                    A volunteer's role is to be a contributer to
+                                    the organization.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <input
-                            className="hidden peer"
-                            type="radio"
-                            id="custom"
-                            name="amount"
-                            value={amount}
-                            onChange={()=>{setCustom(true);setAmount("")}}
-                        />
-                        <label className="border-2 px-4 py-3 rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 cursor-pointer" htmlFor="custom">Custom</label>
+
+                    <div className="mt-8">
+                        <button
+                            onClick={handleSubmission}
+                            className="uppercase text-sm font-bold tracking-wide bg-red-600 hover:bg-red-700 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+                            type="submit"
+                        >
+                            Submit
+                        </button>
                     </div>
-                </div>
-                <p className="text-lg font-semibold">Make custom amount</p>
-                <input
-                disabled={!custom}
-                value={amount}
-                onChange={(e)=>setAmount(e.target.value)}
-                    className="px-5 w-[90%] py-3 border-2 rounded-md"
-                    type="number"
-                    name="custom"
-                    id="amount"
-                    placeholder="RS 100-10000000"
-                />
-                <p className="text-lg font-semibold">Make it monthly!</p>
-                <div className="flex gap-4 gap-y-8 my-2 flex-wrap">
-                    <div>
-                        <input
-                            type="radio"
-                            id="yes"
-                            name="choice"
-                            value={"yes"}
-                            className="peer hidden"
-                        />
-                        <label className="border-2 px-7 py-3 text-sm cursor-pointer rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="yes">Yes, count me in</label>
-                    </div>
-                    <div>
-                        <input
-                            type="radio"
-                            id="no"
-                            name="choice"
-                            value={"no"}
-                            className="peer hidden"
-                        />
-                        <label className="border-2 px-7 py-3 text-sm cursor-pointer rounded-md peer-checked:font-semibold peer-checked:bg-sky-200 peer-checked:border-sky-200" htmlFor="no">No, donate once</label>
-                    </div>
-                </div>
-                <p className="text-sm text-gray-500">
-                    Start a monthly donation today to invest in the future of
-                    our party
-                </p>
-                <button className="bg-red-600 hover:bg-red-700 transition-colors font-inter w-fit px-4 py-3 rounded-md mx-auto text-white">Donate now</button>
+                </form>
             </div>
         </div>
-    )
+    );
 }

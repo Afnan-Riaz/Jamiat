@@ -86,7 +86,6 @@ export default function Footprint() {
                         <Link
                             key={activity._id}
                             className="hover:brightness-90 transition-[filter]"
-                            href={`#`}
                             href={`/activities/${activity.slug}`}
                         >
                             <Image

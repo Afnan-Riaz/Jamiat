@@ -5,7 +5,7 @@ import { Profiles } from "@/utils/model/profilesModel";
 
 const getData = async (slug) => {
     await mongoose.connect(connectionStr);
-    const data=await Profiles.findOne({ type: 'inspiration' ,slug:slug});
+    const data = await Profiles.findOne({ type: "inspiration", slug: slug });
     return data;
 };
 
@@ -47,26 +47,30 @@ async function Inspiration({ params }) {
                         </div>
                         {data.dod && (
                             <div className="flex gap-3 items-center">
-                                <h3 className="text-xl font-semibold">Died: </h3>
-                                <p className="text-base">{parseDate(data.dod)}</p>
+                                <h3 className="text-xl font-semibold">
+                                    Died:
+                                </h3>
+                                <p className="text-base">
+                                    {parseDate(data.dod)}
+                                </p>
                             </div>
                         )}
                         <div className="flex gap-3 items-center">
-                            <h3 className="text-xl font-semibold">Designation: </h3>
+                            <h3 className="text-xl font-semibold">
+                                Designation:
+                            </h3>
                             <p className="text-base">{data.designation}</p>
                         </div>
                     </div>
                 </div>
                 <div className="w-full lg:w-2/3">
-                    <div>
-                        <h2 className="text-blue-700 text-3xl font-semibold mb-3">
-                            Heading 1
-                        </h2>
-                        <p className="mb-4">
-                        </p>
-                        {<div className="revert-tailwind" key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
-                        </div>}
-                    </div>
+                    {
+                        <div
+                            className="revert-tailwind"
+                            key={data._id}
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
+                    }
                 </div>
             </div>
         </div>

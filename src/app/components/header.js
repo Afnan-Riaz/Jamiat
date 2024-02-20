@@ -321,7 +321,7 @@ export default function Header() {
                                         menuRef.current.style.width = "0";
                                     }}
                                     className="hover:text-gray-200"
-                                    href="/about"
+                                    href="#"
                                 >
                                     About
                                 </Link>

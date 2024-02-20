@@ -13,11 +13,11 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'header-bg':"url(/header-bg.png)",
-        'card1-bg':"url(/card1-bg.png)",
-        'card2-bg':"url(/card2-bg.png)",
-        'card3-bg':"url(/card3-bg.png)",
-        'card4-bg':"url(/card4-bg.png)",
+        'header-bg':"url(/backgrounds/header-bg.webp)",
+        'card1-bg':"url(/backgrounds/card1-bg.webp)",
+        'card2-bg':"url(/backgrounds/card2-bg.webp)",
+        'card3-bg':"url(/backgrounds/card3-bg.webp)",
+        'card4-bg':"url(/backgrounds/card4-bg.webp)",
         'long-card-bg':"url(/long-card-bg.png)",
         'about-bg':"url(/about-bg.png)",
         'journey-bg':"url(/journey-bg.png)",

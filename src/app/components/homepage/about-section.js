@@ -28,7 +28,7 @@ export default function About() {
     return (
         <div id="about-section" className="w-full relative bg-about-bg bg-cover overflow-x-hidden bg-no-repeat z-0">
             <div className="w-fit grid laptop12:grid-cols-[350px_350px_435px] justify-items-center md:grid-cols-2 grid-cols-1 text-white laptop12:grid-rows-2 gap-x-5 gap-y-2 mx-auto pt-8 max-md:pb-20 md:pt-20 pb-5">
-                <Link href="#">
+                <Link href="/releases">
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card1-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">
                             <h3 className="text-lg font-medium leading-3">
@@ -107,10 +107,10 @@ export default function About() {
                                 <Link href={magazines[1].link}>
                                 <Image
                                     alt="photo"
-                                    className="mobile:w-[350px] w-[300px]"
+                                    className="mobile:w-[350px] w-[300px] rounded-2xl"
                                     src={magazines[1].description}
-                                    height={2000}
-                                    width={2000}
+                                    height={450}
+                                    width={350}
                                 />
                                 </Link>
                             </SwiperSlide>
@@ -118,10 +118,10 @@ export default function About() {
                                 <Link href={magazines[0].link}>
                                 <Image
                                     alt="photo"
-                                    className="mobile:w-[350px] w-[300px]"
+                                    className="mobile:w-[350px] w-[300px] rounded-2xl"
                                     src={magazines[0].description}
-                                    height={2000}
-                                    width={2000}
+                                    height={450}
+                                    width={350}
                                 />
                                 </Link>
                             </SwiperSlide>
@@ -129,10 +129,10 @@ export default function About() {
                                 <Link href={magazines[2].link}>
                                 <Image
                                     alt="photo"
-                                    className="mobile:w-[350px] w-[300px]"
+                                    className="mobile:w-[350px] w-[300px] rounded-2xl"
                                     src={magazines[2].description}
-                                    height={2000}
-                                    width={2000}
+                                    height={450}
+                                    width={350}
                                 />
                                 </Link>
                             </SwiperSlide>
@@ -162,7 +162,7 @@ export default function About() {
                         </span>
                     </div>
                 </Link>
-                <Link href={"#"}>
+                <Link href={"/blogs"}>
                     <div className="w-[350px] h-[285px] hover:brightness-90 transition-[filter] duration-300 p-7 bg-card3-bg bg-center bg-no-repeat flex flex-col justify-between">
                         <div className="space-y-3">
                             <h3 className="text-lg font-medium leading-3">

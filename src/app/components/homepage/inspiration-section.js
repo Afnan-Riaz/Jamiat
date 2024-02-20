@@ -22,11 +22,11 @@ export default function Inspiration() {
             setPhoto(index);
         }
     };
-    const shorten=(content)=>{
-        const words = content.split(' ');
-        const first20 = words.slice(0, 20).join(' ');
-        return first20+'...';
-    }
+    const shorten = (content) => {
+        const words = content.split(" ");
+        const first20 = words.slice(0, 20).join(" ");
+        return first20 + "...";
+    };
     const parseDate = (d) => {
         const date = new Date(d).toLocaleDateString("en-US", {
             month: "long",
@@ -88,7 +88,7 @@ export default function Inspiration() {
                                 {inspiration.name}
                             </p>
                             <p className="text-sm lg:text-base font-light">
-                                {parseDate(inspiration.dob)} -
+                                {parseDate(inspiration.dob)} -{" "}
                                 {inspiration.dod
                                     ? parseDate(inspiration.dod)
                                     : ""}
@@ -97,10 +97,12 @@ export default function Inspiration() {
                                 {
                                     <div
                                         className="revert-tailwind"
-                                        style={{color:"white"}}
+                                        style={{ color: "white" }}
                                         key={inspiration._id}
                                         dangerouslySetInnerHTML={{
-                                            __html: shorten(inspiration.content),
+                                            __html: shorten(
+                                                inspiration.content
+                                            ),
                                         }}
                                     ></div>
                                 }

@@ -44,7 +44,7 @@ export default async function Activities() {
                                     alt="activity"
                                 />
                                 <div className="p-6">
-                                    <div className="flex justify-between">
+                                    <div className="flex justify-between gap-x-2">
                                     <h1 className="text-xl font-medium text-gray-950 mb-3">
                                         {activity.title}
                                     </h1>
