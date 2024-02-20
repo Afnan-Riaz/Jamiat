@@ -75,7 +75,7 @@ export default function Journey() {
                     <Image
                         className="lg:h-96 md:h-72 w-fit md:block hidden object-contain"
                         alt="photo"
-                        src={slide.image}
+                        src={"/jamiat-image.png"}
                         height={680}
                         width={680}
                     />
