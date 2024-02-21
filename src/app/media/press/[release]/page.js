@@ -11,11 +11,7 @@ const getData = async (slug) => {
 
 export default async function Release({ params }) {
     let data = await getData(params.release);
-    const shorten = (content) => {
-        const words = content.split(" ");
-        const first50 = words.slice(0, 50).join(" ");
-        return first50;
-    };
+
     return (
         <div className="mb-20">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -32,14 +28,13 @@ export default async function Release({ params }) {
                         height={1000}
                         alt="photo"
                     />
-                    <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">
-                        Statement
-                    </h4>
-                    <p>{shorten(data.content)}</p>
-                    <h4 className="text-3xl font-semibold text-blue-700 font-inter my-4">
-                        Full Message
-                    </h4>
-                    <p>{data.content}</p>
+                    {
+                        <div
+                            className="revert-tailwind"
+                            key={data._id}
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
+                    }
                 </main>
                 <aside className="lg:w-1/3 w-full">
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">

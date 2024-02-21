@@ -29,7 +29,13 @@ async function Project({ params }) {
                         alt="photo"
                     />
                     <div className="my-6">
-                        <p>{data.content}</p>
+                    {
+                        <div
+                            className="revert-tailwind"
+                            key={data._id}
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
+                    }
                     </div>
                 </div>
             </div>

@@ -28,7 +28,13 @@ export default async function Blog({ params }) {
                         height={1000}
                         alt="photo"
                     />
-                    <p>{data.content}</p>
+                    {
+                        <div
+                            className="revert-tailwind"
+                            key={data._id}
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
+                    }
                 </main>
                 <aside className="lg:w-1/3 w-full">
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">

@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
-export const revalidate=0
+export const revalidate = 0;
 
 const getData = async () => {
     await mongoose.connect(connectionStr);
@@ -45,10 +45,10 @@ export default async function Activities() {
                                 />
                                 <div className="p-6">
                                     <div className="flex justify-between gap-x-2">
-                                    <h1 className="text-xl font-medium text-gray-950 mb-3">
-                                        {activity.title}
-                                    </h1>
-                                    <span>{parseDate(activity.date)}</span>
+                                        <h1 className="text-xl font-medium text-gray-950 mb-3">
+                                            {activity.title}
+                                        </h1>
+                                        <span>{parseDate(activity.date)}</span>
                                     </div>
                                     <p className="leading-relaxed mb-3">
                                         {activity.content}

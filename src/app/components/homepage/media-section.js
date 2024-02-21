@@ -202,7 +202,7 @@ export default function Media() {
                         Events
                     </div>
                     <div className="h-[630px] max-h-[90vh] w-full bg-white">
-                        <div className="w-full p-5 mb-4 overflow-y-auto">
+                        <div className="w-full h-full p-5 mb-4 overflow-y-auto">
                             {events.map((event) => (
                                 <div
                                     key={event._id}

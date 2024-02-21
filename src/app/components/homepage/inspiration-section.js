@@ -93,7 +93,7 @@ export default function Inspiration() {
                                     ? parseDate(inspiration.dod)
                                     : ""}
                             </p>
-                            <p className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
+                            <div className="max-w-[400px] w-full lg:text-base text-sm font-normal leading-normal">
                                 {
                                     <div
                                         className="revert-tailwind"
@@ -106,7 +106,7 @@ export default function Inspiration() {
                                         }}
                                     ></div>
                                 }
-                            </p>
+                            </div>
                             <Link
                                 className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                                 href={`/inspirations/${inspiration.slug}`}

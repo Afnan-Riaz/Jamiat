@@ -13,11 +13,6 @@ const getData = async () => {
 };
 export default async function Press() {
     const data = await getData();
-    const shorten = (content) => {
-        const words = content.split(" ");
-        const first50 = words.slice(0, 50).join(" ");
-        return first50;
-    };
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -38,14 +33,22 @@ export default async function Press() {
                                     src={release.image}
                                     alt="blog"
                                 />
-                                <div className="p-6">
+                                <div className="p-6 relative">
                                     <h1 className="text-lg font-medium text-gray-900 mb-3">
                                         {release.title}
                                     </h1>
-                                    <p className="leading-relaxed mb-3">
-                                        {shorten(release.content)}
-                                    </p>
-                                    <div className="flex items-center flex-wrap ">
+                                    <div className="max-h-[300px] overflow-hidden text-ellipsis">
+                                        {
+                                            <div
+                                                className="revert-tailwind"
+                                                key={release._id}
+                                                dangerouslySetInnerHTML={{
+                                                    __html: release.content,
+                                                }}
+                                            ></div>
+                                        }
+                                    </div>
+                                    <div className="flex items-center h-12 bottom-0 -mr-6 bg-white w-full absolute">
                                         <Link
                                             href={`/media/press/${release.slug}`}
                                             className="text-blue-700 inline-flex items-center md:mb-2 lg:mb-0"
