@@ -37,10 +37,10 @@ export default function Member() {
                     leadership of CEO and founder Shakeel Ahmed
                 </p>
             </div>
-            <div className="max-w-[478px] my-8 border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-[2vw] pt-6">
+            <div className="lg:w-[50%] my-8 border-2 border-blue-700 rounded-3xl flex flex-col gap-4 p-[2vw] pt-6">
                 <form
                     ref={formRef}
-                    className="mx-auto mobile:px-10 lg:px-0"
+                    className="mx-auto mobile:px-10 w-full lg:px-0"
                 >
                     <div>
                         <label
