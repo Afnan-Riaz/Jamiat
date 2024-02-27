@@ -21,7 +21,11 @@ export default function Landing() {
         async function fetchData() {
             const data = await getData();
             setImages(data);
-            setSwiperLoaded(true);
+            console.log("images")
+            setTimeout(() => {
+                console.log("loaded")
+                setSwiperLoaded(true);
+            }, 5000);
         }
         fetchData();
     }, []);
@@ -68,7 +72,7 @@ export default function Landing() {
                 </Swiper>
             ) : (
                 <Image
-                    src={"/landing-bg.png"}
+                    src={"/backgrounds/landing-bg.webp"}
                     className="object-cover w-full min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800] object-center"
                     width={2000}
                     height={2000}
