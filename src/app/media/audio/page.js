@@ -1,11 +1,11 @@
-import { connectionStr } from "@/utils/db";
+
 import { Media } from "@/utils/model/mediaModel";
-import mongoose from "mongoose";
+import { connectDB } from "@/utils/db";
 
 export const revalidate=0
 
 const getData = async () => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data = await Media.find({ type: "audio" });
     return data;
 };

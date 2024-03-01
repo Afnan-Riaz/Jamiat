@@ -1,11 +1,11 @@
-import { connectionStr } from "@/utils/db";
+
 import { Profiles } from "@/utils/model/profilesModel";
-import mongoose from "mongoose";
+import { connectDB } from "@/utils/db";
 import { NextResponse } from "next/server";
 export const revalidate=10;
 
 export async function GET(){
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data=await Profiles.find({ type: 'team' });
     return NextResponse.json(data);
 }

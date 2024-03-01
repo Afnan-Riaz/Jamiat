@@ -1,12 +1,12 @@
-import { connectionStr } from "@/utils/db";
+
 import { Profiles } from "@/utils/model/profilesModel";
-import mongoose from "mongoose";
+import { connectDB } from "@/utils/db";
 import Image from "next/image";
 
 export const revalidate=0
 
 const getData = async () => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data=await Profiles.find({ type: 'message' });
     return data;
 };

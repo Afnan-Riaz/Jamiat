@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { connectionStr } from "@/utils/db";
-import mongoose from "mongoose";
+
+import { connectDB } from "@/utils/db";
 import { Profiles } from "@/utils/model/profilesModel";
 
 const getData = async (slug) => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data = await Profiles.findOne({ type: "inspiration", slug: slug });
     return data;
 };

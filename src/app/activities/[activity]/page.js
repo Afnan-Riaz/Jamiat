@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { connectionStr } from "@/utils/db";
-import mongoose from "mongoose";
+
+import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
 const getData = async (slug) => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data = await Blogs.findOne({ type: 'activity' ,slug:slug});
     const images = await Media.find({type:"activity", title: data._id.toString() });
     return { ...data.toObject(), images };

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { connectionStr } from "@/utils/db";
-import mongoose from "mongoose";
+
+import { connectDB } from "@/utils/db";
 import { Media } from "@/utils/model/mediaModel";
 
 export const revalidate=0
 
 const getData = async () => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data=await Media.find({ type: 'book'});
     return data;
 };

@@ -4,7 +4,7 @@ import Audio from "./page";
 export const revalidate=0
 
 export const getData = async () => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data = await Page.findOne({ slug: slug });
     return data;
 };

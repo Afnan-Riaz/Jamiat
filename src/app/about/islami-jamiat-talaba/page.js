@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { connectionStr } from "@/utils/db";
-import mongoose from "mongoose";
+
+import { connectDB } from "@/utils/db";
 import { Page } from "@/utils/model/pageModel";
 
 export const revalidate=0
 
 export const getData = async () => {
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const slug = "islami-jamiat-talaba";
     const data = Page.findOne({slug:slug});
     return data || [];

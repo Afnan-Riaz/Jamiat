@@ -21,11 +21,7 @@ export default function Landing() {
         async function fetchData() {
             const data = await getData();
             setImages(data);
-            console.log("images")
-            setTimeout(() => {
-                console.log("loaded")
-                setSwiperLoaded(true);
-            }, 5000);
+            setSwiperLoaded(true)
         }
         fetchData();
     }, []);
@@ -33,7 +29,7 @@ export default function Landing() {
     return (
         <div
             id="landing-section"
-            className={`w-full h-fit relative -mt-24 z-0`}
+            className={`w-full relative -mt-24 z-0 min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800]`}
         >
             {swiperLoaded ? (
                 <Swiper
@@ -55,16 +51,15 @@ export default function Landing() {
                         clickable: true,
                     }}
                     modules={[Pagination, Navigation, Autoplay]}
-                    className="h-fit w-full text-lg overflow-hidden"
+                    className="w-full h-full text-lg overflow-hidden"
                 >
                     {images.map((image) => (
                         <SwiperSlide key={image._id}>
                             <Image
-                                className="object-cover w-full min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800] object-center"
+                                className="object-cover object-center"
                                 alt="photo"
-                                src={image.link}
-                                height={2000}
-                                width={2000}
+                                src={`/backgrounds${image.link}`}
+                                fill
                                 loading="eager"
                             />
                         </SwiperSlide>
@@ -73,10 +68,10 @@ export default function Landing() {
             ) : (
                 <Image
                     src={"/backgrounds/landing-bg.webp"}
-                    className="object-cover w-full min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800] object-center"
-                    width={2000}
-                    height={2000}
+                    className="object-cover object-center"
                     alt="photo"
+                    fill
+                    loading="eager"
                 />
             )}
             <div className="flex absolute text-white bottom-8 left-8 flex-col z-10">

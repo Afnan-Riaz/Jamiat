@@ -1,11 +1,11 @@
-import { connectionStr } from "@/utils/db";
+
 import { Page } from "@/utils/model/pageModel";
-import mongoose from "mongoose";
+import { connectDB } from "@/utils/db";
 import { NextResponse } from "next/server";
 export const revalidate=10;
 
 export async function GET(){
-    await mongoose.connect(connectionStr);
+    await connectDB();
     const data=await Page.find();
     return NextResponse.json(data);
 }
