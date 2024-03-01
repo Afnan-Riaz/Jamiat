@@ -185,15 +185,16 @@ export default function Media() {
                             className="bg-white absolute h-full w-full overflow-y-auto p-5"
                             hidden={activeTabMedia != 3}
                         >
-                            {/* {videos.map((video) => (
+                            {videos.map((video) => (
                                 <iframe
                                     key={video._id}
                                     className="w-full mb-4 h-48 rounded-lg"
                                     src={video.link}
                                     title="YouTube video player"
                                     allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    loading="lazy"
                                 ></iframe>
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -307,7 +308,7 @@ export default function Media() {
                                 Tweets by JamiatPK
                             </Link>
                         </div> */}
-                        {/* <div
+                        <div
                             className="bg-white absolute h-full w-full"
                             hidden={activeTabSocial != 2}
                         >
@@ -315,8 +316,9 @@ export default function Media() {
                                 className="border-0 h-full w-full overflow-hidden"
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJamiatPK%2F&tabs=timeline&width=350&height=650&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                loading="lazy"
                             ></iframe>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

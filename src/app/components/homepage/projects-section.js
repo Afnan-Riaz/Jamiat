@@ -52,7 +52,7 @@ export default function Projects() {
                 spaceBetween={-1}
             >
                 {projects.map((project)=>(<SwiperSlide key={project._id} className="!flex flex-col relative justify-end items-center text-white">
-                    <Image src={`${project.image}`} width={400} height={400} className="absolute inset-0 w-full h-full -z-10"/>
+                    <Image src={`${project.image}`} width={400} height={400} className="absolute inset-0 w-full h-full -z-10" alt="project"/>
                     <h4 className="text-xl text-center font-semibold">
                         {project.title}
                     </h4>

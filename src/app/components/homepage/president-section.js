@@ -42,7 +42,7 @@ export default function President() {
                         className="text-sky-400 w-fit font-medium absolute hover:text-sky-500 transition-colors group bottom-4 ml-10 underline"
                         href="/about/team"
                     >
-                        Read more
+                        See Our Team
                         <Image
                             alt="photo"
                             className="ml-2 inline group-hover:translate-x-4 transition-transform"

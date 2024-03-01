@@ -111,7 +111,7 @@ export default function Inspiration() {
                                 className="text-sky-400 w-fit font-medium underline hover:text-sky-500 transition-colors group"
                                 href={`/inspirations/${inspiration.slug}`}
                             >
-                                Read more
+                                Continue Reading
                                 <Image
                                     alt="photo"
                                     className="ml-2 inline group-hover:translate-x-4 transition-transform"

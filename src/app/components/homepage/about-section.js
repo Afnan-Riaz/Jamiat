@@ -40,7 +40,7 @@ export default function About() {
                             </p>
                         </div>
                         <span className="text-sm">
-                            Read more
+                            Read Press Releases
                             <Image
                                 alt="photo"
                                 className="inline-block ml-2"
