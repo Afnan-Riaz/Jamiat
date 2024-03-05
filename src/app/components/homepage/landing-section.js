@@ -29,7 +29,7 @@ export default function Landing() {
     return (
         <div
             id="landing-section"
-            className={`w-full relative -mt-24 z-0 min-h-[450px] sm:h-[600px] lg:h-[700px] 2xl:[800]`}
+            className={`w-full relative -mt-24 z-0 h-[450px] sm:h-[600px] lg:h-[700px] 2xl:h-[800px]`}
         >
             {swiperLoaded ? (
                 <Swiper
