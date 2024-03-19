@@ -89,7 +89,7 @@ export default function Footprint() {
                             href={`/activities/${activity.slug}`}
                         >
                             <Image
-                                src={activity.image}
+                                src={`/images${activity.image}`}
                                 height={160}
                                 width={190}
                                 className="w-52 h-52 object-cover rounded-xl"

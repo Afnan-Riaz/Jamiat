@@ -115,7 +115,7 @@ export default function Inspiration() {
                                 <Image
                                     alt="photo"
                                     className="ml-2 inline group-hover:translate-x-4 transition-transform"
-                                    src={"/arrow-blue.svg"}
+                                    src={"/icons/arrow-blue.svg"}
                                     height={12}
                                     width={25}
                                 />
@@ -128,7 +128,7 @@ export default function Inspiration() {
                 <Image
                     alt="photo"
                     className="md:w-1/2 w-3/5 md:rounded-none rounded-lg md:mb-0 mb-6 md:h-full object-cover"
-                    src={inspirations[photo].image}
+                    src={`/images${inspirations[photo].image}`}
                     height={2000}
                     width={2000}
                 />

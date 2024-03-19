@@ -33,7 +33,7 @@ export default async function Projects() {
                                 width={1000}
                                 height={500}
                                 className="h-full w-full object-contain object-center"
-                                src={project.image}
+                                src={`/images${project.image}`}
                                 alt="photo"
                             />
                             <div className="absolute bottom-0 w-full flex flex-col items-center text-white">

@@ -52,7 +52,7 @@ async function Audio() {
                                 </div>
                                 <div className="w-full mt-6">
                                     <audio
-                                        src={audio.link}
+                                        src={`/audio${audio.link}`}
                                         controls
                                         className="w-full min-w-[250px]"
                                     ></audio>

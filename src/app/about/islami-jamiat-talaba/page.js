@@ -31,7 +31,7 @@ export default async function IJT() {
                 <aside className="lg:w-1/3 w-full">
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={`/images/inspiration-photo1.png`}
                             height={120}
                             width={120}
                             alt="photo"
@@ -45,7 +45,7 @@ export default async function IJT() {
                     </div>
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={`/images/inspiration-photo1.png`}
                             height={120}
                             width={120}
                             alt="photo"
@@ -59,7 +59,7 @@ export default async function IJT() {
                     </div>
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={`/images/inspiration-photo1.png`}
                             height={120}
                             width={120}
                             alt="photo"

@@ -30,7 +30,7 @@ async function Team() {
                             className="flex-shrink-0 rounded-lg w-96 h-96 object-cover object-top"
                             width={300}
                             height={300}
-                            src={president.image}
+                            src={`/images${president.image}`}
                         />
                         <div className="max-w-96">
                             <h2 className="font-medium text-2xl text-center text-gray-900">
@@ -57,7 +57,7 @@ async function Team() {
                                         className="flex-shrink-0 rounded-lg w-72 h-56 object-cover object-top mb-4"
                                         width={300}
                                         height={300}
-                                        src={member.image}
+                                        src={`/images${member.image}`}
                                     />
                                     <div className="w-full">
                                         <h2 className="font-medium text-lg text-gray-900">

@@ -142,7 +142,7 @@ export default function Member() {
                                 <Image
                                     alt="photo"
                                     className="peer cursor-help"
-                                    src={"/info-button.svg"}
+                                    src={"/icons/info-button.svg"}
                                     width={16}
                                     height={64}
                                 />
@@ -170,7 +170,7 @@ export default function Member() {
                                 <Image
                                     alt="photo"
                                     className="peer cursor-help"
-                                    src={"/info-button.svg"}
+                                    src={"/icons/info-button.svg"}
                                     width={16}
                                     height={64}
                                 />

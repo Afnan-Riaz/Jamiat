@@ -40,7 +40,7 @@ export default async function Activities() {
                                     width={500}
                                     height={500}
                                     className="w-full h-72 object-cover object-center"
-                                    src={activity.image}
+                                    src={`/images${activity.image}`}
                                     alt="activity"
                                 />
                                 <div className="p-6">

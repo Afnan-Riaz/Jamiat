@@ -29,7 +29,7 @@ export default function Header() {
                     <Link href="https://www.instagram.com/jamiatpk/">
                         <Image
                             alt="icon"
-                            src={"/instagram.svg"}
+                            src={"/icons/instagram.svg"}
                             width={20}
                             height={50}
                         />
@@ -37,7 +37,7 @@ export default function Header() {
                     <Link href="https://www.facebook.com/JamiatPK/">
                         <Image
                             alt="icon"
-                            src={"/facebook.svg"}
+                            src={"/icons/facebook.svg"}
                             width={10}
                             height={50}
                         />
@@ -45,7 +45,7 @@ export default function Header() {
                     <Link href="https://www.youtube.com/JamiatPK">
                         <Image
                             alt="icon"
-                            src={"/youtube.svg"}
+                            src={"/icons/youtube.svg"}
                             width={20}
                             height={50}
                         />
@@ -53,7 +53,7 @@ export default function Header() {
                     <Link href="https://twitter.com/JamiatPK">
                         <Image
                             alt="icon"
-                            src={"/twitter.svg"}
+                            src={"/icons/twitter.svg"}
                             width={20}
                             height={50}
                         />
@@ -69,7 +69,7 @@ export default function Header() {
                         <Image
                             alt="photo"
                             className="inline"
-                            src={"/jamiat-logo.svg"}
+                            src={"/icons/jamiat-logo.svg"}
                             width={65}
                             height={65}
                         />
@@ -99,7 +99,7 @@ export default function Header() {
                                 <Image
                                     alt="photo"
                                     className="cheveron h-3 transition-transform duration-300"
-                                    src={"/cheveron.svg"}
+                                    src={"/icons/cheveron.svg"}
                                     width={13}
                                     height={13}
                                 />
@@ -151,7 +151,7 @@ export default function Header() {
                                 <Image
                                     alt="photo"
                                     className="cheveron h-3 transition-transform duration-300"
-                                    src={"/cheveron.svg"}
+                                    src={"/icons/cheveron.svg"}
                                     width={13}
                                     height={13}
                                 />
@@ -215,7 +215,7 @@ export default function Header() {
                                 <Image
                                     alt="photo"
                                     className="cheveron h-3 transition-transform duration-300"
-                                    src={"/cheveron.svg"}
+                                    src={"/icons/cheveron.svg"}
                                     width={13}
                                     height={13}
                                 />
@@ -281,7 +281,7 @@ export default function Header() {
                 >
                     <Image
                         alt="photo"
-                        src={"/hamburger.svg"}
+                        src={"/icons/hamburger.svg"}
                         width={30}
                         height={30}
                     />
@@ -295,7 +295,7 @@ export default function Header() {
                             menuRef.current.style.width = "0";
                         }}
                         className="float-right m-8"
-                        src={"/cross.png"}
+                        src={"/icons/cross.png"}
                         height={30}
                         width={30}
                         alt="photo"

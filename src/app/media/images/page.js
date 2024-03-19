@@ -31,7 +31,7 @@ async function Images() {
                                     height={500}
                                     alt="gallery"
                                     className="relative w-full object-cover object-center"
-                                    src={image.link}
+                                    src={`/images${image.link}`}
                                 />
                                 <div className="absolute inset-0 w-full bg-neutral-900 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80"></div>
                                 <div className="absolute flex flex-col items-center justify-center inset-x-10 top-[100%] group-hover:top-0 inset-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">

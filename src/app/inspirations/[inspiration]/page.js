@@ -30,7 +30,7 @@ async function Inspiration({ params }) {
             <div className="flex gap-6 flex-col lg:flex-row lg:mx-20 mx-4 sm:mx-10 my-10">
                 <div className="w-full lg:w-1/3 flex flex-col sm:max-lg:flex-row gap-4">
                     <Image
-                        src={data.image}
+                        src={`/images${data.image}`}
                         width={320}
                         height={200}
                         alt="photo"

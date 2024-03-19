@@ -4,11 +4,11 @@ import Link from "next/link";
 import { connectDB } from "@/utils/db";
 import { Media } from "@/utils/model/mediaModel";
 
-export const revalidate=0
+export const revalidate = 0;
 
 const getData = async () => {
     await connectDB();
-    const data=await Media.find({ type: 'book'});
+    const data = await Media.find({ type: "book" });
     return data;
 };
 
@@ -28,13 +28,13 @@ export default async function Books() {
                         <Link
                             key={book._id}
                             href={book.link}
-                            className="h-[500px] mb-6 w-fit hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden"
+                            className="h-[500px] mb-6 w-fit max-w-[400px] hover:brightness-90 transition-all md:rounded-lg rounded-3xl overflow-hidden"
                         >
                             <Image
                                 width={1000}
                                 height={500}
                                 className="h-full w-full object-contain object-center"
-                                src={book.title}
+                                src={`/images${book.title}`}
                                 alt="book"
                             />
                         </Link>

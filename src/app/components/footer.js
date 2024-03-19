@@ -6,7 +6,12 @@ export default function Footer() {
         <div className="bg-gray-950 text-white">
             <div className="flex sm:flex-row flex-col justify-between gap-4 pt-36 px-2 mobile:px-[12vw]">
                 <div>
-                    <Image src={"/footer-logo.png"} height={120} width={100} alt="logo"/>
+                    <Image
+                        src={"/icons/footer-logo.png"}
+                        height={120}
+                        width={100}
+                        alt="logo"
+                    />
                     <p className="text-sm w-56 mt-4">
                         Jamiat is devoutly committed to building a strong and
                         developed Pakistan.
@@ -40,47 +45,51 @@ export default function Footer() {
                             <li>Careers</li>
                             <li>FAQs</li>
                             <li>Teams</li>
-                            <li><Link href={"/contactUs"}>Contact Us</Link></li>
+                            <li>
+                                <Link href={"/contactUs"}>Contact Us</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div className="h-px w-full bg-white"></div>
             <div className="py-3 flex justify-between items-center px-3 gap-3 md:px-[10vw]">
-                <p className="font-light text-xs w-fit lg:w-80">© 2021 All Rights Reserved</p>
+                <p className="font-light text-xs w-fit lg:w-80">
+                    © 2021 All Rights Reserved
+                </p>
                 <div className="flex flex-wrap justify-evenly gap-5">
                     <Link href="#">
                         <Image
-                        className="min-w-fit"
+                            className="min-w-fit"
                             alt="icon"
-                            src={"/facebook.svg"}
+                            src={"/icons/facebook.svg"}
                             width={10}
                             height={50}
                         />
                     </Link>
                     <Link href="#">
                         <Image
-                        className="min-w-fit"
+                            className="min-w-fit"
                             alt="icon"
-                            src={"/instagram.svg"}
+                            src={"/icons/instagram.svg"}
                             width={20}
                             height={50}
                         />
                     </Link>
                     <Link href="#">
                         <Image
-                        className="min-w-fit"
+                            className="min-w-fit"
                             alt="icon"
-                            src={"/youtube.svg"}
+                            src={"/icons/youtube.svg"}
                             width={20}
                             height={50}
                         />
                     </Link>
                     <Link href="#">
                         <Image
-                        className="min-w-fit"
+                            className="min-w-fit"
                             alt="icon"
-                            src={"/twitter.svg"}
+                            src={"/icons/twitter.svg"}
                             width={20}
                             height={50}
                         />

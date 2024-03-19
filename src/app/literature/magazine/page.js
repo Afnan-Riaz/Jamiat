@@ -56,7 +56,7 @@ async function Magazine() {
                     <Link className="block mb-10" href={magazines[0].link}>
                         <Image
                             className="max-w-[350px] h-fit"
-                            src={magazines[0].description}
+                            src={`/images${magazines[0].description}`}
                             width={350}
                             height={350}
                             alt="photo"
@@ -65,7 +65,7 @@ async function Magazine() {
                     <Link href={magazines[1].link}>
                         <Image
                             className="max-w-[350px] h-fit"
-                            src={magazines[1].description}
+                            src={`/images${magazines[1].description}`}
                             width={350}
                             height={350}
                             alt="photo"

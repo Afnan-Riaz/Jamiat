@@ -23,7 +23,7 @@ export default async function Release({ params }) {
             <div className="flex lg:flex-row flex-col mt-14 lg:gap-20 lg:px-20 px-5">
                 <main className="lg:w-2/3 w-full">
                     <Image
-                        src={data.image}
+                        src={`/images${data.image}`}
                         width={1000}
                         height={1000}
                         alt="photo"
@@ -39,7 +39,7 @@ export default async function Release({ params }) {
                 <aside className="lg:w-1/3 w-full">
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={"/images/inspiration-photo1.png"}
                             height={120}
                             width={120}
                             alt="photo"
@@ -53,7 +53,7 @@ export default async function Release({ params }) {
                     </div>
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={"/images/inspiration-photo1.png"}
                             height={120}
                             width={120}
                             alt="photo"
@@ -67,7 +67,7 @@ export default async function Release({ params }) {
                     </div>
                     <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
                         <Image
-                            src={"/inspiration-photo1.png"}
+                            src={"/images/inspiration-photo1.png"}
                             height={120}
                             width={120}
                             alt="photo"

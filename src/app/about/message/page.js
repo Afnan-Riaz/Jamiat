@@ -1,13 +1,12 @@
-
 import { Profiles } from "@/utils/model/profilesModel";
 import { connectDB } from "@/utils/db";
 import Image from "next/image";
 
-export const revalidate=0
+export const revalidate = 0;
 
 const getData = async () => {
     await connectDB();
-    const data=await Profiles.find({ type: 'message' });
+    const data = await Profiles.find({ type: "message" });
     return data;
 };
 
@@ -38,7 +37,7 @@ async function Message() {
                             </h4>
                             <Image
                                 className="-ml-10"
-                                src={"/quotes.svg"}
+                                src={"/icons/quotes.svg"}
                                 width={70}
                                 height={100}
                             />
@@ -48,7 +47,7 @@ async function Message() {
                         </div>
                         <div className="w-fit rounded-full overflow-hidden">
                             <Image
-                                src={section.image}
+                                src={`/images${section.image}`}
                                 height={500}
                                 width={500}
                                 alt="photo"

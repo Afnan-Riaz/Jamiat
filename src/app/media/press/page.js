@@ -30,7 +30,7 @@ export default async function Press() {
                                     width={500}
                                     height={500}
                                     className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                    src={release.image}
+                                    src={`/images${release.image}`}
                                     alt="blog"
                                 />
                                 <div className="p-6 relative">

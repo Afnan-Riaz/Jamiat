@@ -148,7 +148,7 @@ export default function Media() {
                                 >
                                     <Image
                                         alt="photo"
-                                        src={release.image}
+                                        src={`/images${release.image}`}
                                         height={200}
                                         width={500}
                                     />
@@ -175,7 +175,7 @@ export default function Media() {
                                     </p>
                                     <audio
                                         className="mt-3 w-full"
-                                        src={aud.link}
+                                        src={`/audio${aud.link}`}
                                         controls
                                     ></audio>
                                 </div>
@@ -211,7 +211,7 @@ export default function Media() {
                                 >
                                     <Image
                                         className="w-full"
-                                        src={event.image}
+                                        src={`/images${event.image}`}
                                         height={400}
                                         width={400}
                                         alt="event"
@@ -222,7 +222,7 @@ export default function Media() {
                                     <div>
                                         <div className="flex gap-1">
                                             <Image
-                                                src={"clock.svg"}
+                                                src={"/icons/clock.svg"}
                                                 width={20}
                                                 height={20}
                                                 alt="icon"
@@ -231,7 +231,7 @@ export default function Media() {
                                         </div>
                                         <div className="flex gap-1">
                                             <Image
-                                                src={"map-pin.svg"}
+                                                src={"icons/map-pin.svg"}
                                                 width={20}
                                                 height={20}
                                                 alt="icon"
@@ -265,7 +265,7 @@ export default function Media() {
                             >
                                 <Image
                                     alt="photo"
-                                    src={"twitter.svg"}
+                                    src={"icons/twitter.svg"}
                                     height={50}
                                     width={25}
                                 />
@@ -287,7 +287,7 @@ export default function Media() {
                             >
                                 <Image
                                     alt="photo"
-                                    src={"facebook.svg"}
+                                    src={"icons/facebook.svg"}
                                     height={50}
                                     width={12}
                                 />

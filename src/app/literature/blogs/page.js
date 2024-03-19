@@ -30,7 +30,7 @@ export default async function Blogs() {
                                     width={500}
                                     height={500}
                                     className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                    src={blog.image}
+                                    src={`/images${blog.image}`}
                                     alt="blog"
                                 />
                                 <div className="p-6 relative">

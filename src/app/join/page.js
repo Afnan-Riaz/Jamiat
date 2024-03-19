@@ -34,7 +34,7 @@ export default function Join() {
                 <div className="w-1/2 md:block hidden">
                     <Image
                         className="object-cover h-full"
-                        src={"/landing-bg.png"}
+                        src={"/images/landing-bg.png"}
                         width={1000}
                         height={1000}
                         alt="photo"
@@ -152,7 +152,7 @@ export default function Join() {
                                     <Image
                                         alt="photo"
                                         className="peer cursor-help"
-                                        src={"/info-button.svg"}
+                                        src={"/icons/info-button.svg"}
                                         width={16}
                                         height={64}
                                     />
@@ -179,7 +179,7 @@ export default function Join() {
                                     <Image
                                         alt="photo"
                                         className="peer cursor-help"
-                                        src={"/info-button.svg"}
+                                        src={"/icons/info-button.svg"}
                                         width={16}
                                         height={64}
                                     />

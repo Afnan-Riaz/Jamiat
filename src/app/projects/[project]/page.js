@@ -23,7 +23,7 @@ async function Project({ params }) {
                 <div className="flex gap-10">
                     <Image
                         className="h-fit"
-                        src={data.image}
+                        src={`/images${data.image}`}
                         width={400}
                         height={300}
                         alt="photo"

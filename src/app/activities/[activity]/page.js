@@ -6,8 +6,11 @@ import { Media } from "@/utils/model/mediaModel";
 
 const getData = async (slug) => {
     await connectDB();
-    const data = await Blogs.findOne({ type: 'activity' ,slug:slug});
-    const images = await Media.find({type:"activity", title: data._id.toString() });
+    const data = await Blogs.findOne({ type: "activity", slug: slug });
+    const images = await Media.find({
+        type: "activity",
+        title: data._id.toString(),
+    });
     return { ...data.toObject(), images };
 };
 
@@ -32,7 +35,7 @@ async function Activity({ params }) {
                                     height={500}
                                     alt="activity"
                                     className="relative w-full h-96 object-cover object-center"
-                                    src={activity.link}
+                                    src={`/images${activity.link}`}
                                 />
                                 <div className="absolute inset-0 w-full bg-neutral-900 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80"></div>
                                 <p className="absolute flex items-center justify-center text-xl inset-x-10 top-[100%] group-hover:top-0 inset-0 transition-all duration-300 ease-in-out text-white leading-relaxed opacity-0 group-hover:opacity-100">

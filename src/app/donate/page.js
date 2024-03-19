@@ -36,7 +36,7 @@ export default function Join() {
                 <div className="w-1/2 md:block hidden">
                     <Image
                         className="object-cover h-full"
-                        src={"/landing-bg.png"}
+                        src={"/images/landing-bg.png"}
                         width={1000}
                         height={1000} alt="photo"
                     />

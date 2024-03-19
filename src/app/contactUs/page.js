@@ -33,7 +33,7 @@ export default function Contact() {
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
             <div className="flex">
             <div className="w-1/2 md:block hidden">
-                <Image className="object-cover h-full" src={"/landing-bg.png"} alt="photo" width={1000} height={1000}/>
+                <Image className="object-cover h-full" src={"/images/landing-bg.png"} alt="photo" width={1000} height={1000}/>
             </div>
             <div className="w-full md:w-1/2 px-4">
             <h1 className=" text-4xl font-semibold text-blue-700 mb-4 mt-14">
