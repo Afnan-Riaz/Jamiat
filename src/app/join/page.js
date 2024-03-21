@@ -41,10 +41,10 @@ export default function Join() {
                     />
                 </div>
                 <div className="w-full md:w-1/2 px-4">
-                    <h1 className=" text-4xl font-semibold text-blue-700 mb-4 mt-14">
+                    <h1 className=" text-4xl lg:ml-16 font-semibold text-blue-700 mb-4 mt-14">
                         Join Us
                     </h1>
-                    <p className=" text-lg mb-8">
+                    <p className=" text-lg mb-8 lg:ml-16">
                         Become a member or volunteer by filling relevant
                         information.
                     </p>

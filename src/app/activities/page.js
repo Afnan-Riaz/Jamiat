@@ -1,11 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { getMetaData } from "@/utils/metadata";
 import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
-import { Media } from "@/utils/model/mediaModel";
 
 export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("activities");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();

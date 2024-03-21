@@ -1,8 +1,10 @@
+import { getMetaData } from "@/utils/metadata";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 
+export const revalidate = 0;
 const inter = Inter({
     subsets: ["latin"],
     weight: ["700", "800", "900"],
@@ -16,10 +18,18 @@ const poppins = Poppins({
     display: "swap",
 });
 
-export const metadata = {
-    title: "Islami Jamiat Talaba",
-    description: "description",
-};
+
+
+export async function generateMetadata() {
+    const metadata = await getMetaData('');
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 export default function RootLayout({ children }) {
     return (

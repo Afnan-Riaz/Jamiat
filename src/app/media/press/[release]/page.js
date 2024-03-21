@@ -3,6 +3,16 @@ import Image from "next/image";
 import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
 
+export async function generateMetadata({params}) {
+    const metadata = await getData(params.release);
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 const getData = async (slug) => {
     await connectDB();
     const data = await Blogs.findOne({ type: "release", slug: slug });

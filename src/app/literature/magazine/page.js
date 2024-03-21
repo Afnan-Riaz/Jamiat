@@ -3,8 +3,20 @@ import Image from "next/image";
 
 import { connectDB } from "@/utils/db";
 import { Media } from "@/utils/model/mediaModel";
+import { getMetaData } from "@/utils/metadata";
 
-export const revalidate=0
+export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("magazine");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();
@@ -40,8 +52,12 @@ async function Magazine() {
                                 key={magazine._id}
                                 className="flex justify-between gap-x-20"
                             >
-                                <div className="space-x-3"><span className="font-medium">{magazine.title}</span>
-                                <span>{parseDate(magazine.date)}</span></div>
+                                <div className="space-x-3">
+                                    <span className="font-medium">
+                                        {magazine.title}
+                                    </span>
+                                    <span>{parseDate(magazine.date)}</span>
+                                </div>
                                 <Link
                                     href={magazine.link}
                                     className="underline"

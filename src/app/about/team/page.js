@@ -2,8 +2,20 @@ import Image from "next/image";
 
 import { Profiles } from "@/utils/model/profilesModel";
 import { connectDB } from "@/utils/db";
+import { getMetaData } from "@/utils/metadata";
 
 export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("team");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();

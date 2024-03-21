@@ -5,8 +5,8 @@ import Modal from "../components/modal";
 import Image from "next/image";
 
 export default function Join() {
-    const [amount,setAmount]=useState();
-    const [custom,setCustom]=useState(false)
+    const [amount, setAmount] = useState();
+    const [custom, setCustom] = useState(false);
     const formRef = useRef(null);
     const [display, setDisplay] = useState(false);
     const handleSubmission = (e) => {
@@ -38,14 +38,15 @@ export default function Join() {
                         className="object-cover h-full"
                         src={"/images/landing-bg.png"}
                         width={1000}
-                        height={1000} alt="photo"
+                        height={1000}
+                        alt="photo"
                     />
                 </div>
                 <div className="w-full md:w-1/2 px-4">
-                    <h1 className=" text-4xl font-semibold text-blue-700 mb-4 mt-14">
+                    <h1 className=" text-4xl lg:ml-16 font-semibold text-blue-700 mb-4 mt-14">
                         Make A Donation
                     </h1>
-                    <p className=" text-lg mb-8">
+                    <p className=" text-lg mb-8 lg:ml-16">
                         Donate us and be a part of our journey
                     </p>
                     <form
@@ -138,7 +139,7 @@ export default function Join() {
                             Make custom amount
                         </p>
                         <input
-                        required
+                            required
                             disabled={!custom}
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
@@ -188,7 +189,10 @@ export default function Join() {
                             Start a monthly donation today to invest in the
                             future of our party
                         </p>
-                        <button onClick={handleSubmission} className="bg-red-600 hover:bg-red-700 transition-colors font-inter w-fit px-4 py-3 rounded-md mx-auto text-white">
+                        <button
+                            onClick={handleSubmission}
+                            className="bg-red-600 hover:bg-red-700 transition-colors font-inter w-fit px-4 py-3 rounded-md mx-auto text-white"
+                        >
                             Donate now
                         </button>
                     </form>

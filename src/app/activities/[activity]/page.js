@@ -4,7 +4,18 @@ import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
 import { Media } from "@/utils/model/mediaModel";
 
-const getData = async (slug) => {
+export async function generateMetadata({ params }) {
+    const metadata = await getData(params.activity);
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
+
+export const getData = async (slug) => {
     await connectDB();
     const data = await Blogs.findOne({ type: "activity", slug: slug });
     const images = await Media.find({

@@ -4,7 +4,20 @@ import Link from "next/link";
 import { connectDB } from "@/utils/db";
 import Blogs  from "@/utils/model/blogsModel";
 
-export const revalidate=0
+import { getMetaData } from "@/utils/metadata";
+
+export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("projects");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();

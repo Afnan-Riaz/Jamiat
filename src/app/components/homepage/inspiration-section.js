@@ -101,7 +101,7 @@ export default function Inspiration() {
                                         key={inspiration._id}
                                         dangerouslySetInnerHTML={{
                                             __html: shorten(
-                                                inspiration.content
+                                                inspiration.meta_description
                                             ),
                                         }}
                                     ></div>

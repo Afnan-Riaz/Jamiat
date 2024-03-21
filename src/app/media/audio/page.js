@@ -1,8 +1,20 @@
 
 import { Media } from "@/utils/model/mediaModel";
 import { connectDB } from "@/utils/db";
+import { getMetaData } from "@/utils/metadata";
 
-export const revalidate=0
+export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("audio");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();

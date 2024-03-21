@@ -4,7 +4,16 @@ import { connectDB } from "@/utils/db";
 import { Page } from "@/utils/model/pageModel";
 
 export const revalidate=0
-
+export async function generateMetadata() {
+    const metadata = await getData();
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 export const getData = async () => {
     await connectDB();
     const slug = "islami-jamiat-talaba";

@@ -4,6 +4,16 @@ import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
 // import Comments from "@/app/components/comments";
 
+export async function generateMetadata({params}) {
+    const metadata = await getData(params.blog);
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 const getData = async (slug) => {
     await connectDB();
     const data = await Blogs.findOne({ type: "blog", slug: slug });

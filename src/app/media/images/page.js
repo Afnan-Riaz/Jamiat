@@ -2,8 +2,20 @@ import Image from "next/image";
 
 import { connectDB } from "@/utils/db";
 import { Media } from "@/utils/model/mediaModel";
+import { getMetaData } from "@/utils/metadata";
 
-export const revalidate=0
+export const revalidate = 0;
+
+export async function generateMetadata() {
+    const metadata = await getMetaData("images");
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 
 const getData = async () => {
     await connectDB();

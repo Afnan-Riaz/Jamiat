@@ -3,6 +3,18 @@ import Image from "next/image";
 import { connectDB } from "@/utils/db";
 import { Profiles } from "@/utils/model/profilesModel";
 
+export const revalidate = 0;
+
+export async function generateMetadata({params}) {
+    const metadata = await getData(params.inspiration);
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description,
+        alternates: {
+            canonical: metadata.canonical,
+        },
+    };
+}
 const getData = async (slug) => {
     await connectDB();
     const data = await Profiles.findOne({ type: "inspiration", slug: slug });
