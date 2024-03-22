@@ -24,6 +24,14 @@ const getData = async () => {
 };
 export default async function Press() {
     const data = await getData();
+    const parseDate = (d) => {
+        const date = new Date(d).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        });
+        return date;
+    };
     return (
         <section className="text-gray-600">
             <div className="bg-header-bg bg-cover w-full h-28 -mt-24"></div>
@@ -45,9 +53,12 @@ export default async function Press() {
                                     alt="blog"
                                 />
                                 <div className="p-6 relative">
-                                    <h1 className="text-lg font-medium text-gray-900 mb-3">
+                                    <h1 className="text-lg font-medium text-gray-900 mb-1">
                                         {release.title}
                                     </h1>
+                                    <p className="text-sm font-medium text-gray-600 mb-3">
+                                        {parseDate(release.date)}
+                                    </p>
                                     <div className="max-h-[300px] overflow-hidden text-ellipsis">
                                         {
                                             <div

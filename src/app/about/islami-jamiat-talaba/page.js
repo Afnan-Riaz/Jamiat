@@ -2,8 +2,9 @@ import Image from "next/image";
 
 import { connectDB } from "@/utils/db";
 import { Page } from "@/utils/model/pageModel";
+import News from "@/app/components/news";
 
-export const revalidate=0
+export const revalidate = 0;
 export async function generateMetadata() {
     const metadata = await getData();
     return {
@@ -17,7 +18,7 @@ export async function generateMetadata() {
 export const getData = async () => {
     await connectDB();
     const slug = "islami-jamiat-talaba";
-    const data = Page.findOne({slug:slug});
+    const data = Page.findOne({ slug: slug });
     return data || [];
 };
 export default async function IJT() {
@@ -33,54 +34,14 @@ export default async function IJT() {
             <div className="flex lg:flex-row flex-col mt-14 lg:gap-20 lg:px-20 px-5">
                 <main className="lg:w-2/3 w-full">
                     {
-                        <div className="revert-tailwind" key={data._id} dangerouslySetInnerHTML={{ __html:data.content}}>
-                        </div>
+                        <div
+                            className="revert-tailwind"
+                            key={data._id}
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
                     }
                 </main>
-                <aside className="lg:w-1/3 w-full">
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={`/images/inspiration-photo1.png`}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={`/images/inspiration-photo1.png`}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={`/images/inspiration-photo1.png`}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                </aside>
+                <News/>
             </div>
         </div>
     );

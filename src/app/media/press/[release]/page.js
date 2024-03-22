@@ -3,7 +3,7 @@ import Image from "next/image";
 import { connectDB } from "@/utils/db";
 import Blogs from "@/utils/model/blogsModel";
 
-export async function generateMetadata({params}) {
+export async function generateMetadata({ params }) {
     const metadata = await getData(params.release);
     return {
         title: metadata.meta_title,
@@ -46,50 +46,7 @@ export default async function Release({ params }) {
                         ></div>
                     }
                 </main>
-                <aside className="lg:w-1/3 w-full">
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={"/images/inspiration-photo1.png"}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={"/images/inspiration-photo1.png"}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                    <div className="w-full flex gap-5 items-center border-b-2 mt-5 pb-5">
-                        <Image
-                            src={"/images/inspiration-photo1.png"}
-                            height={120}
-                            width={120}
-                            alt="photo"
-                        />
-                        <div>
-                            <h4 className="text-lg font-medium">
-                                Syed Abul A'la Maududi example news
-                            </h4>
-                            <p className="text-sm text-gray-500">5 days ago</p>
-                        </div>
-                    </div>
-                </aside>
+                <News />
             </div>
         </div>
     );
